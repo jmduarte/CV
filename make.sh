@@ -9,7 +9,7 @@ SOURCE=cv_duarte_javier
 $ECHO "First pass\n"
 run_pdflatex $SOURCE
 $ECHO "bibtex"
-biber "$SOURCE.aux"
+biber $SOURCE
 $ECHO "\nSecond pass\n"
 run_pdflatex $SOURCE
 $ECHO "Third pass\n"
