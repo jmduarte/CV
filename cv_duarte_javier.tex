@@ -2,7 +2,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[10pt]{res}
+\documentclass[11pt]{res}
 
 
 \usepackage{palatino}%    Choose default roman font.  Others are times, pslatex, newcent, bookman, chancery
@@ -102,6 +102,7 @@ biblabel=brackets,
 %----------------------------------------------------------------------------------------
 
 \address{{\bf Javier M. Duarte} \\
+Mayer Hall Addition 5513\\
 Department of Physics, 0319\\
 University of California San Diego\\
 9500 Gilman Drive, La Jolla, CA 92093-0319}
@@ -128,8 +129,8 @@ Dissertation:
 Advisor: Professor Maria Spiropulu
 
 \textbf{Massachusetts Institute of Technology} (\textit{2006--2010})\\
-B.S., Mathematics, 2010\\
-B.S., Physics, 2010\\
+S.B., Mathematics, 2010\\
+S.B., Physics, 2010\\
 Senior thesis: \href{http://hdl.handle.net/1721.1/61255}{Exotic antineutrino oscillations
   ($\bar\nu_\Pe\to\bar\nu_{\slashed{\Pe}}$) in Double Chooz}\\
 Advisor: Professor Janet Conrad
@@ -140,7 +141,7 @@ Advisor: Professor Janet Conrad
 %----------------------------------------------------------------------------------------
 
 \MarginText{Professional Experience}
-William A. Lee Chancellor's Endowed Junior Faculty Fellow II Assistant Professor at UC San Diego, La Jolla, CA (\textit{2019--Present})\\
+Assistant Professor of Physics at UC San Diego, La Jolla, CA (\textit{2019--Present})\\
 \href{http://www.fnal.gov/pub/forphysicists/fellowships/leon_lederman/index.html}{Lederman
   Fellow} at Fermilab, Batavia, IL (\textit{2016--2019})\\
 Technical Instructor in
@@ -151,28 +152,17 @@ Technical Instructor in
 %	FELLOWSHIPS AND AWARDS
 %----------------------------------------------------------------------------------------
 
-\MarginText{Fellowships, Awards, and Grants}
-\href{https://science.energy.gov/~/media/78921BDAD1894BBF9A686A2125C3B3C0.ashx}{DOE
-  QuantISED} award for ``Quantum Machine Learning and Quantum
-  Computation Frameworks for HEP (QMLQCF)'' (\textit{2018--2020})\\
-\href{https://ldrd.fnal.gov/subdir/FNAL-LDRD-2019-017-D1.pdf}{Fermilab Laboratory Directed R\&D} award for ``Graph Neural Networks
-for Accelerating Calorimetry and Event Reconstruction'' (\textit{2019--2021})\\
-\href{https://ldrd.fnal.gov/subdir/FNAL-LDRD-2019-027-D1.pdf}{Fermilab Laboratory Directed R\&D} award for ``Accelerator Control
-with Artificial Intelligence'' (\textit{2019--2021})\\
-\href{http://lpc.fnal.gov/fellows/2019/Javier_Duarte.shtml}{LHC
-  Physics Center Distinguished Researcher} (\textit{2019})\\
-\href{http://www.fnal.gov/pub/forphysicists/fellowships/leon_lederman/index.html}{Fermilab
-    Lederman Fellowship} (\textit{2016--2019})\\
-\href{http://www.pma.caltech.edu/content/france-cordova-graduate-student-fund}{Tombrello
-  Scholar} sponsored by the France A. C\'{o}rdova Graduate Student Fund (\textit{2015})\\
-\href{https://www.nsfgrfp.org/}{National Science Foundation
-  Graduate Research Fellowship} (\textit{2011--2014})\\
-%\Description{\textit{2012} \hspace{1.5em} Isidor I. Rabi Award at the
-%\href{http://www.emfcsc.infn.it/issp2012/index.html}{International
-%School of Subnuclear Physics}}\\
-\href{http://www.gmsp.org/}{Gates Millenium
-  Scholar} sponsored by Hispanic Scholarship Fund
-(\textit{2006--2014})
+\MarginText{Fellowships and Awards} %, and Grants}
+William A. Lee Chancellor's Endowed Junior Faculty Fellow II (\textit{2019--Present})\\
+%\href{https://science.energy.gov/~/media/78921BDAD1894BBF9A686A2125C3B3C0.ashx}{DOE QuantISED} award for ``Quantum Machine Learning and Quantum Computation Frameworks for HEP (QMLQCF)'' (\textit{2018--2020})\\
+%\href{https://ldrd.fnal.gov/subdir/FNAL-LDRD-2019-017-D1.pdf}{Fermilab Laboratory Directed R\&D} award for ``Graph Neural Networks for Accelerating Calorimetry and Event Reconstruction'' (\textit{2019--2021})\\
+%\href{https://ldrd.fnal.gov/subdir/FNAL-LDRD-2019-027-D1.pdf}{Fermilab Laboratory Directed R\&D} award for ``Accelerator Control with Artificial Intelligence'' (\textit{2019--2021})\\
+\href{http://lpc.fnal.gov/fellows/2019/Javier_Duarte.shtml}{LHC Physics Center Distinguished Researcher} (\textit{2019})\\
+\href{http://www.fnal.gov/pub/forphysicists/fellowships/leon_lederman/index.html}{Fermilab Lederman Fellowship} (\textit{2016--2019})\\
+\href{http://pma.caltech.edu/research-and-academics/physics/physics-prizes-awards/france-a-cordova-graduate-student-fund-recipients}{Tombrello Scholar} sponsored by the France A. C\'{o}rdova Graduate Student Fund (\textit{2015})\\
+\href{https://www.nsfgrfp.org/}{National Science Foundation Graduate Research Fellowship} (\textit{2011--2014})\\
+%\Description{\textit{2012} \hspace{1.5em} Isidor I. Rabi Award at the \href{http://www.emfcsc.infn.it/issp2012/index.html}{International School of Subnuclear Physics}}\\
+\href{http://www.gmsp.org/}{Gates Millenium Scholar} sponsored by Hispanic Scholarship Fund (\textit{2006--2014})
 
 %----------------------------------------------------------------------------------------
 %	Research 
@@ -204,7 +194,7 @@ Optimal Network Inference on Coprocessors (SONIC)}~\cite{Duarte:2019fta} (\texti
 \textbf{Machine Learning / Trigger.} Development of
 \href{https://hls-fpga-machine-learning.github.io/hls4ml/}{\texttt{hls4ml}}
 tool for creating low-latency FPGA-based firmware
-  implementations of machine learning algorithms~\cite{Duarte:2018ite,Summers:2020xiy} (\textit{2017--Present}).
+  implementations of machine learning algorithms~\cite{Duarte:2018ite,Summers:2020xiy,bnnpaper} (\textit{2017--Present}).
 \begin{itemize}
 \item Prepared benchmark machine learning algorithms, including
   fully connected, convolutional, recurrent, and graph neural networks.
@@ -229,7 +219,7 @@ Level-1 trigger (\emph{2017--Present}).
   deployed a deep neural network for identifiying boosted Higgs
   bosons decaying to $\bbbar$ and $\ccbar$ over a wide range of
   masses.
-\item Lead a team performing studies in data to commission the neural network.
+\item Led a team performing studies in data to commission the neural network.
 \item Developed new interaction network~\cite{Moreno:2019bmu,Moreno:2019neq} methods to further improve background
   rejection as well as coordinated the release of the simulated data through the CERN Open Data Portal~\cite{opendata}.
 \end{itemize}
@@ -252,7 +242,7 @@ Level-1 trigger (\emph{2017--Present}).
 
 \textbf{Boosted Dijet Resonances.} Co-leader of analysis group searching for exotic, light spin-$1$ and
   spin-$0$ particles decaying to
-  quarks~\cite{Sirunyan:2017nvi,Sirunyan:2018ikr,Sirunyan:2019sgo,CMS-PAS-EXO-18-012} (\textit{2017--2019}).
+  quarks~\cite{Sirunyan:2017nvi,Sirunyan:2018ikr,Sirunyan:2019sgo,Sirunyan:2019vxa} (\textit{2017--2019}).
 %\begin{itemize}
 %\item I lead a group of professors, postdocs, and graduate students
 %  from Fermilab, MIT, Rutgers, Johns Hopkins, and Brown, which use shared techniques like jet
@@ -263,7 +253,7 @@ Level-1 trigger (\emph{2017--Present}).
 %  mass range between $50$ and $350\GeV$~\cite{Sirunyan:2018ikr}.
 %\end{itemize}
 
-\textbf{Dijet Resonances.} Co-leader of dijet resonance search group, including data scouting, wide resonance, and $\PQb$-tagged resonance searches~\cite{Sirunyan:2016iap,Sirunyan:2018xlo,CMS-PAS-EXO-17-026,Duarte:2018bsd,CMS-PAS-EXO-19-012,CMS-PAS-EXO-19-004} (\textit{2016--2018}).
+\textbf{Dijet Resonances.} Co-leader of dijet resonance search group, including data scouting, wide resonance, and $\PQb$-tagged resonance searches~\cite{Sirunyan:2016iap,Sirunyan:2018xlo,CMS-PAS-EXO-17-026,Duarte:2018bsd,Sirunyan:2019vgj,Sirunyan:2019pnb} (\textit{2016--2018}).
 %\begin{itemize}
 %\item Developer of the 2017 CMS data scouting triggers, streams, and data sets. 
 %\item Developer of statistical analysis framework for dijet resonance searches.
@@ -410,9 +400,16 @@ razor variables for Run 2 of the LHC at 13 TeV  (\textit{2014--2016}).
 
 \MarginText{Teaching}
 
-\textbf{Introductory University Physics.} Lead instructor for
+\textbf{Introductory Physics.} Lead instructor for
 \href{https://jduarte.physics.ucsd.edu/phys2c/index.html}{Physics 2C}:
-Fluids, Waves, Thermodynamics, and Optics for 350 undergraduates (Winter \textit{2020})
+Fluids, Waves, Thermodynamics, and Optics for 350 undergraduate students
+(Winter \textit{2020})
+
+\textbf{Graduate Seminar.} Guest speaker for Physics 261:
+Seminar on Physics Research at UC San Diego (Winter \textit{2020})
+
+\textbf{Undergraduate Seminar.} Guest speaker for Physics 191:
+Undergraduate Seminar on Physics (Fall \textit{2019})
 
 \textbf{Physics Tutorial.} Lead facilitator of the
 \href{https://indico.cern.ch/event/628146/}{first} and second annual \href{https://indico.cern.ch/event/726984/}{CMS Machine Learning
@@ -600,43 +597,29 @@ Joint Experimental-Theoretical Physics Seminar (Wine \& Cheese). December 14, 20
 
 \MarginText{Service and Committee Work}
 
+Scientific organizing committee for \ref{http://www.ncsa.illinois.edu/Conferences/AcceleratedAINCSA/}{Accelerated Artificial Intelligence for Big-Data Experiments Conference} (2020) at NCSA
 
 Nuclear Instruments and Methods in Physics Research Section A (NIMA): Accelerators, Spectrometers, Detectors and Associated Equipment peer reviewer (\textit{2020})
 
-Graduate admissions committee for UC San Diego Physics Department
-(\textit{2019--2020})
+Graduate admissions committee for UC San Diego Physics Department (\textit{2019--2020})
   
-European Physics Journal C (EPJC) peer reviewer (\textit{2019})
+European Physics Journal C (Eur. Phys. J. C) peer reviewer (\textit{2019})
 
 European Science Foundation (ESF) external reviewer (\textit{2019})
 
-Local organizing committee for
-  \href{https://indico.cern.ch/e/fml}{Fast ML} workshop
-  at Fermilab LPC (\textit{2019})
+Local organizing committee for \href{https://indico.cern.ch/e/fml}{Fast ML} workshop at Fermilab LPC (\textit{2019})
 
-Local organizing committee for
-  \href{https://indico.cern.ch/e/ml4jets2018}{ML4Jets 2018} workshop
-  at Fermilab LPC (\textit{2018})
+Local organizing committee for \href{https://indico.cern.ch/e/ml4jets2018}{ML4Jets 2018} workshop at Fermilab LPC (\textit{2018})
 
-\href{http://diversity.fnal.gov/target/}{TARGET}
-  program committee at Fermilab (\textit{2017--2019})
+\href{http://diversity.fnal.gov/target/}{TARGET} program committee at Fermilab (\textit{2017--2019})
 
-\href{http://lpc.fnal.gov/programs/topic/}{LPC Topic of the Week}
-  committee chair at Fermilab (\textit{2017--2018})
+\href{http://lpc.fnal.gov/programs/topic/}{LPC Topic of the Week} committee chair at Fermilab (\textit{2017--2018})
 
-Analysis Review Committee for four CMS analyses: a \href{http://arxiv.org/abs/1803.08030}{search for new
-  physics with dijet angular distributions}, \href{https://arxiv.org/abs/1803.06986}{a search for fully hadronic
-  $\ttbar\PH(\bbbar)$}, a search for strongly interacting massive
-particles, and a search for electroweak production of a vector-like
-top quark partner in the fully-hadronic final state.
+Analysis review committees for several CMS analyses: a \href{http://arxiv.org/abs/1803.08030}{search for new physics with dijet angular distributions}, a \href{https://arxiv.org/abs/1803.06986}{search for fully hadronic $\ttbar\PH(\bbbar)$}, a search for strongly interacting massive particles, and a \href{https://arxiv.org/abs/1909.04721}{search for electroweak production of a vector-like top quark partner in the fully-hadronic final state}.
 
-Local organizing committee for
-  \href{http://dshep.fnal.gov}{DS@HEP 2017} workshop at Fermilab and
-  development of public data set based on CMS open data for boosted
-  object tagging with machine learning applications
+Local organizing committee for \href{http://dshep.fnal.gov}{DS@HEP 2017} workshop at Fermilab and development of public data set based on CMS open data for boosted object tagging with machine learning applications
 
-Local organizing committee for
-  \href{https://indico.cern.ch/event/639314/}{LHC Reinterpretation 2017} workshop at Fermilab LPC
+Local organizing committee for \href{https://indico.cern.ch/event/639314/}{LHC Reinterpretation 2017} workshop at Fermilab LPC
 
 % %----------------------------------------------------------------------------------------
 % % CMS INTERNAL WORK
@@ -696,9 +679,10 @@ Supervision of Graduate Students (\textit{2016--Present}).
 Supervision of Undergraduate Students (\textit{2012--Present}).
 
 \begin{itemize}
+\item Steven Tsan (UC San Diego). Unsupervised or semi-supervised anomaly detection algorithms for high energy physics. (\textit{2020--Present}).
+\item Vesal Razavimaleki (UC San Diego). Implementation of graph neural networks on FPGAs. (\textit{2019--Present}).
 \item Eric Moreno (Caltech). Development of interaction and graph neural networks for boosted jet tagging with CMS open data. (\textit{2018--Present}).
-\item Sydney Jenknins (University of Chicago). Compression and
-  firmware implementation of interaction and graph neural networks for charged particle tracking at the LHC (\textit{2018}).
+\item Sydney Jenknins (University of Chicago). Compression and firmware implementation of interaction and graph neural networks for charged particle tracking at the LHC (\textit{2018}).
 \item Eric Scotti (Brown University). Development of deep neural networks for boosted Higgs identification in CMS (\textit{2017--2018}).  
 \item Irene Li (University of Cambridge). Supervised and unsupervised machine learning methods for SUSY searches at the LHC (\textit{2015}).
 \item Jared Filseth (Caltech). Measurement of single-lepton and razor trigger efficiencies for LHC Run 2 (\textit{2015}).
