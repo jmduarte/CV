@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Compile proposal narrative and summary LaTeX
+    - name: Compile CV LaTeX
       uses: docker://xucheng/texlive-full:latest
       with:
         entrypoint: /bin/sh
