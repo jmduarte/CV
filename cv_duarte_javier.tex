@@ -27,17 +27,21 @@
 %\renewcommand{\cvheadingfont}{\LARGE\color{Blue}} % Font color of your name at the top
 
 \usepackage{hyperref} % Required for adding links	and customizing them
-\hypersetup{colorlinks, breaklinks, urlcolor=NavyBlue, linkcolor=NavyBlue, citecolor=Plum}
+%\hypersetup{colorlinks, breaklinks, urlcolor=NavyBlue, linkcolor=NavyBlue, citecolor=Plum}
+\hypersetup{colorlinks, breaklinks, urlcolor=Black, linkcolor=Black, citecolor=Black}
 % Set link colors
 
-\usepackage[style=phys,
+\newcommand*\publistbasestyle{phys}
+\usepackage[style=publist,
 biblabel=brackets,
     %backend=biber,
  %   natbib,
   %  style=numeric,
-   % sorting=none
+   sorting=ddt,
+   plauthorhandling=highlight,
+   nameorder=given-family
 ]{biblatex}
-
+ \plauthorname[Javier]{Duarte}
 %\usepackage[%
 %style=phys,%
 %biblabel=brackets,%
@@ -124,7 +128,7 @@ phone: (858) 246-4980}
 M.S., Physics, 2015\\
 Ph.D., Physics, 2016\\
 Dissertation:
-    \href{http://resolver.caltech.edu/CaltechTHESIS:08232016-112522351}{Naturalness
+    \href{https://doi.org/10.7907/Z9GX48JV}{Naturalness
         confronts nature: searches for supersymmetry with the CMS
         detector in $\Pp\Pp$ collisions at $\sqrt{s} = 8$ and $13\TeV$}\\
 Advisor: Professor Maria Spiropulu
@@ -189,7 +193,7 @@ quantum computation frameworks for high energy physics~\cite{Zlokapa:2019tkn}.
 \textbf{Boosted Higgs.} Lead author of search for a highly Lorentz boosted Higgs boson
   decaying to a bottom quark-antiquark pair using full Run 2 data~\cite{CMS-PAS-HIG-19-003} (\textit{2017--Present}).
 
-\textbf{Machine Learning / Coprocessors.} Development of \href{https://github.com/hls-fpga-machine-learning/SonicCMS}{Services for Optimal Network Inference on Coprocessors (SONIC)}~\cite{Duarte:2019fta,neurips2019_sonic} (\textit{2018--Present}).
+\textbf{Machine Learning / Coprocessors.} Development of \href{https://github.com/hls-fpga-machine-learning/SonicCMS}{Services for Optimal Network Inference on Coprocessors (SONIC)}~\cite{neurips2019_sonic,Duarte:2019fta} (\textit{2018--Present}).
 %\begin{itemize}
 %\item Prepared, trained, validated, and tested the ResNet-50 convolutional neural network for top quark
 %  jet identification at the LHC on different CPU, GPU, and FPGA platforms, including Microsoft Project Brainwave.
@@ -198,7 +202,7 @@ quantum computation frameworks for high energy physics~\cite{Zlokapa:2019tkn}.
 \textbf{Machine Learning / Trigger.} Development of
 \href{https://fastmachinelearning.org/hls4ml/}{\texttt{hls4ml}}
 tool for creating low-latency FPGA-based firmware
-  implementations of machine learning algorithms~\cite{Duarte:2018ite,Summers:2020xiy,bnnpaper,neurips2019_hls4ml} (\textit{2017--Present}).
+  implementations of machine learning algorithms~\cite{bnnpaper,Summers:2020xiy,neurips2019_hls4ml,Duarte:2018ite} (\textit{2017--Present}).
 %\begin{itemize}
 %\item Prepared benchmark machine learning algorithms, including
 %  fully connected, convolutional, recurrent, and graph neural networks.
@@ -216,7 +220,7 @@ Level-1 trigger (\emph{2017--Present}).
 %\end{itemize}
 
 \textbf{Machine Learning / Higgs Tagging.} Development of a mass-decorrelated deep neural network tagger
-  for identifiying boosted Higgs bosons decaying to $\bbbar$ and $\ccbar$ in CMS~\cite{CMS-DP-2018-046,Moreno:2019bmu,Moreno:2019neq,neurips2019_hbb}
+  for identifiying boosted Higgs bosons decaying to $\bbbar$ and $\ccbar$ inside and outside of  CMS~\cite{Moreno:2019neq,Moreno:2019bmu,neurips2019_hbb,CMS-DP-2018-046}
   (\textit{2017--Present}).
 %\begin{itemize}
 %\item Developed, trained using simulated data, and
@@ -246,7 +250,7 @@ Level-1 trigger (\emph{2017--Present}).
 
 \textbf{Boosted Dijet Resonances.} Co-leader of analysis group searching for exotic, light spin-$1$ and
   spin-$0$ particles decaying to
-  quarks~\cite{Sirunyan:2017nvi,Sirunyan:2018ikr,Sirunyan:2019sgo,Sirunyan:2019vxa} (\textit{2017--2019}).
+  quarks~\cite{Sirunyan:2019vxa,Sirunyan:2019sgo,Sirunyan:2018ikr,Sirunyan:2017nvi} (\textit{2017--2019}).
 %\begin{itemize}
 %\item I lead a group of professors, postdocs, and graduate students
 %  from Fermilab, MIT, Rutgers, Johns Hopkins, and Brown, which use shared techniques like jet
@@ -257,7 +261,7 @@ Level-1 trigger (\emph{2017--Present}).
 %  mass range between $50$ and $350\GeV$~\cite{Sirunyan:2018ikr}.
 %\end{itemize}
 
-\textbf{Dijet Resonances.} Co-leader of dijet resonance search group, including data scouting, wide resonance, and $\PQb$-tagged resonance searches~\cite{Sirunyan:2016iap,Sirunyan:2018xlo,CMS-PAS-EXO-17-026,Duarte:2018bsd,Sirunyan:2019vgj,Sirunyan:2019pnb} (\textit{2016--2018}).
+\textbf{Dijet Resonances.} Co-leader of dijet resonance search group, including data scouting, wide resonance, and $\PQb$-tagged resonance searches~\cite{Sirunyan:2019pnb,Sirunyan:2019vgj,CMS-PAS-EXO-17-026,Duarte:2018bsd,Sirunyan:2018xlo,Sirunyan:2016iap} (\textit{2016--2018}).
 %\begin{itemize}
 %\item Developer of the 2017 CMS data scouting triggers, streams, and data sets.
 %\item Developer of statistical analysis framework for dijet resonance searches.
@@ -299,7 +303,7 @@ track trigger (\textit{2016--2017}).
 %\end{itemize}
 
 \textbf{SUSY Phenomenology.} Development of a simplified model~\cite{Duarte:2017bbq}
-  for bottom-squark-mediated Higgs$+$jet production used to interpret a
+  for bottom-squark-mediated Higgs+jet production used to interpret a
   CMS search for supersymmetry with $\PH\to\gamma\gamma$
   decays~\cite{Sirunyan:2017eie} (\textit{2015--2016}).
 
@@ -396,7 +400,7 @@ razor variables for Run 2 of the LHC at 13 TeV  (\textit{2014--2016}).
 %\clearpage
 \MarginText{Selected Publications and Products}
 \vspace{10pt}
-\printbibliography[heading=none]
+\printbibliography[heading=none,sorting=ynt]
 
 %----------------------------------------------------------------------------------------
 %	TEACHING
@@ -597,6 +601,8 @@ Joint Experimental-Theoretical Physics Seminar (Wine \& Cheese). December 14, 20
 
 \MarginText{Service and Committee Work}
 
+French National Research Agency (ANR) external reviewer (\textit{2020})
+
 Scientific organizing committee for \href{http://www.ncsa.illinois.edu/Conferences/AcceleratedAINCSA/}{Accelerated Artificial Intelligence for Big-Data Experiments Conference} (2020) at NCSA
 
 Nuclear Instruments and Methods in Physics Research Section A (NIMA): Accelerators, Spectrometers, Detectors and Associated Equipment peer reviewer (\textit{2020})
@@ -605,7 +611,7 @@ Graduate admissions committee for UC San Diego Physics Department (\textit{2019-
 
 European Physics Journal C (Eur. Phys. J. C) peer reviewer (\textit{2019})
 
-European Science Foundation (ESF) external reviewer (\textit{2019})
+European Science Foundation (ESF) external reviewer (\textit{2018--Present})
 
 Local organizing committee for \href{https://indico.cern.ch/e/fml}{Fast ML} workshop at Fermilab LPC (\textit{2019})
 
@@ -620,6 +626,14 @@ Analysis review committees for several CMS analyses: a \href{http://arxiv.org/ab
 Local organizing committee for \href{http://dshep.fnal.gov}{DS@HEP 2017} workshop at Fermilab and development of public data set based on CMS open data for boosted object tagging with machine learning applications
 
 Local organizing committee for \href{https://indico.cern.ch/event/639314/}{LHC Reinterpretation 2017} workshop at Fermilab LPC
+
+
+\MarginText{Professional Memberships}
+
+American Physical Society member (\textit{2020})
+
+Society of Hispanic Professional Engineers (\textit{2018--2019})
+
 
 % %----------------------------------------------------------------------------------------
 % % CMS INTERNAL WORK
