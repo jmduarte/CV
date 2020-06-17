@@ -5,6 +5,7 @@ cv_duarte_javier:
 	biber cv_duarte_javier
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
+	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
 
 lint:
 	grep -E --color=always -r -i --include=\*.tex --include=\*.bib "(\b[a-zA-Z]+) \1\b" || true
