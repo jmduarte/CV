@@ -60,13 +60,9 @@
   \ifhyperref
     {\href{https://arxiv.org/\abx@arxivpath/#1}{%
         \nolinkurl{arXiv:#1}%
-        \iffieldundef{eprintclass}
-          {}
-          {\addspace\UrlFont{\mkbibbrackets{\thefield{eprintclass}}}}}}
+          }}
     {\nolinkurl{arXiv:#1}%
-      \iffieldundef{eprintclass}
-        {}
-        {\addspace\UrlFont{\mkbibbrackets{\thefield{eprintclass}}}}}}
+        }}
 \DeclareFieldAlias{eprint:arXiv}{eprint:arxiv}
 \DeclareFieldFormat[online]{date}{\mkbibparens{#1}\nopunct}
 \DeclareFieldFormat{doi}{%
