@@ -125,7 +125,6 @@
   \printfield{pages}%
   \newunit
 }
-
 \renewbibmacro*{institution+location+date}{%
   \setunit{\addspace}%
   \printtext[parens]{%
@@ -458,7 +457,7 @@
     \newunit\newblock
     \setunit{\addspace}%
     \printfield{year}%
-    \setunit{\addspace}%
+  \setunit{\addspace}%
     \iffieldundef{pages}
     {%
       \printfield{doi}%
