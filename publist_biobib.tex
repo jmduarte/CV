@@ -28,7 +28,7 @@
 
 \usepackage{hyperref} % Required for adding links	and customizing them
 %\hypersetup{colorlinks, breaklinks, urlcolor=NavyBlue, linkcolor=NavyBlue, citecolor=Plum}
-\hypersetup{colorlinks, breaklinks, urlcolor=Black, linkcolor=Black, citecolor=Black}
+\hypersetup{colorlinks=false, breaklinks, pdfborder = {0 0 0}}
 % Set link colors
 
 \newcommand*\publistbasestyle{phys}
@@ -68,8 +68,12 @@ biblabel=brackets,
   }%
 }%
 
-
-\renewbibmacro*{begentry}{\ifkeyword{career}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+\renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+\AtEveryBibitem{%
+  \ifkeyword{career}%
+    {\color{Maroon}}%
+    {}%
+  }
 
 %%% --- The following two lines are what needs to be added --- %%%
 \setcounter{biburllcpenalty}{7000}
