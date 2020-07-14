@@ -1,0 +1,154 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{res}
+
+
+\usepackage{palatino}%    Choose default roman font.  Others are times, pslatex, newcent, bookman, chancery
+\usepackage{mathpazo}%  Match
+\usepackage{helvet}%      Choose default sans serif
+
+\usepackage{simplemargins}
+\usepackage{slashed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{doi}
+
+
+%\reversemarginpar % Move the margin to the left of the page
+%\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textsc{\small#1}}}
+%% New command defining the margin text style
+%\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textbf{#1}}} % New command defining the margin text style
+\newcommand{\MarginText}[1]{\section{\textsc{#1}}\vspace{10pt}}
+
+%\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+%\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+
+%\renewcommand{\cvheadingfont}{\LARGE\color{Blue}} % Font color of your name at the top
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+%\hypersetup{colorlinks, breaklinks, urlcolor=NavyBlue, linkcolor=NavyBlue, citecolor=Plum}
+\hypersetup{colorlinks, breaklinks, urlcolor=Black, linkcolor=Black, citecolor=Black}
+% Set link colors
+
+\newcommand*\publistbasestyle{phys}
+\usepackage[style=publist,
+biblabel=brackets,
+    %backend=biber,
+ %   natbib,
+  %  style=numeric,
+   sorting=dt,
+   plauthorhandling=highlight,
+   plnumbered=reset,
+   nameorder=given-family
+]{biblatex}
+ \plauthorname[Javier]{Duarte}
+%\usepackage[%
+%style=phys,%
+%biblabel=brackets,%
+%chaptertitle=false,%
+%]
+%{biblatex}
+
+%\renewcommand*{\bibfont}{\small}
+\DeclareSourcemap{
+ \maps[datatype=bibtex,overwrite=true]{
+  \map{
+    \step[fieldsource=Collaboration, final=true]
+    \step[fieldset=usera, origfieldval, final=true]
+  }
+ }
+}
+
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+    \printfield{usera} Collaboration% \printnames{author}%
+  }%
+}%
+
+
+\renewbibmacro*{begentry}{\ifkeyword{career}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+% Name of your .bib file(s)
+%\usepackage[utf8]{inputenc}
+\addbibresource{bib_publications.bib}
+\addbibresource{bib_proceedings.bib}
+\addbibresource{bib_workinprogress.bib}
+\addbibresource{bib_other.bib}
+
+\newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
+
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.5em}} % Add some white space after each new entry
+
+%\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\small{#1}\par\normalsize\vspace{.5em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+
+\newcommand{\Description[1]}{\noindent #1\vspace{-2pt}}
+
+\usepackage{pennames}
+\usepackage{ptdr-definitions}
+
+\newcommand{\MR}{\ensuremath{M_\mathrm{R}}\xspace}
+\newcommand{\MRz}{\ensuremath{M_\mathrm{R}^0}\xspace}
+\newcommand{\Rtwo}{\ensuremath{\mathrm{R}^2}\xspace}
+\newcommand{\Rtwoz}{\ensuremath{\mathrm{R}^2_0}\xspace}
+%\usepackage{fullpage}
+
+
+\newsectionwidth{10pt} % Stops section indenting
+
+\setallmargins{1in}
+%\setrightmargin{1in}
+
+\begin{document}
+%\thispagestyle{empty} % Stop the page count at the bottom of the first page
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\address{}
+\address{}
+
+\begin{resume}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+%\clearpage
+\MarginText{A.I.a. Research Articles}
+\newrefsection[bib_publications]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none]
+\clearpage
+
+\MarginText{A.IV. Refereed Conference Proceedings}
+\newrefsection[bib_proceedings]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none]
+\clearpage
+
+\MarginText{B.IV. Additional Products of Major Research}
+\newrefsection[bib_other]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none]
+\clearpage
+
+\MarginText{C. Work In Progress}
+\newrefsection[bib_workinprogress]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none]
+\clearpage
+
+\end{resume}
+
+\end{document}
