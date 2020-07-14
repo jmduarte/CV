@@ -34,6 +34,7 @@ jobs:
       run: |
         mkdir -p docs/_build
         cp cv_duarte_javier.pdf docs/_build/cv_duarte_javier.pdf
+        cp publist_biobib.pdf docs/_build/publist_biobib.pdf
     - name: Deploy build to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
