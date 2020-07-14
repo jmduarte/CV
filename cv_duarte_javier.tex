@@ -19,7 +19,7 @@
 %\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textsc{\small#1}}}
 %% New command defining the margin text style
 %\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textbf{#1}}} % New command defining the margin text style
-\newcommand{\MarginText}[1]{\section{\textsc{#1}}\vspace{10pt}}
+\newcommand{\MarginText}[1]{\section{#1}\vspace{10pt}}
 
 %\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
 %\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
@@ -73,6 +73,7 @@ biblabel=brackets,
 % Name of your .bib file(s)
 %\usepackage[utf8]{inputenc}
 \addbibresource{bib_publications.bib}
+\addbibresource{bib_refproceedings.bib}
 \addbibresource{bib_proceedings.bib}
 \addbibresource{bib_workinprogress.bib}
 \addbibresource{bib_other.bib}
@@ -120,6 +121,7 @@ email: \href{mailto:jduarte@ucsd.edu}{jduarte@ucsd.edu}\\
 web: \href{https://jduarte.physics.ucsd.edu/}{https://jduarte.physics.ucsd.edu}\\
 phone: (858) 246-4980}
 
+\newcommand{\DOI}[1]{\href{https://doi.org/#1}{doi:#1}}
 \begin{resume}
 
 %----------------------------------------------------------------------------------------
@@ -481,7 +483,7 @@ Particle Physics Computing.''} Machine Learning and the Physical Sciences Worksh
 
 \href{https://physics.drupal.ku.edu/calendar/colloquia#/?i=2}{Department of Physics and Astronomy Colloquium}. November 11, 2019. University of Kansas, Lawrence, KS, USA.
 
-\href{http://physics.bu.edu/events/show/2204}{High Energy Experiment Seminar}. October 10, 2019. Boston University
+\href{http://physics.bu.edu/events/show/2204}{High Energy Experiment Seminar}. October 10, 2019. Boston University, Boston, MA, USA.
 
 \href{https://escience2019.sdsc.edu/program}{``Machine
   learning on FPGAs for low-latency and high-throughput inference.''}
@@ -491,11 +493,11 @@ eScience 2019. September 24–27, 2019. San Diego, CA, USA.
 
 \href{https://indico.cern.ch/event/687651/contributions/3428206/}{``Machine
   learning using CERN Open Data.''} LHCP 2019. May
-  20-25, 2019. Benem\'{e}rita Universidad Aut\'{o}noma de Puebla, Pubela, Mexico.
+  20-25, 2019. Benem\'{e}rita Universidad Aut\'{o}noma de Puebla, Puebla, Mexico.
 
 \href{https://indico.cern.ch/event/687651/contributions/3426898/}{``Dark
   sector searches in CMS.''} LHCP 2019. May
-  20-25, 2019. Benem\'{e}rita Universidad Aut\'{o}noma de Puebla, Pubela, Mexico.
+  20-25, 2019. Benem\'{e}rita Universidad Aut\'{o}noma de Puebla, Puebla, Mexico.
 
 \href{https://indico.cern.ch/event/742793/contributions/3274392/}{``FPGA-accelerated
   machine learning inference for particle physics.''} Connecting the
@@ -530,12 +532,10 @@ Joint Experimental-Theoretical Physics Seminar (Wine \& Cheese). December 14, 20
 
 \href{https://indico.fnal.gov/event/16908/}{``Fast inference of deep neural networks in FPGAs for particle physics.''} Research Techniques Seminar. April 24, 2018. Fermilab, Batavia, IL, USA.
 
-\href{https://indico.cern.ch/event/658267/contributions/2881127/}{``Fast Reconstruction and Data Scouting.''} Plenary oral
-  presentation. Connecting the Dots 2018. March 20-22,
+\href{https://indico.cern.ch/event/658267/contributions/2881127/}{``Fast Reconstruction and Data Scouting.''} Connecting the Dots 2018. March 20-22,
   2018. University of Washington, Seattle, WA, USA.
 
-\href{http://www.thphys.uni-heidelberg.de/~higgs/talks/duarte.pdf}{``Boosted Higgs in CMS.''} Oral
-  presentation. Higgs Couplings 2017. November 6-10, 2017. Heidelberg
+\href{http://www.thphys.uni-heidelberg.de/~higgs/talks/duarte.pdf}{``Boosted Higgs in CMS.''} Higgs Couplings 2017. November 6-10, 2017. Heidelberg
   University, Heidelberg, Germany.
 
 \href{https://indico.hep.caltech.edu/indico/conferenceDisplay.py?confId=149}{``Unlocking the potential of CMS data: boosted Higgs, low-mass dijet resonances, and data scouting.''} High Energy Physics Seminar. October 30, 2017. Caltech, Pasadena, CA, USA.
@@ -568,13 +568,11 @@ Joint Experimental-Theoretical Physics Seminar (Wine \& Cheese). December 14, 20
   23-25, 2017. University of Pittsburgh, Pittsburgh, PA, USA.
 
 \href{https://indico.cern.ch/event/443176/contributions/2148316/}{``Inclusive
-    searches for SUSY using the razor variables in CMS.''} Oral
-  presentation. SUSY 2016. July 3-8, 2016. The University of Melbourne,
+    searches for SUSY using the razor variables in CMS.''} SUSY 2016. July 3-8, 2016. The University of Melbourne,
   Melbourne, Australia.
 
 \href{https://indico.cern.ch/event/443176/contributions/2154549/}{``Searches
-    for BSM physics in dijet and multijet final states at CMS.''} Oral
-  presentation. SUSY 2016. July 3-8, 2016. The University of Melbourne,
+    for BSM physics in dijet and multijet final states at CMS.''} SUSY 2016. July 3-8, 2016. The University of Melbourne,
   Melbourne, Australia.
 
 \href{https://indico.cern.ch/event/331032/contributions/1720249/}{``Third

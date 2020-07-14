@@ -19,7 +19,7 @@
 %\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textsc{\small#1}}}
 %% New command defining the margin text style
 %\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textbf{#1}}} % New command defining the margin text style
-\newcommand{\MarginText}[1]{\section{\textsc{#1}}\vspace{10pt}}
+\newcommand{\MarginText}[1]{\section{#1}\vspace{10pt}}
 
 %\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
 %\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
@@ -81,6 +81,7 @@ biblabel=brackets,
 % Name of your .bib file(s)
 %\usepackage[utf8]{inputenc}
 \addbibresource{bib_publications.bib}
+\addbibresource{bib_refproceedings.bib}
 \addbibresource{bib_proceedings.bib}
 \addbibresource{bib_workinprogress.bib}
 \addbibresource{bib_other.bib}
@@ -119,6 +120,7 @@ biblabel=brackets,
 \address{}
 \address{}
 
+\newcommand{\DOI}[1]{\href{https://doi.org/#1}{doi:#1}}
 \begin{resume}
 
 %----------------------------------------------------------------------------------------
@@ -133,6 +135,14 @@ biblabel=brackets,
 \clearpage
 
 \MarginText{A.IV. Refereed Conference Proceedings}
+\newrefsection[bib_refproceedings]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none]
+\clearpage
+
+
+\MarginText{B.I. Other Conference Proceedings}
 \newrefsection[bib_proceedings]
 \nocite{*}
 \vspace{10pt}
