@@ -22,6 +22,10 @@ jobs:
       with:
        repository: coherentgraphics/cpdf-binaries
        path: cpdf-binaries
+    - name: Add cpdf to PATH
+      run: |
+        echo "::add-path::$GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit"
+        chmod +x $GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit/cpdf
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -33,11 +37,6 @@ jobs:
         args: |
           -c "\
           apk --no-cache add make && \
-          export PATH=$PATH:$GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit && \
-          echo $PATH && \
-          ls -lhtra && \
-          ls -lhtra * && \
-          ls -lhtra */* && \
           make tex"
     - name: List directory contents
       run: ls -lhtra
