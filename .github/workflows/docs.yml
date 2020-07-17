@@ -15,12 +15,13 @@ jobs:
         python-version: [ '3.7' ]
 
     steps:
-    - name: Checkout repo
+    - name: Checkout CV
       uses: actions/checkout@v2
     - name: Checkout cpdf
       uses: actions/checkout@v2
       with:
        repository: coherentgraphics/cpdf-binaries
+       path: cpdf-binaries
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
