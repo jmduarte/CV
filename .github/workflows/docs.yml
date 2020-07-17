@@ -27,7 +27,7 @@ jobs:
         args: |
           -c "\
           apk --no-cache add make && \
-	  git clone https://github.com/coherentgraphics/cpdf-binaries && \
+          git clone https://github.com/coherentgraphics/cpdf-binaries && \
           make tex"
     - name: List directory contents
       run: ls -lhtra
@@ -36,6 +36,7 @@ jobs:
         mkdir -p docs/_build
         cp cv_duarte_javier.pdf docs/_build/cv_duarte_javier.pdf
         cp publist_biobib.pdf docs/_build/publist_biobib.pdf
+        cp PersonalStatement2021.pdf docs/_build/PersonalStatement2021.pdf
     - name: Deploy build to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
