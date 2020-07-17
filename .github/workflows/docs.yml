@@ -39,7 +39,7 @@ jobs:
           apk --no-cache add make && \
           make tex"
     - name: Clip pdf
-        run: cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
+      run: cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
     - name: List directory contents
       run: ls -lhtra
     - name: Setup build for deployment
