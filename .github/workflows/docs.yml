@@ -28,6 +28,9 @@ jobs:
           -c "\
           apk --no-cache add make git && \
           git clone https://github.com/coherentgraphics/cpdf-binaries.git cpdf-binaries && \
+          echo $PATH && \
+          export PATH=$PWD/cpdf-binaries/Linux-Intel-64bit:$PATH && \
+          echo $PATH && \
           ls -lhtra && \
           ls -lhtra * && \
           ls -lhtra */* && \
