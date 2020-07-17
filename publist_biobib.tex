@@ -95,8 +95,9 @@ biblabel=brackets,
 
 \newcommand{\Description[1]}{\noindent #1\vspace{-2pt}}
 
-\usepackage{pennames}
+\usepackage[pazoGreek]{heppennames2}
 \usepackage{ptdr-definitions}
+
 
 \newcommand{\MR}{\ensuremath{M_\mathrm{R}}\xspace}
 \newcommand{\MRz}{\ensuremath{M_\mathrm{R}^0}\xspace}
@@ -127,36 +128,38 @@ biblabel=brackets,
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 %\clearpage
-\MarginText{A.I.a. Research Articles}
+\setcounter{page}{5}
+\MarginText{A. PRIMARY PUBLISHED OR CREATIVE WORK}
+\subsection{I. Original Peer-Reviewed Work or Listing of Creative Endeavors}
+\subsubsection{a. Research Articles}
 \newrefsection[bib_publications]
 \nocite{*}
 \vspace{10pt}
 \printbibliography[heading=none]
-\clearpage
 
-\MarginText{A.IV. Refereed Conference Proceedings}
+\subsection{IV. Refereed Conference Proceedings}
 \newrefsection[bib_refproceedings]
 \nocite{*}
 \vspace{10pt}
 \printbibliography[heading=none]
-\clearpage
 
-
-\MarginText{B.I. Other Conference Proceedings}
+\MarginText{B. OTHER WORK}
+\subsection{I. Other Conference Proceedings}
 \newrefsection[bib_proceedings]
 \nocite{*}
 \vspace{10pt}
 \printbibliography[heading=none]
-\clearpage
 
-\MarginText{B.IV. Additional Products of Major Research}
+\subsection{II. Abstracts}
+\subsection{III. Popular Works}
+\subsection{IV. Additional Products of Major Research}
 \newrefsection[bib_other]
 \nocite{*}
 \vspace{10pt}
 \printbibliography[heading=none]
-\clearpage
 
-\MarginText{C. Work In Progress}
+\MarginText{C. WORK IN PROGRESS}
+\vspace{10pt}
 \newrefsection[bib_workinprogress]
 \nocite{*}
 \vspace{10pt}

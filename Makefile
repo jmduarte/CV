@@ -1,4 +1,4 @@
-tex: cv_duarte_javier publist_biobib
+tex: cv_duarte_javier publist_biobib PersonalStatement2021
 
 cv_duarte_javier:
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
@@ -14,6 +14,14 @@ publist_biobib:
 	pdflatex -interaction=nonstopmode -synctex=-1 publist_biobib
 	pdflatex -interaction=nonstopmode -synctex=-1 publist_biobib
 
+PersonalStatement2021:
+	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
+	biber PersonalStatement2021
+	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
+	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
+	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
+	./cpdf-binaries/OSX-Intel/cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
+
 lint:
 	grep -E --color=always -r -i --include=\*.tex --include=\*.bib "(\b[a-zA-Z]+) \1\b" || true
 
@@ -25,4 +33,5 @@ clean:
 	find . -type f -name '*.aux' -delete
 
 realclean: clean
-	rm -f cv_duarte_javier*.ps cv_duarte_javier*.pdf publist_biobib*.ps publist_biobib*.pdf
+	rm -f cv_duarte_javier*.ps cv_duarte_javier*.pdf publist_biobib*.ps publist_biobib*.pdf PersonalStatement2021*.ps PersonalStatement2021*.pdf
+
