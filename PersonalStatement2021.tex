@@ -1,0 +1,196 @@
+\documentclass[ucsd,cs,11pt]{ucletter}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{lmodern}
+
+\usepackage[pazoGreek]{heppennames2}
+\usepackage{ptdr-definitions}
+
+\hypersetup{colorlinks=false, breaklinks, pdfborder = {0 0 0}}
+
+
+\newcommand*\publistbasestyle{phys}
+\usepackage[style=publist,
+biblabel=brackets,
+    %backend=biber,
+ %   natbib,
+  %  style=numeric,
+   sorting=dt,
+   plauthorhandling=highlight,
+   plnumbered=reset,
+   nameorder=given-family
+]{biblatex}
+ \plauthorname[Javier]{Duarte}
+%\usepackage[%
+%style=phys,%
+%biblabel=brackets,%
+%chaptertitle=false,%
+%]
+%{biblatex}
+
+%\renewcommand*{\bibfont}{\small}
+\DeclareSourcemap{
+ \maps[datatype=bibtex,overwrite=true]{
+  \map{
+    \step[fieldsource=Collaboration, final=true]
+    \step[fieldset=usera, origfieldval, final=true]
+  }
+ }
+}
+
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+    \printfield{usera} Collaboration% \printnames{author}%
+  }%
+}%
+
+
+ \renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+% Name of your .bib file(s)
+%\usepackage[utf8]{inputenc}
+\addbibresource{bib_publications.bib}
+\addbibresource{bib_refproceedings.bib}
+\addbibresource{bib_proceedings.bib}
+\addbibresource{bib_workinprogress.bib}
+\addbibresource{bib_other.bib}
+
+
+\name{Javier Duarte\\
+  Assistant Professor of Physics\\
+  University of California San Diego\\
+  \href{mailto:jduarte@ucsd.edu}{jduarte@ucsd.edu}}
+\telephone{}
+\email{}
+
+\begin{document}
+\begin{letter}{
+  Distinguished Professor M. Brian Maple\\
+  Chair of the Department of Physics\\
+  University of California San Diego
+}
+\opening{Dear Professor Maple,}
+
+Below, I descibe my contributions to research, teaching, service, and equity, diversity and inclusion since my appointment on July 1, 2019.
+Enclosed is also a selected bibliography for papers to which I have contributed significantly.
+
+\textbf{Research}
+
+My research focuses on (1) searches for and measurements of Higgs bosons decaying to quarks with large transverse momentum ($\pt$), (2) searches for exotic new physics involving jets, and (3) developing machine learning (ML) algorithms to enable these physics results and improve the real-time LHC event selection in the trigger.
+
+%As a member of a large collaboration such as CMS, I am an author of every physics paper.
+Within the CMS Collaboration, I led the search for high-$\pt$ Higgs bosons decaying to bottom quark-antiquark pairs ($\bbbar$)~[\textbf{C.1}], which is now submitted to \emph{J. High Energy Phys}.
+This search is unique because it probes the $\pt$ spectrum of the Higgs boson above 1~TeV and uses deep learning techniques that I developed to better identify its decays relative to a previous search that I also led~[\textbf{A.I.a.573}].
+For this current work, I was the contactperson (first author within the collaboration) with responsibilities including writing the paper and responding to internal and external reviews.
+I directly supervised the small team of graduate students and postdoctoral researchers working on the analysis and developed parts of the analysis framework and statistical tools used.
+During this review period, I have also made significant contributions to several other CMS publications involving jet-based searches for new physics~[\textbf{A.I.a.820}, \textbf{A.I.a.821}, \textbf{A.I.a.869}, \textbf{A.I.a.880}] through development of the analysis framework and statistical analysis tools used, mentorship of the graduate students involved, significant reviews of the methods, and coordination of the small analysis teams including organizing weekly meetings.
+
+In terms of scientific management, I serve as the co-convener of the CMS physics analysis subgroup for exotic physics searches with jets in the final state.
+In this capacity, I coordinated biweekly subgroup meetings, reviewed in detail and ``signed-off'' on each analysis, and helped shepherd toward publication six CMS papers, with at least five others in the pipeline.
+Finally, as a member of the CMS Collaboration, I am an author of all CMS publications since 2011 that are listed in my complete bibliography.
+A number of these works benefit from my indirect contributions in the form of my development of deep neural networks for Higgs boson identification and b-tagging, trigger algorithms, and statistical analysis tools within CMS.
+
+Outside of the CMS Collaboration, my research has focused on developing new ML algorithms for particle physics and efficiently implementing them on field-programmable gate arrays (FPGAs).
+This work is done in collaboration with a relatively small number of co-authors and I made significant intellectual, technical, and writing contributions to these papers.
+The novel ML algorithms I helped develop in Ref.~[\textbf{A.I.a.826}, \textbf{A.I.a.875}] focus on improving the identification of jets, especially those produced by Higgs bosons.
+In Ref.~[\textbf{A.I.a.826}, \textbf{A.I.a.875}], I helped conceptualize the ML algorithms, directly supervised the undergraduate student, who is first author, performing the studies, and I was the corresponding author.
+I have also contributed to the design, implementation, and study of fast ML algorithms on FPGAs for particle physics~[\textbf{A.I.a.796}, \textbf{A.I.a.864}, \textbf{A.I.a.872}].
+In Ref.~[\textbf{A.I.a.796}], I developed and trained the top quark identification algorithm based on the ResNet-50 convolutional neural network that we used to benchmark the acceleration with FPGA coprocessing as a service.
+In Ref.~[\textbf{A.I.a.864}, \textbf{A.I.a.872}], we extended the software/firmware compiler framework called \texttt{hls4ml}~[\textbf{A.I.a.645}], which I helped create, to include new implementations of boosted decision trees and binary and ternary neural networks.
+I reviewed and tested these implementations and made major contributions to writing the manuscripts.
+The goal of this work is to realize advanced artificial intellgience (AI) techniques in the low-latency, resource-constrained environment of the trigger.
+
+I have also begun building a research group, including two graduate students, Raghav Kansal (year 1) and Farouk Mokhtar (incoming) and two undergraduate students, Steven Tsan (year 3, Computer Science) and Vesal Razavimaleki (year 3, Engineering Physics).
+I have helped both of the undergraduate students secure funding for their summer research projects through the Triton Research and Experiential Learning Scholars (TRELS) program (\$5,000 stipend) and an IRIS-HEP fellowship (\$6,000 stipend).
+I am also in the process of recruiting a postdoctoral researcher.
+
+I devoted substantial effort to securing external funding by submitting several applications to the NSF and the DOE, three of which have been funded during this review period.
+One is from the NSF for a new AI-centric supercomputer at SDSC ``Category II: Exploring Neural Network Processors for AI in Science and Engineering'' (\$5,000,000).
+The second is a sub-award from Internet2's NSF grant for ``Investigating Heterogeneous Computing at the Large Hadron Collider'' (\$721,000 total with \$500,000 in cloud computing credits shared among the team).
+This project involves deploying heterogeneous computing resources in the cloud at scale for LHC event reconstruction.
+Finally, the third is a DOE Early Career Award for ``Real-Time Artificial Intelligence for Particle Reconstruction and Higgs Physics'' (\$750,000 over five years).
+As part of this latter award, I plan to design, test, and validate FPGA-based real-time ML algorithms that improve particle, jet, and missing transverse energy reconstruction in the trigger.
+I also plan to initate new CMS data analyses for high-$\pt$ Higgs bosons decaying to $\PW$ bosons.
+% and exotic long-lived particles.
+%Students will have the opportunity to use this to learn about the trigger and develop new algorithms.
+
+\textbf{Teaching}
+
+During the spring quarter 2020, I taught Physics 2C to 350 students.
+I adopted a ``flipped classroom'' format with readings and conceptual homework assignments due prior to each lecture.
+During the lecture, I would then briefly review the material from the readings and the homework using the document camera to write notes, focusing on conceptually challenging issues.
+I used a student response system (iClicker) to promote active learning, engage the students, and better understand the difficulties that they were having with the material.
+I used the ETS podcasting service to ensure students could view the lecture even if they could not attend in person.
+To facilitate learning outside of the classroom, my team of TAs and I quickly responded to students questions on Piazza.
+On the forum, there were 376 posts consisting of 1,359 total contributions, and an average response time of 25 minutes (See \url{https://piazza.com/demo_login?nid=k2kxqrgmz9e75y&auth=cd03ae6}).
+Finally, because of the COVID-19 pandemic, I decided to have a no-fault online final exam.
+Overall, I received good ratings in the CAPES evaluations with 63.7\% of the class responding, 89.4\% recommending the course, and 98.1\% recommending me as the instructor.
+
+In fall quarter 2020, I will lead the Physics 191 undergraduate seminar course and act as a scientific domain mentor for DSC 180A, the first quarter of the data science capstone project course.
+In winter quater 2021, I plan to teach Physics 4A together with Brian Shotwell and continue assisting with DSC 180B, while in spring quarter 2021, I plan to teach Physics 2C.
+
+\textbf{Service}
+
+During 2019--2020 academic year, I served on the Physics Department Graduate Admissions Committee.
+This included carefully reviewing and scoring 107 graduate applications.
+As an invited faculty speaker, I spoke at the Young Physicists Program (YPP).
+
+In terms of service more broadly, I have served as a peer reviewer for \emph{Eur. Phys. J. C} and \emph{Nucl. Instrum. Methods Phys. Res. A}.
+I have also served as an external reviewer for European Science Foundation and the French National Research Agency.
+I am actively paricipating in the Snowmass 2021 process, which defines the priorites for the US HEP program for the next decade.
+
+\textbf{Equity, Diversity, and Inclusion}
+
+After speaking at the YPP program, I was interested in how to increase participation from underrepresented and underserved communities in San Diego.
+Thus, I met with the CREATE STEM Success Initative (CSSI) team to discuss how to increase this participation to YPP, including acquiring funding from NSF grants for providing transportation to our program.
+Unfortunately, the COVID-19 pandemic halted these initiatives temporarily as the YPP program was suspended.
+Within a US CMS program, I am mentoring a Latinx graduate student (Daniel Guerrero) through biweekly chats, and independently I am mentoring an undegraduate student (Daniel Gaytan) from the University of Sonora in Mexico.
+On Wednesday June 10, 2020, I participated in a discussion with colleagues in the Physics Department toward addressing the existing inequalities within our department and new initiatives to address them.
+
+\closing{Sincerely}
+\end{letter}
+
+\newrefsection[bib_publications]
+
+\nocite{*}
+\printbibliography[heading=none]
+\clearpage
+
+\setcounter{page}{4}
+
+\Large
+\textbf{A.I.a. Research Articles}
+\vspace{10pt}
+\printbibliography[heading=none,keyword=career]
+
+\textbf{A.IV. Refereed Conference Proceedings}
+\newrefsection[bib_refproceedings]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none,keyword=career]
+
+\textbf{B.I. Other Conference Proceedings}
+\newrefsection[bib_proceedings]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none,keyword=career]
+
+\textbf{B.IV. Additional Products of Major Research}
+\newrefsection[bib_other]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none,keyword=career]
+
+\textbf{C. Work In Progress}
+\newrefsection[bib_workinprogress]
+\nocite{*}
+\vspace{10pt}
+\printbibliography[heading=none,keyword=career]
+
+\end{document}

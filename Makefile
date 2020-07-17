@@ -20,7 +20,7 @@ PersonalStatement2021:
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
-	./cpdf-binaries/OSX-Intel/cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
+	./cpdf-binaries/Linux-Intel-64bit/cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
 
 lint:
 	grep -E --color=always -r -i --include=\*.tex --include=\*.bib "(\b[a-zA-Z]+) \1\b" || true
