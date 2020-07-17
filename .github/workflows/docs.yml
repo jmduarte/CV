@@ -20,16 +20,18 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+     - name: Checkout cpdf
+       uses: actions/checkout@v2
+       with:
+        repository: coherentgraphics/cpdf-binaries
     - name: Compile CV LaTeX
       uses: docker://xucheng/texlive-full:latest
       with:
         entrypoint: /bin/sh
         args: |
           -c "\
-          apk --no-cache add make git && \
-          git clone https://github.com/coherentgraphics/cpdf-binaries.git cpdf-binaries && \
-          echo $PATH && \
-          export PATH=$PWD/cpdf-binaries/Linux-Intel-64bit:$PATH && \
+          apk --no-cache add make && \
+          export PATH=$PATH:$GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit && \
           echo $PATH && \
           ls -lhtra && \
           ls -lhtra * && \
