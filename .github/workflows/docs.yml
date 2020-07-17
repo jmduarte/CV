@@ -28,6 +28,8 @@ jobs:
           -c "\
           apk --no-cache add make git && \
           git clone https://github.com/coherentgraphics/cpdf-binaries && \
+          ls -lhtra * && \
+          ls -lhtra */* && \
           make tex"
     - name: List directory contents
       run: ls -lhtra
