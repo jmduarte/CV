@@ -27,7 +27,8 @@ jobs:
         args: |
           -c "\
           apk --no-cache add make git && \
-          git clone https://github.com/coherentgraphics/cpdf-binaries && \
+          git clone https://github.com/coherentgraphics/cpdf-binaries.git cpdf-binaries && \
+          ls -lhtra && \
           ls -lhtra * && \
           ls -lhtra */* && \
           make tex"
