@@ -20,6 +20,8 @@ PersonalStatement2021:
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
+
+clip:
 	cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
 
 lint:
