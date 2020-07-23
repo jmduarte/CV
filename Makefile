@@ -21,6 +21,9 @@ PersonalStatement2021:
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 	pdflatex -interaction=nonstopmode -synctex=-1 PersonalStatement2021
 
+VerbiageChair2021:
+		pdflatex -interaction=nonstopmode -synctex=-1 VerbiageChair2021
+		
 clip:
 	cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
 
@@ -36,4 +39,3 @@ clean:
 
 realclean: clean
 	rm -f cv_duarte_javier*.ps cv_duarte_javier*.pdf publist_biobib*.ps publist_biobib*.pdf PersonalStatement2021*.ps PersonalStatement2021*.pdf
-
