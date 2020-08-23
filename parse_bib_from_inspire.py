@@ -40,11 +40,11 @@ with open('INSPIRE-CiteAll.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 # get entries not on INSPIRE
-with open('NOT_ON_INSPIRE.BIB') as bibtex_file:
-    bib_database_more = bibtexparser.load(bibtex_file)
-
-# combine them
-bib_database.entries.extend(bib_database_more.entries)
+if os.path.isfile('NOT_ON_INSPIRE.bib'):
+    with open('NOT_ON_INSPIRE.bib') as bibtex_file:
+        bib_database_more = bibtexparser.load(bibtex_file)
+    # combine them
+    bib_database.entries.extend(bib_database_more.entries)
 
 # prepare empty databases for proceedings and other
 bib_database_other = copy.deepcopy(bib_database)
