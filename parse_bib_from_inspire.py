@@ -11,6 +11,7 @@ epjc_names = ['Eur. Phys. J. C', 'EPJ C', 'EPJC']
 prev_names = ['PRL', 'PRD', 'PRC', 'Phys. Rev. Lett.', 'Phys. Rev. D', 'Phys. Rev. C']
 plb_names = ['Phys. Lett. B', 'PLB']
 csbs_names = ['Comput. Softw. Big Sci.', 'CSBS']
+sci_names = ['Science']
 jinst_names = ['JINST', 'J. Instrum.']
 nima_names = ['Nucl. Instrum. Meth. A', 'Nucl. Instrum. Methods Phys. Res. A']
 
@@ -116,7 +117,7 @@ for l in t:
             pub = 'published-online'
             l['year'] = str(record[pub]['date-parts'][0][0])
             l['month'] = str(record[pub]['date-parts'][0][1])
-    elif l['journal'] in prev_names+csbs_names+jinst_names:
+    elif l['journal'] in prev_names+csbs_names+jinst_names+sci_names:
         record = works.doi(l['doi'])
         pub = 'published-online'
         l['year'] = str(record[pub]['date-parts'][0][0])
@@ -128,9 +129,9 @@ for l in t:
         l['month'] = str(record[pub]['date-parts'][0][1])
 
 # export 3 bib files (publications, proceedings, other)
-with open('bib_publications.bib', 'w') as bibtex_file:
+with open('INSPIRE_publications.bib', 'w') as bibtex_file:
     bibtexparser.dump(bib_database, bibtex_file)
-with open('bib_proceedings.bib', 'w') as bibtex_file:
+with open('INSPIRE_proceedings.bib', 'w') as bibtex_file:
     bibtexparser.dump(bib_database_proceedings, bibtex_file)
-with open('bib_other.bib', 'w') as bibtex_file:
+with open('INSPIRE_other.bib', 'w') as bibtex_file:
     bibtexparser.dump(bib_database_other, bibtex_file)
