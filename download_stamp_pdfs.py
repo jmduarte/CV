@@ -1,9 +1,18 @@
 import bibtexparser
 import requests
 import os
-import tqdm
 from articledownloader.articledownloader import ArticleDownloader
+import time
+from sys import platform
+
 downloader = ArticleDownloader(els_api_key='11acc1dbb49e1a44d49d46d48469a2f7')
+
+if platform == "linux" or platform == "linux2":
+    cpdf = './cpdf-binaries/Linux-Intel-64bit/cpdf'
+elif platform == "darwin":
+    cpdf = './cpdf-binaries/OSX-Intel/cpdf'
+elif platform == "win32":
+    cpdf = './cpdf-binaries/Windows32bit/cpdf.exe'
 
 aux_lines = []
 with open('publist_biobib.aux') as aux_file:
@@ -13,16 +22,20 @@ with open('bib_publications.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 article_dir = 'Journal_Articles'
+os.makedirs(article_dir,exist_ok=True)
 
-t = tqdm.tqdm(bib_database.entries, total = len(bib_database.entries))
-for l in t:
+for l in bib_database.entries:
+    print('Checking %s'%l['ID'])
     if 'doi' in l and 'keywords' in l and 'recent' in l['keywords']:
         name = ''
         for line in aux_lines:
             if 'bx@aux@number' in line and l['ID'] in line:
                 n = line.split('{')[-1][:-2]
                 name = 'A.I.a.'+n
-        if os.path.isfile('%s/%s.pdf'%(article_dir,name)): continue
+        if os.path.isfile('%s/%s.pdf'%(article_dir,name)) and os.path.getsize('%s/%s.pdf'%(article_dir,name))>0:
+            continue
+
+        print('Getting PDF URL for %s'%l['ID'])
         r = requests.get('https://doi.org/'+l['doi'])
         get_pdf_url = ''
         if 'https://link.springer.com/' in r.url:
@@ -38,6 +51,7 @@ for l in t:
             get_pdf_url = r.url+'/pdf'
         if get_pdf_url!='': l['pdf'] = get_pdf_url
 
+        print('Downloading %s'%l['ID'])
         stamp_page = 1
         if 'elsevier' in r.url:
             with open('%s/%s.pdf'%(article_dir,name), 'wb') as my_file:
@@ -47,20 +61,21 @@ for l in t:
             with open('%s/%s.pdf'%(article_dir,name), 'wb') as my_file:
                 b = downloader.get_pdf_from_doi(l['doi'], my_file, 'crossref')
         else:
-            command = 'curl -o %s/%s.pdf "%s"'%(article_dir,name,get_pdf_url)
-            print(command)
-            value = os.system(command)
-            if value!=0:
-                print("ERROR")
-                continue
-        command = './cpdf-binaries/OSX-Intel/cpdf -add-text "%s" -topright 20  %s/%s.pdf %i -o %s/%s_text.pdf'%(name,article_dir,name,stamp_page,article_dir,name)
-        value = os.system(command)
-        if value!=0:
-            print("ERROR")
-            continue
-        command = 'mv %s/%s_text.pdf %s/%s.pdf'%(article_dir,name,article_dir,name)
-        value = os.system(command)
-        if value!=0:
-            print("ERROR")
-            continue
+            response = requests.get(get_pdf_url, stream=True)
+            with open('%s/%s.pdf'%(article_dir,name), 'wb') as handle:
+                for data in response.iter_content():
+                    handle.write(data)
 
+        print('Stamping %s'%l['ID'])
+        command = '%s -add-text "%s" -topright 20  %s/%s.pdf %i -o %s/%s_text.pdf'%(cpdf, name,article_dir,name,stamp_page,article_dir,name)
+        value = os.system(command)
+        if value!=0:
+            print("Error stamping %s"%l['ID'])
+            continue
+        if stamp_page>1:
+            command = '%s %s/%s_text.pdf %i-end -o %s/%s.pdf'%(cpdf, article_dir,name,stamp_page,article_dir,name)
+        else:
+            command = 'mv %s/%s_text.pdf %s/%s.pdf'%(article_dir,name,article_dir,name)
+        value = os.system(command)
+
+        time.sleep(2)
