@@ -200,6 +200,16 @@
   \printfield{eid}%
 }
 
+\newbibmacro*{note}{%
+  \printfield{note}%
+  \newunit}
+
+  \newbibmacro*{pages}{%
+    \printfield{pages}%
+    \newunit}
+
+
+
 % New bibliography drivers, using the required order of fields. These
 % are mainly copied from standard.bbx then modified.
 \DeclareBibliographyDriver{article}{%
@@ -222,7 +232,7 @@
     \newunit
     \usebibmacro{byeditor+others}%
     \newunit
-    \usebibmacro{note+pages}%
+    \usebibmacro{pages}%
     \newunit\newblock
     \iftoggle{bbx:isbn}
       {\printfield{issn}}
@@ -241,6 +251,8 @@
     {\usebibmacro{related:init}%
      \usebibmacro{related}}
     {}%
+    \newunit\newblock
+    \usebibmacro{note}
   \usebibmacro{finentry}%
 }
 
