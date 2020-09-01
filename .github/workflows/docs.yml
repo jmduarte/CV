@@ -17,11 +17,7 @@ jobs:
     steps:
     - name: Checkout CV
       uses: actions/checkout@v2
-    - name: Checkout cpdf
-      uses: actions/checkout@v2
-      with:
-       repository: coherentgraphics/cpdf-binaries
-       path: cpdf-binaries
+      submodules: 'recursive'
     - name: Add cpdf to PATH
       run: |
         echo "::add-path::$GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit"
