@@ -17,7 +17,8 @@ jobs:
     steps:
     - name: Checkout CV
       uses: actions/checkout@v2
-      submodules: 'recursive'
+      with:
+        submodules: 'recursive'
     - name: Add cpdf to PATH
       run: |
         echo "::add-path::$GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit"
