@@ -68,6 +68,30 @@ biblabel=brackets,
   }%
 }%
 
+
+\DeclareSourcemap{
+    \maps[datatype=bibtex]{
+      \map{
+        \step[fieldsource=contributioncodes, final=true]
+        \step[fieldset=userb, origfieldval, final=true]
+    }
+  }
+}
+
+\DeclareFieldFormat{bold}{\mkbibbold{#1}}
+\renewbibmacro*{note}{%
+\iffieldundef{userb}{%
+\printfield{note}%
+}{%
+\iffieldundef{note}{%
+  \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+}{%
+  \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+ }%
+ }%
+\newunit%
+}
+
 \renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
 \AtEveryBibitem{%
   \ifkeyword{career}%

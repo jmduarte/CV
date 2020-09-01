@@ -37,7 +37,6 @@
       \setlength{\biblabelsep}{0 pt}%
     }%
 }
-
 % Alter settings that carry through from biblatex
 \ExecuteBibliographyOptions
   {
@@ -240,7 +239,7 @@
     \setunit{\addspace}%
     \printfield{year}%
   }%
-  \setunit{\addspace}%
+  \setunit{\addcomma\space}%
   \usebibmacro{doi+eprint+url}%
   \newunit\newblock
   \usebibmacro{addendum+pubstate}%
@@ -251,6 +250,7 @@
     {\usebibmacro{related:init}%
      \usebibmacro{related}}
     {}%
+    \setunit{\addcomma\space}%
     \newunit\newblock
     \usebibmacro{note}
   \usebibmacro{finentry}%
@@ -349,6 +349,9 @@
     {\usebibmacro{related:init}%
      \usebibmacro{related}}
     {}%
+    \setunit{\addcomma\space}%
+    \newunit\newblock
+    \usebibmacro{note}
   \usebibmacro{finentry}%
 }
 
@@ -442,7 +445,6 @@
         {\printfield[parens]{collaboration}}}
     {}%
 }
-
 
 \renewbibmacro*{journal}{%
   \iffieldundef{journaltitle}

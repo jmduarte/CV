@@ -59,20 +59,16 @@ for l in t:
     elif 'collaboration' in l and 'CMS' in l['collaboration'] or ('usera' in l and 'CMS' in l['usera']):
         codes = [str(c) for c in author_codes['CMS']]
 
-    if 'note' in l and 'Author Contribution Code(s)' not in l['note']:
-        # add to note
-        l['note'] += ', \\textbf{{Author Contribution Code(s)}}: {0}'.format(', '.join(codes))
-    elif 'note' in l and 'Author Contribution Code(s)' in l['note']:
+    l['contributioncodes'] = ', '.join(codes)
+
+    if 'note' in l and 'Author Contribution Code(s)' in l['note']:
         if 'Accepted by' in l['note'] or 'Erratum' in l['note']:
-            # update note
+            # remove author contribution codes from note
             former_note = l['note'].split('\\textbf{Author Contribution Code(s)}')[0]
-            l['note'] = former_note + '\\textbf{{Author Contribution Code(s)}}: {0}'.format(', '.join(codes))
+            l['note'] = former_note
         else:
-            # just replace note
-            l['note'] = '\\textbf{{Author Contribution Code(s)}}: {0}'.format(', '.join(codes))
-    else:
-        # define new note
-        l['note'] = '\\textbf{{Author Contribution Code(s)}}: {0}'.format(', '.join(codes))
+            # just remove note
+            del l['note']
 
 # export 3 bib files (publications, proceedings, other)
 with open('bib_publications.bib', 'w') as bibtex_file:
