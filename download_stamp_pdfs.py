@@ -21,7 +21,7 @@ with open('publist_biobib.aux') as aux_file:
 with open('bib_publications.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
-article_dir = 'Journal_Articles'
+article_dir = 'Research_Articles'
 os.makedirs(article_dir,exist_ok=True)
 
 for l in bib_database.entries:
@@ -38,18 +38,17 @@ for l in bib_database.entries:
         print('Getting PDF URL for %s'%l['ID'])
         r = requests.get('https://doi.org/'+l['doi'])
         get_pdf_url = ''
-        if 'https://link.springer.com/' in r.url:
+        if 'link.springer.com' in r.url:
             get_pdf_url = r.url.replace('/article/','/content/pdf/')+'.pdf'
-        elif 'https://journals.aps.org/' in r.url:
+        elif 'journals.aps.org' in r.url:
             get_pdf_url = r.url.replace('/abstract/','/pdf/')
-        elif 'https://linkinghub.elsevier.com/' in r.url:
+        elif 'linkinghub.elsevier.com' in r.url:
             pdfname = '1-s2.0-'+r.url.split('/')[-1]+'-main.pdf'
             get_pdf_url = r.url.replace('https://linkinghub.elsevier.com/retrieve/','https://www.sciencedirect.com/science/article/')+'/pdfft?isDTMRedir=true&download=true'
-        elif 'https://ieeexplore.ieee.org/' in r.url:
+        elif 'ieeexplore.ieee.org' in r.url:
             get_pdf_url = r.url.replace('/document/','/stamp/stamp.jsp?tp=&arnumber=')[:-1]
-        elif 'https://iopscience.iop.org/' in r.url:
+        elif 'iopscience.iop.org' in r.url:
             get_pdf_url = r.url+'/pdf'
-        if get_pdf_url!='': l['pdf'] = get_pdf_url
 
         print('Downloading %s'%l['ID'])
         stamp_page = 1
@@ -60,6 +59,11 @@ for l in bib_database.entries:
             stamp_page = 2
             with open('%s/%s.pdf'%(article_dir,name), 'wb') as my_file:
                 b = downloader.get_pdf_from_doi(l['doi'], my_file, 'crossref')
+            if not b:
+                response = requests.get(get_pdf_url, stream=True)
+                with open('%s/%s.pdf'%(article_dir,name), 'wb') as handle:
+                    for data in response.iter_content():
+                        handle.write(data)
         else:
             response = requests.get(get_pdf_url, stream=True)
             with open('%s/%s.pdf'%(article_dir,name), 'wb') as handle:
@@ -71,11 +75,19 @@ for l in bib_database.entries:
         value = os.system(command)
         if value!=0:
             print("Error stamping %s"%l['ID'])
+            os.system('rm  %s/%s.pdf'%(article_dir,name))
+            os.system('rm  %s/%s_text.pdf'%(article_dir,name))
+            print('Check for CAPTCHA?: %s'%get_pdf_url)
             continue
         if stamp_page>1:
             command = '%s %s/%s_text.pdf %i-end -o %s/%s.pdf'%(cpdf, article_dir,name,stamp_page,article_dir,name)
         else:
             command = 'mv %s/%s_text.pdf %s/%s.pdf'%(article_dir,name,article_dir,name)
         value = os.system(command)
+        if value!=0:
+            print("Error clipping/moving %s"%l['ID'])
+            os.system('rm  %s/%s.pdf'%(article_dir,name))
+        if os.path.isfile('%s/%s_text.pdf'%(article_dir,name)):
+            os.system('rm  %s/%s_text.pdf'%(article_dir,name))
 
-        time.sleep(2)
+        time.sleep(5)
