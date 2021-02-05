@@ -42,7 +42,7 @@ jobs:
       run: |
         mkdir -p docs/_build
         cp cv_duarte_javier.pdf docs/_build/cv_duarte_javier.pdf
-	cp cv_duarte_javier_ext.pdf docs/_build/cv_duarte_javier_ext.pdf
+        cp cv_duarte_javier_ext.pdf docs/_build/cv_duarte_javier_ext.pdf
         cp publist_biobib.pdf docs/_build/publist_biobib.pdf
         cp PersonalStatement2021_clip.pdf docs/_build/PersonalStatement2021.pdf
     - name: Deploy build to GitHub Pages
