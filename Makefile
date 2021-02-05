@@ -1,4 +1,4 @@
-tex: cv_duarte_javier publist_biobib PersonalStatement2021
+tex: cv_duarte_javier_ext cv_duarte_javier publist_biobib PersonalStatement2021
 
 cv_duarte_javier:
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
@@ -6,6 +6,15 @@ cv_duarte_javier:
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
+
+cv_duarte_javier_ext:
+	sed -e 's/extfalse/exttrue/g' cv_duarte_javier.tex > cv_duarte_javier_ext.tex
+	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext
+	biber cv_duarte_javier_ext
+	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext
+	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext
+	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext
+	rm cv_duarte_javier_ext.tex
 
 publist_biobib:
 	pdflatex -interaction=nonstopmode -synctex=-1 publist_biobib
@@ -23,7 +32,7 @@ PersonalStatement2021:
 
 VerbiageChair2021:
 		pdflatex -interaction=nonstopmode -synctex=-1 VerbiageChair2021
-		
+
 clip:
 	cpdf -i PersonalStatement2021.pdf -range 1-3,65-end -o PersonalStatement2021.pdf
 
