@@ -4,12 +4,16 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{times}
 
+\usepackage{ifthen}
+\newboolean{cms@italic}
+\setboolean{cms@italic}{false}
+\newboolean{cms@external}
+\setboolean{cms@external}{false}
 
 \usepackage[pazoGreek]{heppennames2}
 \usepackage{ptdr-definitions}
 
 \hypersetup{colorlinks=false, breaklinks, pdfborder = {0 0 0}}
-
 
 \newcommand*\publistbasestyle{phys}
 \usepackage[style=publist,
