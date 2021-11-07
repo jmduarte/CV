@@ -1235,7 +1235,7 @@ FUNCTION {techreport}
   link.shut
   blank.sep
   format.tr.number output.nonnull
-  institution "institution" output.check
+  institution output
   address output
   format.date "year" output.check
   new.block
@@ -1259,11 +1259,11 @@ FUNCTION {unpublished}
   format.title "title" output.check
   link.shut
   blank.sep
-  format.date.paren "year"  output.check
+  format.date "year" output.check
   new.sentence
   format.eprint output
   new.sentence
-  note "note" output.check
+  note output
   new.sentence
   format.SLACcitation output
   fin.entry

@@ -1,18 +1,12 @@
-\def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
-\def\Filedate$#1: #2-#3-#4 #5 ${\gdef\filedate{#2/#3/#4}}
-\Fileversion$Revision: 460316 $
-\Filedate$Date: 2018-05-15 06:41:40 -0400 (Tue, 15 May 2018) $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  CMS Common definitions style file
 %
-%  N.B. use of \newcommand rather than \newcommand means
-%       that a definition is ignored if already specified
-%
-%                                              L. Taylor 18 Feb 2005
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{ptdr-definitions}[\filedate\space CMS Additional Macro Definitions (\fileversion)]
+\ProvidesPackage{ptdr-definitions}[ 2021/01/12  CMS Additional Macro Definitions v2]
 \RequirePackage{xspace}
 \RequirePackage{amsmath}
 
@@ -174,7 +168,7 @@
 
 
 
-\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}
+\ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}}
 
 % Particle names which track the italic/non-italic face convention
 \newcommand{\zp}{{\PZpr}\xspace} % plain Z'
@@ -222,6 +216,13 @@
 \providecommand{\PQQ}{\HepParticle{Q}{}{}\Xspace} % generic heavy quark
 \providecommand{\PAQQ}{\HepAntiParticle{Q}{}{}\Xspace} % generic heavy antiquark
 
+% for APS style tables
+\ifthenelse{\boolean{cms@external}}{%
+\newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
+}{
+\newenvironment{scotch}[1]{\protect\centering\tabular{#1}}{\endtabular}
+\newenvironment{turnpage}[1]{#1}{}
+}
 % Other
 \newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
 \newcommand{\Mpl}{\ensuremath{{M_\mathrm{Pl}}}\xspace}% Planck mass
@@ -262,7 +263,7 @@
 
 
 %%%%%%
-% From Albert
+% From Albert De Roeck for original TDRs
 %
 
 \newcommand{\ga}{\ensuremath{\gtrsim}}
