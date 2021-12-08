@@ -85,21 +85,23 @@ biblabel=brackets,
   }
 }
 
-\DeclareFieldFormat{bold}{\mkbibbold{#1}}
-\renewbibmacro*{note}{%
-\iffieldundef{userb}{%
-\printfield{note}%
-}{%
-\iffieldundef{note}{%
-  \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-}{%
-  \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
- }%
- }%
-\newunit%
-}
+% for UCSD, add contribution codes
+%\DeclareFieldFormat{bold}{\mkbibbold{#1}}
+%\renewbibmacro*{note}{%
+%\iffieldundef{userb}{%
+%\printfield{note}%
+%}{%
+%\iffieldundef{note}{%
+%  \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+%}{%
+%  \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+% }%
+% }%
+%\newunit%
+%}
 
-\renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+% for UCSD, mark recent with asterisk
+%\renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
 \AtEveryBibitem{%
   \ifkeyword{career}%
     {\color{Maroon}}%
@@ -159,7 +161,11 @@ biblabel=brackets,
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 %\clearpage
-\setcounter{page}{5}
+%\setcounter{page}{5}
+
+As a member of the CMS Collaboration, I am an author of hundreds of peer-reviewed articles.
+Selected publications, reports, book chapters, and conference proceedings to which I made a substantial contribution are listed in {\color{Maroon}maroon}.
+
 \MarginText{A. PRIMARY PUBLISHED OR CREATIVE WORK}
 \subsection{I. Original Peer-Reviewed Work or Listing of Creative Endeavors}
 \subsubsection{a. Research Articles}
