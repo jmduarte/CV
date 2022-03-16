@@ -2,7 +2,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{res}
+\documentclass{res}
 
 
 \usepackage{palatino}%    Choose default roman font.  Others are times, pslatex, newcent, bookman, chancery
@@ -15,21 +15,10 @@
 \usepackage{doi}
 
 
-%\reversemarginpar % Move the margin to the left of the page
-%\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textsc{\small#1}}}
-%% New command defining the margin text style
-%\newcommand{\MarginText}[1]{\marginpar{\raggedleft\textbf{#1}}} % New command defining the margin text style
 \newcommand{\MarginText}[1]{\section{#1}\vspace{10pt}}
 
-%\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
-%\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
-
-%\renewcommand{\cvheadingfont}{\LARGE\color{Blue}} % Font color of your name at the top
-
 \usepackage{hyperref} % Required for adding links	and customizing them
-%\hypersetup{colorlinks, breaklinks, urlcolor=NavyBlue, linkcolor=NavyBlue, citecolor=Plum}
 \hypersetup{colorlinks=false, breaklinks, pdfborder = {0 0 0}}
-% Set link colors
 
 \usepackage{ifthen}
 \newboolean{cms@italic}
@@ -41,23 +30,12 @@
 \newcommand*\publistbasestyle{phys}
 \usepackage[style=publist,
 biblabel=brackets,
-    %backend=biber,
- %   natbib,
-  %  style=numeric,
    sorting=dt,
    plauthorhandling=highlight,
    plnumbered=reset,
    nameorder=given-family
 ]{biblatex}
  \plauthorname[Javier]{Duarte}
-%\usepackage[%
-%style=phys,%
-%biblabel=brackets,%
-%chaptertitle=false,%
-%]
-%{biblatex}
-
-%\renewcommand*{\bibfont}{\small}
 \DeclareSourcemap{
  \maps[datatype=bibtex,overwrite=true]{
   \map{
@@ -125,8 +103,6 @@ biblabel=brackets,
 \newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
 \vspace{0.5em}} % Add some white space after each new entry
 
-%\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\small{#1}\par\normalsize\vspace{.5em}} % Define a command for descriptions of each entry - change spacing and font sizes here
-
 \newcommand{\Description[1]}{\noindent #1\vspace{-2pt}}
 
 \usepackage[pazoGreek]{heppennames2}
@@ -137,16 +113,13 @@ biblabel=brackets,
 \newcommand{\MRz}{\ensuremath{M_\mathrm{R}^0}\xspace}
 \newcommand{\Rtwo}{\ensuremath{\mathrm{R}^2}\xspace}
 \newcommand{\Rtwoz}{\ensuremath{\mathrm{R}^2_0}\xspace}
-%\usepackage{fullpage}
 
 
 \newsectionwidth{10pt} % Stops section indenting
 
 \setallmargins{1in}
-%\setrightmargin{1in}
 
 \begin{document}
-%\thispagestyle{empty} % Stop the page count at the bottom of the first page
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION SECTION
