@@ -8,7 +8,7 @@ cv_duarte_javier:
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier
 
 cv_duarte_javier_ext:
-	sed -e 's/extfalse/exttrue/g' cv_duarte_javier.tex > cv_duarte_javier_ext.tex
+	sed -e 's/\setboolean{extended}{false}/\setboolean{extended}{true}/g' cv_duarte_javier.tex > cv_duarte_javier_ext.tex
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext
 	biber cv_duarte_javier_ext
 	pdflatex -interaction=nonstopmode -synctex=-1 cv_duarte_javier_ext

@@ -117,6 +117,7 @@ biblabel=brackets,
 \addbibresource{bib_refproceedings.bib}
 \addbibresource{bib_proceedings.bib}
 \addbibresource{bib_workinprogress.bib}
+\addbibresource{bib_bookchapters.bib}
 \addbibresource{bib_other.bib}
 
 \newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
@@ -170,6 +171,12 @@ biblabel=brackets,
   \subsection{I. Original Peer-Reviewed Work or Listing of Creative Endeavors}
   \subsubsection{a. Research Articles}
   \newrefsection[bib_publications]
+  \nocite{*}
+  \vspace{10pt}
+  \printbibliography[heading=none]
+
+  \subsection{III. Books and Book Chapters}
+  \newrefsection[bib_bookchapters]
   \nocite{*}
   \vspace{10pt}
   \printbibliography[heading=none]
