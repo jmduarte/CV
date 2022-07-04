@@ -63,23 +63,28 @@ biblabel=brackets,
   }
 }
 
-% for UCSD, add contribution codes
-%\DeclareFieldFormat{bold}{\mkbibbold{#1}}
-%\renewbibmacro*{note}{%
-%\iffieldundef{userb}{%
-%\printfield{note}%
-%}{%
-%\iffieldundef{note}{%
-%  \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-%}{%
-%  \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-% }%
-% }%
-%\newunit%
-%}
+% for UCSD, add contribution codes to recent pubs
+\DeclareFieldFormat{bold}{\mkbibbold{#1}}
+\renewbibmacro*{note}{%
+\iffieldundef{userb}{%
+\printfield{note}%
+}{%
+\ifkeyword{recent}{%
+\iffieldundef{note}{%
+  \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+}{%
+  \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
+ }%
+ }%
+}%
+{%
+\printfield{note}%
+}%
+\newunit%
+}
 
 % for UCSD, mark recent with asterisk
-%\renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+\renewbibmacro*{begentry}{\ifkeyword{recent}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
 \AtEveryBibitem{%
   \ifkeyword{career}%
     {\color{Maroon}}%
@@ -107,13 +112,6 @@ biblabel=brackets,
 
 \usepackage[pazoGreek]{heppennames2}
 \usepackage{ptdr-definitions}
-
-
-\newcommand{\MR}{\ensuremath{M_\mathrm{R}}\xspace}
-\newcommand{\MRz}{\ensuremath{M_\mathrm{R}^0}\xspace}
-\newcommand{\Rtwo}{\ensuremath{\mathrm{R}^2}\xspace}
-\newcommand{\Rtwoz}{\ensuremath{\mathrm{R}^2_0}\xspace}
-
 
 \newsectionwidth{10pt} % Stops section indenting
 
@@ -176,11 +174,11 @@ biblabel=brackets,
   \printbibliography[heading=none]
 
   \MarginText{C. WORK IN PROGRESS}
-  \vspace{10pt}
-  \newrefsection[bib_workinprogress]
-  \nocite{*}
-  \vspace{10pt}
-  \printbibliography[heading=none]
+  % \vspace{10pt}
+  % \newrefsection[bib_workinprogress]
+  % \nocite{*}
+  % \vspace{10pt}
+  % \printbibliography[heading=none]
   \clearpage
 
 \end{resume}
