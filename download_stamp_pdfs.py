@@ -64,6 +64,8 @@ for l in bib_database.entries:
             get_pdf_url = r.url + "/pdf"
         elif "nature.com" in r.url:
             get_pdf_url = r.url + ".pdf"
+        elif "frontiersin.org" in r.url:
+            get_pdf_url = r.url.replace("/full","/pdf")
 
         print("Downloading %s" % l["ID"])
         stamp_page = 1
