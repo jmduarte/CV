@@ -140,8 +140,13 @@ biblabel=brackets,
 
   \MarginText{A. PRIMARY PUBLISHED OR CREATIVE WORK}
   \subsection{I. Original Peer-Reviewed Work or Listing of Creative Endeavors}
-  \subsubsection{a. Research Articles}
   \newrefsection[bib_publications]
+  \nocite{*}
+  \vspace{10pt}
+  \printbibliography[heading=none]
+
+  \subsection{II. Review and Invited Articles}
+  \newrefsection[bib_reviews]
   \nocite{*}
   \vspace{10pt}
   \printbibliography[heading=none]

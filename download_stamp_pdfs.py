@@ -33,7 +33,7 @@ if __name__ == '__main__':
             for line in aux_lines:
                 if "bx@aux@number" in line and l["ID"] in line:
                     n = line.split("{")[-1][:-2]
-                    name = "A.I.a." + n
+                    name = "A.I." + n
             if (
                 os.path.isfile("%s/%s.pdf" % (article_dir, name))
                 and os.path.getsize("%s/%s.pdf" % (article_dir, name)) > 0
@@ -44,36 +44,36 @@ if __name__ == '__main__':
             print("Getting PDF URL for %s" % l["ID"])
             r = requests.get("https://doi.org/" + l["doi"])
             get_pdf_url = ""
+            if "link.springer.com" in r.url:
+                get_pdf_url = r.url.replace("/article/", "/content/pdf/") + ".pdf"
+            elif "journals.aps.org" in r.url:
+                get_pdf_url = r.url.replace("/abstract/", "/pdf/")
+            elif "linkinghub.elsevier.com" in r.url:
+                pdfname = "1-s2.0-" + r.url.split("/")[-1] + "-main.pdf"
+                get_pdf_url = (
+                    r.url.replace(
+                        "https://linkinghub.elsevier.com/retrieve/",
+                        "https://www.sciencedirect.com/science/article/",
+                    )
+                    + "/pdfft?isDTMRedir=true&download=true"
+                )
+            elif "ieeexplore.ieee.org" in r.url:
+                get_pdf_url = r.url.replace("/document/", "/stamp/stamp.jsp?tp=&arnumber=")[
+                    :-1
+                ]
+            elif "iopscience.iop.org" in r.url:
+                get_pdf_url = r.url + "/pdf"
+            elif "scipost.org" in r.url:
+                get_pdf_url = r.url + "/pdf"
+            elif "nature.com" in r.url:
+                get_pdf_url = r.url + ".pdf"
+            elif "frontiersin.org" in r.url:
+                get_pdf_url = r.url.replace("/full","/pdf")
+                
             if (
                 not (os.path.isfile("%s/%s_nostamp.pdf" % (article_dir, name))
                 and os.path.getsize("%s/%s_nostamp.pdf" % (article_dir, name)) > 0)
             ):
-                if "link.springer.com" in r.url:
-                    get_pdf_url = r.url.replace("/article/", "/content/pdf/") + ".pdf"
-                elif "journals.aps.org" in r.url:
-                    get_pdf_url = r.url.replace("/abstract/", "/pdf/")
-                elif "linkinghub.elsevier.com" in r.url:
-                    pdfname = "1-s2.0-" + r.url.split("/")[-1] + "-main.pdf"
-                    get_pdf_url = (
-                        r.url.replace(
-                            "https://linkinghub.elsevier.com/retrieve/",
-                            "https://www.sciencedirect.com/science/article/",
-                        )
-                        + "/pdfft?isDTMRedir=true&download=true"
-                    )
-                elif "ieeexplore.ieee.org" in r.url:
-                    get_pdf_url = r.url.replace("/document/", "/stamp/stamp.jsp?tp=&arnumber=")[
-                        :-1
-                    ]
-                elif "iopscience.iop.org" in r.url:
-                    get_pdf_url = r.url + "/pdf"
-                elif "scipost.org" in r.url:
-                    get_pdf_url = r.url + "/pdf"
-                elif "nature.com" in r.url:
-                    get_pdf_url = r.url + ".pdf"
-                elif "frontiersin.org" in r.url:
-                    get_pdf_url = r.url.replace("/full","/pdf")
-
                 print("Downloading %s" % l["ID"])
                 if "elsevier" in r.url:
                     with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as my_file:
@@ -88,7 +88,7 @@ if __name__ == '__main__':
                                 handle.write(data)
                 else:
                     response = requests.get(get_pdf_url, stream=True)
-                    with open("%s/%s.pdf" % (article_dir, name), "wb") as handle:
+                    with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as handle:
                         for data in response.iter_content():
                             handle.write(data)
 
@@ -105,12 +105,15 @@ if __name__ == '__main__':
                 article_dir,
                 name,
             )
+            
             value = os.system(command)
+            
             if value != 0:
                 print("Error stamping %s" % l["ID"])
                 os.system("rm  %s/%s_stamp.pdf" % (article_dir, name))
                 print("Check for CAPTCHA?: %s" % get_pdf_url)
                 continue
+
             if stamp_page > 1:
                 command = "%s %s/%s_stamp.pdf %i-end -o %s/%s.pdf" % (
                     cpdf,
@@ -127,11 +130,14 @@ if __name__ == '__main__':
                     article_dir,
                     name,
                 )
+
             value = os.system(command)
+
             if value != 0:
                 print("Error clipping/moving %s" % l["ID"])
-                os.system("rm  %s/%s.pdf" % (article_dir, name))
+                os.system("rm %s/%s.pdf" % (article_dir, name))
+
             if os.path.isfile("%s/%s_stamp.pdf" % (article_dir, name)):
-                os.system("rm  %s/%s_stamp.pdf" % (article_dir, name))
+                os.system("rm %s/%s_stamp.pdf" % (article_dir, name))
 
             time.sleep(5)
