@@ -1,0 +1,170 @@
+
+\documentclass[11pt]{article}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage{ifthen}
+\newboolean{cms@italic}
+\setboolean{cms@italic}{false}
+\newboolean{cms@external}
+\setboolean{cms@external}{false}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{46,48,147}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=darkblue,
+            urlcolor=darkblue,
+            citecolor=darkblue}
+
+\newcommand{\mycite}[1]{%
+\ifthenelse{\equal{#1}{Khachatryan:2015pwa}}{\href{https://doi.org/10.1103/PhysRevD.91.052018}{\textbf{A.I.277}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015tia}}{\href{https://doi.org/10.1016/j.nima.2014.11.041}{\textbf{A.I.311}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015gha}}{\href{https://doi.org/10.1016/j.nima.2015.04.013}{\textbf{A.I.317}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016ygg}}{\href{https://doi.org/10.1109/TNS.2016.2528166}{\textbf{A.I.373}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016tiu}}{\href{https://doi.org/10.1016/j.nima.2015.11.129}{\textbf{A.I.396}}}{}%
+\ifthenelse{\equal{#1}{Khachatryan:2016epu}}{\href{https://doi.org/10.1103/PhysRevD.95.012003}{\textbf{A.I.444}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2016iap}}{\href{https://doi.org/10.1016/j.physletb.2017.02.012}{\textbf{A.I.491}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017nvi}}{\href{https://doi.org/10.1007/JHEP01(2018)097}{\textbf{A.I.567}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017dgc}}{\href{https://doi.org/10.1103/PhysRevLett.120.071802}{\textbf{A.I.571}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017eie}}{\href{https://doi.org/10.1016/j.physletb.2017.12.069}{\textbf{A.I.604}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018ite}}{\href{https://doi.org/10.1088/1748-0221/13/07/P07027}{\textbf{A.I.644}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018xlo}}{\href{https://doi.org/10.1007/JHEP08(2018)130}{\textbf{A.I.662}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018kst}}{\href{https://doi.org/10.1103/PhysRevLett.121.121801}{\textbf{A.I.667}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018ikr}}{\href{https://doi.org/10.1103/PhysRevD.99.012005}{\textbf{A.I.713}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018koj}}{\href{https://doi.org/10.1140/epjc/s10052-019-6909-y}{\textbf{A.I.761}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018sgc}}{\href{https://doi.org/10.1016/j.physletb.2019.03.059}{\textbf{A.I.762}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2019fta}}{\href{https://doi.org/10.1007/s41781-019-0027-2}{\textbf{A.I.794}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vxa}}{\href{https://doi.org/10.1103/PhysRevD.100.112007}{\textbf{A.I.817}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019sgo}}{\href{https://doi.org/10.1103/PhysRevLett.123.231803}{\textbf{A.I.818}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019bmu}}{\href{https://doi.org/10.1140/epjc/s10052-020-7608-4}{\textbf{A.I.824}}}{}%
+\ifthenelse{\equal{#1}{Summers:2020xiy}}{\href{https://doi.org/10.1088/1748-0221/15/05/p05026}{\textbf{A.I.861}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vgj}}{\href{https://doi.org/10.1007/JHEP05(2020)033}{\textbf{A.I.866}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019pnb}}{\href{https://doi.org/10.1016/j.physletb.2020.135448}{\textbf{A.I.875}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019neq}}{\href{https://doi.org/10.1103/PhysRevD.102.012010}{\textbf{A.I.877}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2020eqx}}{\href{https://doi.org/10.1088/2632-2153/aba042}{\textbf{A.I.910}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2020hwz}}{\href{https://doi.org/10.1007/JHEP12(2020)085}{\textbf{A.I.911}}}{}%
+\ifthenelse{\equal{#1}{Iiyama:2020wap}}{\href{https://doi.org/10.3389/fdata.2020.598927}{\textbf{A.I.915}}}{}%
+\ifthenelse{\equal{#1}{Krupa:2020bwg}}{\href{https://doi.org/10.1088/2632-2153/abec21}{\textbf{A.I.930}}}{}%
+\ifthenelse{\equal{#1}{Pata:2021oez}}{\href{https://doi.org/10.1140/epjc/s10052-021-09158-w}{\textbf{A.I.940}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021zos}}{\href{https://doi.org/10.1088/2632-2153/ac0ea1}{\textbf{A.I.945}}}{}%
+\ifthenelse{\equal{#1}{Hawks:2021ruw}}{\href{https://doi.org/10.3389/frai.2021.676564}{\textbf{A.I.949}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2021ide}}{\href{https://doi.org/10.1109/TNS.2021.3087100}{\textbf{A.I.952}}}{}%
+\ifthenelse{\equal{#1}{John:2020sak}}{\href{https://doi.org/10.1103/PhysRevAccelBeams.24.104601}{\textbf{A.I.971}}}{}%
+\ifthenelse{\equal{#1}{Dezoort:2021kfk}}{\href{https://doi.org/10.1007/s41781-021-00073-z}{\textbf{A.I.974}}}{}%
+\ifthenelse{\equal{#1}{Zlokapa:2019tkn}}{\href{https://doi.org/10.1007/s42484-021-00054-w}{\textbf{A.I.975}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021juv}}{\href{https://doi.org/10.1103/PhysRevLett.127.261804}{\textbf{A.I.987}}}{}%
+\ifthenelse{\equal{#1}{Kasieczka:2021xcg}}{\href{https://doi.org/10.1088/1361-6633/ac36b9}{\textbf{A.I.988}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021oeb}}{\href{https://doi.org/10.21468/SciPostPhys.12.1.043}{\textbf{A.I.992}}}{}%
+\ifthenelse{\equal{#1}{Chen:2021euv}}{\href{https://doi.org/10.1038/s41597-021-01109-0}{\textbf{A.I.993}}}{}%
+\ifthenelse{\equal{#1}{Govorkova:2021utb}}{\href{https://doi.org/10.1038/s42256-022-00441-3}{\textbf{A.I.994}}}{}%
+\ifthenelse{\equal{#1}{Jawahar:2021vyu}}{\href{https://doi.org/10.3389/fdata.2022.803685}{\textbf{A.I.996}}}{}%
+\ifthenelse{\equal{#1}{Elabd:2021lgo}}{\href{https://doi.org/10.3389/fdata.2022.828666}{\textbf{A.I.1004}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021yhb}}{\href{https://doi.org/10.1007/JHEP03(2022)160}{\textbf{A.I.1006}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022nmn}}{\href{https://arxiv.org/abs/2205.06667}{\textbf{A.I.1028}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022dwd}}{\href{https://doi.org/10.1038/s41586-022-04892-x}{\textbf{A.I.1029}}}{}%
+\ifthenelse{\equal{#1}{Touranakou:2022qrp}}{\href{https://doi.org/10.1088/2632-2153/ac7c56}{\textbf{A.I.1030}}}{}%
+\ifthenelse{\equal{#1}{Deiana:2021niw}}{\href{https://doi.org/10.3389/fdata.2022.787421}{\textbf{A.II.1}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2020ngm}}{\href{https://doi.org/10.1142/9789811234033_0012}{\textbf{A.III.1}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_sonic}}{\href{https://doi.org/10.5281/zenodo.3895029}{\textbf{A.IV.1}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hbb}}{\href{https://doi.org/10.5281/zenodo.3895048}{\textbf{A.IV.2}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hls4ml}}{\href{https://doi.org/10.5281/zenodo.3895081}{\textbf{A.IV.3}}}{}%
+\ifthenelse{\equal{#1}{Rankin:2020usv}}{\href{https://doi.org/10.1109/H2RC51942.2020.00010}{\textbf{A.IV.4}}}{}%
+\ifthenelse{\equal{#1}{Heintz:2020soy}}{\href{https://arxiv.org/abs/2012.01563}{\textbf{A.IV.5}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2020svm}}{\href{https://arxiv.org/abs/2012.00173}{\textbf{A.IV.6}}}{}%
+\ifthenelse{\equal{#1}{Fahim:2021cic}}{\href{https://arxiv.org/abs/2103.05579}{\textbf{A.IV.7}}}{}%
+\ifthenelse{\equal{#1}{Orzari:2021suh}}{\href{https://arxiv.org/abs/2109.15197}{\textbf{A.IV.8}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2021bkf}}{\href{https://arxiv.org/abs/2111.12840}{\textbf{A.IV.9}}}{}%
+\ifthenelse{\equal{#1}{Banbury:2021mlperf}}{\href{https://arxiv.org/abs/2106.07597}{\textbf{A.IV.10}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2021cqp}}{\href{https://arxiv.org/abs/2106.11535}{\textbf{A.IV.11}}}{}%
+\ifthenelse{\equal{#1}{Tsan:2021brw}}{\href{https://arxiv.org/abs/2111.12849}{\textbf{A.IV.12}}}{}%
+\ifthenelse{\equal{#1}{Pata:2022wam}}{\href{https://arxiv.org/abs/2203.00330}{\textbf{A.IV.13}}}{}%
+\ifthenelse{\equal{#1}{Borras:2022opensource}}{\href{https://arxiv.org/abs/2206.11791}{\textbf{A.IV.14}}}{}%
+\ifthenelse{\equal{#1}{Pappalardo:2022nxk}}{\href{https://arxiv.org/abs/2206.07527}{\textbf{A.IV.15}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2014soa}}{\href{https://arxiv.org/abs/1409.4466}{\textbf{B.I.1}}}{}%
+\ifthenelse{\equal{#1}{Bornheim_2015}}{\href{https://doi.org/10.1088/1742-6596/587/1/012057}{\textbf{B.I.2}}}{}%
+\ifthenelse{\equal{#1}{7581887}}{\href{https://doi.org/10.1109/NSSMIC.2015.7581887}{\textbf{B.I.3}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2016wnw}}{\href{https://doi.org/10.1016/j.nuclphysbps.2015.09.071}{\textbf{B.I.4}}}{}%
+\ifthenelse{\equal{#1}{8069874}}{\href{https://doi.org/10.1109/NSSMIC.2016.8069874}{\textbf{B.I.5}}}{}%
+\ifthenelse{\equal{#1}{Bornheim:2017gql}}{\href{https://doi.org/10.1088/1742-6596/928/1/012023}{\textbf{B.I.6}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018bsd}}{\href{https://arxiv.org/abs/1808.00902}{\textbf{B.I.7}}}{}%
+\ifthenelse{\equal{#1}{Albertsson:2018maf}}{\href{https://doi.org/10.1088/1742-6596/1085/2/022008}{\textbf{B.I.8}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2020ngo}}{\href{https://doi.org/10.5281/zenodo.4009114}{\textbf{B.I.9}}}{}%
+\ifthenelse{\equal{#1}{Wozniak:2020}}{\href{https://doi.org/10.1051/epjconf/202024506039}{\textbf{B.I.10}}}{}%
+\ifthenelse{\equal{#1}{Thais:2022iok}}{\href{https://arxiv.org/abs/2203.12852}{\textbf{B.I.11}}}{}%
+\ifthenelse{\equal{#1}{Harris:2022qtm}}{\href{https://arxiv.org/abs/2203.16255}{\textbf{B.I.12}}}{}%
+\ifthenelse{\equal{#1}{Apresyan:2022tqw}}{\href{https://arxiv.org/abs/2203.07353}{\textbf{B.I.13}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2017bbq}}{\href{https://arxiv.org/abs/1703.06544}{\textbf{B.IV.1}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2018-046}}{\href{https://cds.cern.ch/record/2630438}{\textbf{B.IV.2}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-17-026}}{\href{https://cds.cern.ch/record/2637847}{\textbf{B.IV.3}}}{}%
+\ifthenelse{\equal{#1}{CERN-LHCC-2020-004}}{\href{https://cds.cern.ch/record/2714892}{\textbf{B.IV.4}}}{}%
+\ifthenelse{\equal{#1}{hls4ml}}{\href{https://doi.org/10.5281/zenodo.1201549}{\textbf{B.IV.5}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2021-030}}{\href{https://cds.cern.ch/record/2792320}{\textbf{B.IV.6}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-012}}{\href{https://cds.cern.ch/record/280992}{\textbf{B.IV.7}}}{}%
+}
+
+\usepackage[pazoGreek]{heppennames2}
+\usepackage{ptdr-definitions}
+\begin{document}
+
+Javier M. Duarte is an experimental high energy physicist, who studies the basic building blocks of matter at the highest energies producible in the laboratory.
+The most energetic collider in the world is currently the Large Hadron Collider (LHC) at CERN in Geneva, Switzerland.
+Duarte is a member of one of the large experimental collaborations consisting of several thousand scientists called CMS.
+Such a large collaboration is needed to build the complex detector, operate it in the extreme conditions of the LHC beam, acquire the data from the collisions, and analyze the data to infer the properties and interactions of the subatomic particles produced in the collisions.
+Nonetheless, Duarte is already recognized as an intellectual leader within the collaboration and the field.
+The major research question that Duarte seeks to answer is what is the nature of the \emph{new physics} beyond the standard model of particle physics, the current best description of the elementary particles and the fundamental forces.
+
+The direction Duarte pursues is to study the most recently discovered elementary particle, the Higgs boson, to see if its properties deviate from expectations, as this may provide crucial hints as to the nature of the new physics.
+His research in CMS currently focuses on searches for and measurements of Higgs bosons decaying to quarks with large transverse momentum ($\pt$).
+By studying the production of Higgs bosons at high $\pt$, Duarte's work is sensitive to new physics at very high energy scales.
+In addition, Duarte searches for Higgs boson pair production in order to measure the Higgs boson self-interaction, a fundamental parameter of the standard model, necessary to confirm its validity.
+
+Within CMS, he led a search for high-$\pt$ Higgs boson pair production in the gluon fusion production mode and the four-bottom-quark final state ($\bbbar\bbbar$)~[\mycite{CMS:2022nmn}].
+Impressively, this novel search is the most sensitive to this process in LHC Run 2.
+It uses algorithms called graph neural networks that Duarte previously established as state of the art for this purpose~[\mycite{Moreno:2019bmu}, \mycite{Moreno:2019neq}].
+The paper also establishes the existence of new fundamental interaction between two vector bosons and two Higgs bosons for the first time assuming all other Higgs boson couplings are as predicted by the standard model.
+The search builds on a prior work by Duarte for single high-\pt Higgs bosons decaying to \bbbar~[\mycite{Sirunyan:2020hwz}, \mycite{Sirunyan:2017dgc}], published in \emph{J. High Energy Phys.} and \emph{Phys. Rev. Lett.}, respectively.
+
+This result~[\mycite{CMS:2022nmn}] was featured prominently in a combination of all CMS Higgs boson pair searches published in Nature~[\mycite{CMS:2022dwd}], which Duarte contribteud to.
+This work represents a substantial step forward toward measuring the Higgs boson self-interaction, an important aim of the LHC program.
+
+To enable these physics results, Duarte is a leader in the interdisciplinary subfield of ML for particle physics.
+Rather than being explicitly programmed, ML algorithms learn directly from data and simulation to optimally perform a given task such as distinguishing Higgs bosons from background.
+Duarte developed novel ML algorithms to identify the decay of a Higgs boson~[\mycite{Moreno:2019bmu}, \mycite{Moreno:2019neq}], reconstruct particles from detector measurements~[\mycite{Pata:2021oez}, \mycite{Pata:2022wam}, \mycite{Mokhtar:2021bkf}], track charged particles~[\mycite{Dezoort:2021kfk}, \mycite{Zlokapa:2019tkn}],  detect anomalies~[\mycite{Kasieczka:2021xcg}, \mycite{Aarrestad:2021oeb}, \mycite{Jawahar:2021vyu}, \mycite{Tsan:2021brw}, \mycite{Wozniak:2020}], and improve simulation~[\mycite{Touranakou:2022qrp}, \mycite{Kansal:2021cqp}, \mycite{Kansal:2020svm}, \mycite{Orzari:2021suh}].
+These results have been published in prominent particle physics journals like \emph{Phys. Rev. D} and \emph{Eur. Phys. J. C}, as well as the leading machine learning conference Neural Information Processing Systems (NeurIPS).
+
+Duarte also leads efforts to develop and implement ML algorithms in dedicated hardware for very fast processing, with a \emph{latency} or delay of less than one microsecond, to improve the real-time LHC event selection, known as the trigger.
+As the trigger selects the subset of collision events to be preserved for analysis, while discarding the rest, it is of paramount importance.
+For this work, he designed, implemented, and benchmarked fast ML algorithms on field-programmable gate arrays (FPGAs) for particle physics~[\mycite{Summers:2020xiy}, \mycite{DiGuglielmo:2020eqx}, \mycite{Iiyama:2020wap}, \mycite{Aarrestad:2021zos}, \mycite{Elabd:2021lgo}] and accelerator physics~[\mycite{John:2020sak}].
+This work builds on a compiler framework that Duarte established previously~[\mycite{Duarte:2018ite}].
+The impact of this work is tremendous: by enabling sophisticated ML algorithms to run in the trigger, events that may contain subtle signatures of new physics may be identified and preserved rather than lost forever.
+Many CMS trigger applications~[\mycite{CERN-LHCC-2020-004}] have already adopted this framework.
+
+Duarte has made contributions to several other CMS publications involving long-lived particles~[\mycite{CMS:2021juv}, \mycite{CMS:2021yhb}] jet-based searches for new physics~[\mycite{Sirunyan:2019pnb}, \mycite{Sirunyan:2019vgj}, \mycite{Sirunyan:2019sgo}, \mycite{Sirunyan:2019vxa}, \mycite{Sirunyan:2017nvi}, \mycite{Sirunyan:2018ikr}, \mycite{Sirunyan:2018xlo}, \mycite{Sirunyan:2016iap}].
+Duarte served as the co-convener of the CMS physics analysis subgroup for exotic physics searches with jets in the final state.
+As a member of the CMS Collaboration, he is also an author of all CMS publications since 2011, many of which benefit from his indirect contributions.
+
+Duarte's research group includes two postdoctoral fellows and three graduate students.
+Duarte is a strong advocate for mentoring undergraduate researchers.
+Astoundingly, he and his group have mentored more than 15 undergraduate researchers in the past 3 years, many of whom have published papers, presented their work at national conferences, and gone on to pursue graduate study or industry positions.
+In recognition of his excellent mentorship, he was awarded the Outstanding Mentor Award in 2021 by the Undergraduate Research Hub.
+
+Duarte was awarded a Department of Energy (DOE) Early Career Award (ECA) for ``Real-Time Artificial Intelligence for Particle Reconstruction and Higgs Physics'' (\$750,000, 2020--2025) in his first year as junior faculty.
+Notably, he is the first ever DOE ECA recipient in high energy physics at UC San Diego.
+He also received NSF funding as a Co-PI for the construction of a new AI-centric supercomputer at SDSC with a project entitled ``Category II: Exploring Neural Network Processors for AI in Science and Engineering'' (\$5,000,000 total) and DOE funding as a Co-PI for ``FAIR4HEP: FAIR Framework for Physics-Inspired Artificial Intelligence in High Energy Physics'' (\$2,250,000 total, \$450,000 for UCSD, 2020--2023).
+Duarte was key in establishing the ``NSF Harnessing the Data Revolution (HDR) Institute for Accelerated AI Algorithms for Data Driven Discovery (A3D3)'' (\$15,000,000 total, \$675,600 for UCSD, 2021--2026) focused on the domains of multimessenger astronomy, neuroscience, and particle physics.
+Duarte has also received funding as part of DOE award entitled ``High Energy Physics Consortium for Advanced Training (HEPCAT)'' (\$3,700,000 total, \$110,000 for UCSD so far, 2021--2026) for training the next generation of HEP instrumentation researchers.
+Finally, Duarte is also a Co-PI on a DOE Award for ``Real-time Data Reduction Codesign at the Extreme Edge for Science'' (\$750,000 total, \$225,000 for UCSD, 2021--2024).
+
+Duarte is committed to the educational mission of our institution, with a focus on demonstrating the accessibility of modern computational research physics.
+Duarte has taught Physics 2C: Fluids, Waves, Thermodynamics, and Optics to 300+ students three times using a flipped classroom method with over 98\% of the students responding to CAPES recommending him as an instructor.
+He is also developing new machine learning and data science graduate and undergraduate courses for the Physics Department to be taught in 2022--2023.
+His unique approach of simultaneously teaching students necessary computational skills, while also giving them the opportunity to explore open-ended research questions in collaboration fellow students, will provide a valuable introduction to ``authentic research collaboration.''
+
+Duarte is also a leader in equity, diversity, and inclusion (EDI) in our department and beyond.
+He has simultaneously served on the Physics Department's Graduate Admissions and EDI Committees.
+As one of the campus representatives for the California Consortium for Inclusive Doctoral Education (C-CIDE), he has driven efforts for establishing holistic review with special consideration of EDI contributions for our graduate applicants.
+Beyond our department, he has helped established two thriving programs for enhancing opportunities for underrepresented minority students in STEM: the DOE HEPCAT Instrumentation Training Graduate Fellowship Program (https://hepcat.ucsd.edu/) and the NSF A3D3 Institute Postbaccalaurete Fellowship Program (https://a3d3.ai/).
+
+In terms of service to the field, he has also peer-reviewed papers for \emph{J. High Energy Phys.}, \emph{Phys. Lett. B}, \emph{Phys. Rev. D}, \emph{Phys. Rev. Research}, \emph{Eur. Phys. J. C}, \emph{Comput. Softw. Big Sci.}, \emph{Nucl. Instrum. Methods Phys. Res. A}, and \emph{Applied Optics}, and edited \emph{Front. Big Data} and \emph{Front. AI}.
+He has also reviewed grant applications for the Department of Energy, European Science Foundation, and the French National Research Agency.
+
+\end{document}

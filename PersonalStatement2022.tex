@@ -1,0 +1,314 @@
+\documentclass[11pt,letterpaper,notitlepage]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{46,48,147}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=darkblue,
+            urlcolor=darkblue,
+            citecolor=darkblue}
+\usepackage{xspace}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{pennames}
+\usepackage{ptdr-definitions}
+\usepackage{ifthen}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{Javier M. Duarte}
+\rhead{Personal Statement}
+\cfoot{\thepage}
+
+\newcommand{\mycite}[1]{%
+\ifthenelse{\equal{#1}{Khachatryan:2015pwa}}{\href{https://doi.org/10.1103/PhysRevD.91.052018}{\textbf{A.I.277}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015tia}}{\href{https://doi.org/10.1016/j.nima.2014.11.041}{\textbf{A.I.311}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015gha}}{\href{https://doi.org/10.1016/j.nima.2015.04.013}{\textbf{A.I.317}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016ygg}}{\href{https://doi.org/10.1109/TNS.2016.2528166}{\textbf{A.I.373}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016tiu}}{\href{https://doi.org/10.1016/j.nima.2015.11.129}{\textbf{A.I.396}}}{}%
+\ifthenelse{\equal{#1}{Khachatryan:2016epu}}{\href{https://doi.org/10.1103/PhysRevD.95.012003}{\textbf{A.I.444}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2016iap}}{\href{https://doi.org/10.1016/j.physletb.2017.02.012}{\textbf{A.I.491} (293 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017nvi}}{\href{https://doi.org/10.1007/JHEP01(2018)097}{\textbf{A.I.567} (183 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017dgc}}{\href{https://doi.org/10.1103/PhysRevLett.120.071802}{\textbf{A.I.571} (154 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017eie}}{\href{https://doi.org/10.1016/j.physletb.2017.12.069}{\textbf{A.I.604}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018ite}}{\href{https://doi.org/10.1088/1748-0221/13/07/P07027}{\textbf{A.I.644} (258 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018xlo}}{\href{https://doi.org/10.1007/JHEP08(2018)130}{\textbf{A.I.662} (250 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018kst}}{\href{https://doi.org/10.1103/PhysRevLett.121.121801}{\textbf{A.I.667} (622 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018ikr}}{\href{https://doi.org/10.1103/PhysRevD.99.012005}{\textbf{A.I.713} (26 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018koj}}{\href{https://doi.org/10.1140/epjc/s10052-019-6909-y}{\textbf{A.I.761}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018sgc}}{\href{https://doi.org/10.1016/j.physletb.2019.03.059}{\textbf{A.I.762} (85 citations)}}{}%
+\ifthenelse{\equal{#1}{Duarte:2019fta}}{\href{https://doi.org/10.1007/s41781-019-0027-2}{\textbf{A.I.794} (41 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vxa}}{\href{https://doi.org/10.1103/PhysRevD.100.112007}{\textbf{A.I.817} (75 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019sgo}}{\href{https://doi.org/10.1103/PhysRevLett.123.231803}{\textbf{A.I.818} (44 citations)}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019bmu}}{\href{https://doi.org/10.1140/epjc/s10052-020-7608-4}{\textbf{A.I.824} (84 citations)}}{}%
+\ifthenelse{\equal{#1}{Summers:2020xiy}}{\href{https://doi.org/10.1088/1748-0221/15/05/p05026}{\textbf{A.I.861} (41 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vgj}}{\href{https://doi.org/10.1007/JHEP05(2020)033}{\textbf{A.I.866} (125 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019pnb}}{\href{https://doi.org/10.1016/j.physletb.2020.135448}{\textbf{A.I.875} (26 citations)}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019neq}}{\href{https://doi.org/10.1103/PhysRevD.102.012010}{\textbf{A.I.877} (49 citations)}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2020eqx}}{\href{https://doi.org/10.1088/2632-2153/aba042}{\textbf{A.I.910} (44 citations)}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2020hwz}}{\href{https://doi.org/10.1007/JHEP12(2020)085}{\textbf{A.I.911} (41 citations)}}{}%
+\ifthenelse{\equal{#1}{Iiyama:2020wap}}{\href{https://doi.org/10.3389/fdata.2020.598927}{\textbf{A.I.915} (41 citations)}}{}%
+\ifthenelse{\equal{#1}{Krupa:2020bwg}}{\href{https://doi.org/10.1088/2632-2153/abec21}{\textbf{A.I.930} (20 citations)}}{}%
+\ifthenelse{\equal{#1}{Pata:2021oez}}{\href{https://doi.org/10.1140/epjc/s10052-021-09158-w}{\textbf{A.I.940} (48 citations)}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021zos}}{\href{https://doi.org/10.1088/2632-2153/ac0ea1}{\textbf{A.I.945} (39 citations)}}{}%
+\ifthenelse{\equal{#1}{Hawks:2021ruw}}{\href{https://doi.org/10.3389/frai.2021.676564}{\textbf{A.I.949} (17 citations)}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2021ide}}{\href{https://doi.org/10.1109/TNS.2021.3087100}{\textbf{A.I.952} (11 citations)}}{}%
+\ifthenelse{\equal{#1}{John:2020sak}}{\href{https://doi.org/10.1103/PhysRevAccelBeams.24.104601}{\textbf{A.I.971} (13 citations)}}{}%
+\ifthenelse{\equal{#1}{Dezoort:2021kfk}}{\href{https://doi.org/10.1007/s41781-021-00073-z}{\textbf{A.I.974} (21 citations)}}{}%
+\ifthenelse{\equal{#1}{Zlokapa:2019tkn}}{\href{https://doi.org/10.1007/s42484-021-00054-w}{\textbf{A.I.975} (30 citations)}}{}%
+\ifthenelse{\equal{#1}{CMS:2021juv}}{\href{https://doi.org/10.1103/PhysRevLett.127.261804}{\textbf{A.I.987} (11 citations)}}{}%
+\ifthenelse{\equal{#1}{Kasieczka:2021xcg}}{\href{https://doi.org/10.1088/1361-6633/ac36b9}{\textbf{A.I.988} (70 citations)}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021oeb}}{\href{https://doi.org/10.21468/SciPostPhys.12.1.043}{\textbf{A.I.992} (35 citations)}}{}%
+\ifthenelse{\equal{#1}{Chen:2021euv}}{\href{https://doi.org/10.1038/s41597-021-01109-0}{\textbf{A.I.993}}}{}%
+\ifthenelse{\equal{#1}{Govorkova:2021utb}}{\href{https://doi.org/10.1038/s42256-022-00441-3}{\textbf{A.I.994}}}{}%
+\ifthenelse{\equal{#1}{Jawahar:2021vyu}}{\href{https://doi.org/10.3389/fdata.2022.803685}{\textbf{A.I.996}}}{}%
+\ifthenelse{\equal{#1}{Elabd:2021lgo}}{\href{https://doi.org/10.3389/fdata.2022.828666}{\textbf{A.I.1004}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021yhb}}{\href{https://doi.org/10.1007/JHEP03(2022)160}{\textbf{A.I.1006}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022nmn}}{\href{https://arxiv.org/abs/2205.06667}{\textbf{A.I.1028}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022dwd}}{\href{https://doi.org/10.1038/s41586-022-04892-x}{\textbf{A.I.1029}}}{}%
+\ifthenelse{\equal{#1}{Touranakou:2022qrp}}{\href{https://doi.org/10.1088/2632-2153/ac7c56}{\textbf{A.I.1030}}}{}%
+\ifthenelse{\equal{#1}{Deiana:2021niw}}{\href{https://doi.org/10.3389/fdata.2022.787421}{\textbf{A.II.1}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2020ngm}}{\href{https://doi.org/10.1142/9789811234033_0012}{\textbf{A.III.1} (30 citations)}}{}%
+\ifthenelse{\equal{#1}{neurips2019_sonic}}{\href{https://doi.org/10.5281/zenodo.3895029}{\textbf{A.IV.1}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hbb}}{\href{https://doi.org/10.5281/zenodo.3895048}{\textbf{A.IV.2}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hls4ml}}{\href{https://doi.org/10.5281/zenodo.3895081}{\textbf{A.IV.3}}}{}%
+\ifthenelse{\equal{#1}{Rankin:2020usv}}{\href{https://doi.org/10.1109/H2RC51942.2020.00010}{\textbf{A.IV.4} (17 citations)}}{}%
+\ifthenelse{\equal{#1}{Heintz:2020soy}}{\href{https://arxiv.org/abs/2012.01563}{\textbf{A.IV.5} (34 citations)}}{}%
+\ifthenelse{\equal{#1}{Kansal:2020svm}}{\href{https://arxiv.org/abs/2012.00173}{\textbf{A.IV.6} (12 citations)}}{}%
+\ifthenelse{\equal{#1}{Fahim:2021cic}}{\href{https://arxiv.org/abs/2103.05579}{\textbf{A.IV.7} (33 citations)}}{}%
+\ifthenelse{\equal{#1}{Orzari:2021suh}}{\href{https://arxiv.org/abs/2109.15197}{\textbf{A.IV.8}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2021bkf}}{\href{https://arxiv.org/abs/2111.12840}{\textbf{A.IV.9}}}{}%
+\ifthenelse{\equal{#1}{Banbury:2021mlperf}}{\href{https://arxiv.org/abs/2106.07597}{\textbf{A.IV.10} (29 citations)}}{}%
+\ifthenelse{\equal{#1}{Kansal:2021cqp}}{\href{https://arxiv.org/abs/2106.11535}{\textbf{A.IV.11}}}{}%
+\ifthenelse{\equal{#1}{Tsan:2021brw}}{\href{https://arxiv.org/abs/2111.12849}{\textbf{A.IV.12}}}{}%
+\ifthenelse{\equal{#1}{Pata:2022wam}}{\href{https://arxiv.org/abs/2203.00330}{\textbf{A.IV.13}}}{}%
+\ifthenelse{\equal{#1}{Borras:2022opensource}}{\href{https://arxiv.org/abs/2206.11791}{\textbf{A.IV.14}}}{}%
+\ifthenelse{\equal{#1}{Pappalardo:2022nxk}}{\href{https://arxiv.org/abs/2206.07527}{\textbf{A.IV.15}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2014soa}}{\href{https://arxiv.org/abs/1409.4466}{\textbf{B.I.1}}}{}%
+\ifthenelse{\equal{#1}{Bornheim_2015}}{\href{https://doi.org/10.1088/1742-6596/587/1/012057}{\textbf{B.I.2}}}{}%
+\ifthenelse{\equal{#1}{7581887}}{\href{https://doi.org/10.1109/NSSMIC.2015.7581887}{\textbf{B.I.3}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2016wnw}}{\href{https://doi.org/10.1016/j.nuclphysbps.2015.09.071}{\textbf{B.I.4}}}{}%
+\ifthenelse{\equal{#1}{8069874}}{\href{https://doi.org/10.1109/NSSMIC.2016.8069874}{\textbf{B.I.5}}}{}%
+\ifthenelse{\equal{#1}{Bornheim:2017gql}}{\href{https://doi.org/10.1088/1742-6596/928/1/012023}{\textbf{B.I.6}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018bsd}}{\href{https://arxiv.org/abs/1808.00902}{\textbf{B.I.7}}}{}%
+\ifthenelse{\equal{#1}{Albertsson:2018maf}}{\href{https://doi.org/10.1088/1742-6596/1085/2/022008}{\textbf{B.I.8}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2020ngo}}{\href{https://doi.org/10.5281/zenodo.4009114}{\textbf{B.I.9}}}{}%
+\ifthenelse{\equal{#1}{Wozniak:2020}}{\href{https://doi.org/10.1051/epjconf/202024506039}{\textbf{B.I.10}}}{}%
+\ifthenelse{\equal{#1}{Thais:2022iok}}{\href{https://arxiv.org/abs/2203.12852}{\textbf{B.I.11}}}{}%
+\ifthenelse{\equal{#1}{Harris:2022qtm}}{\href{https://arxiv.org/abs/2203.16255}{\textbf{B.I.12}}}{}%
+\ifthenelse{\equal{#1}{Apresyan:2022tqw}}{\href{https://arxiv.org/abs/2203.07353}{\textbf{B.I.13}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2017bbq}}{\href{https://arxiv.org/abs/1703.06544}{\textbf{B.IV.1}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2018-046}}{\href{https://cds.cern.ch/record/2630438}{\textbf{B.IV.2}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-17-026}}{\href{https://cds.cern.ch/record/2637847}{\textbf{B.IV.3}}}{}%
+\ifthenelse{\equal{#1}{CERN-LHCC-2020-004}}{\href{https://cds.cern.ch/record/2714892}{\textbf{B.IV.4} (59 citations)}}{}%
+\ifthenelse{\equal{#1}{hls4ml}}{\href{https://doi.org/10.5281/zenodo.1201549}{\textbf{B.IV.5}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2021-030}}{\href{https://cds.cern.ch/record/2792320}{\textbf{B.IV.6}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-012}}{\href{https://cds.cern.ch/record/280992}{\textbf{B.IV.7}}}{}%
+}
+
+
+\begin{document}
+
+\pagestyle{fancyplain}
+
+Below, I describe my contributions to research, teaching, mentorship, service, and equity, diversity and inclusion in the review period from July 1, 2020 to June 30, 2022.
+\vspace{-1ex}
+\subsection*{Research}
+
+As an experimental particle physicist working on the CMS experiment at the CERN LHC, I analyze petabytes of proton-proton collision data to disentangle rare signal processes from the background to measure the properties and interactions of subatomic particles.
+My research focuses on (R1) measurements of Higgs bosons decaying to quarks with large transverse momentum ($\pt$),
+(R2) searches for exotic new physics involving jets and long-lived particles,
+(R3) developing novel artificial intelligence (AI) and machine learning (ML) algorithms for event reconstruction and simulation to enable these physics results, and
+(R4) developing methods to accelerate AI algorithm training and inference, e.g., to improve the real-time LHC event selection in the trigger.
+This work is naturally interdisciplinary, at the interface of physics, computer science, AI, and electrical engineering.
+\vspace{-1ex}
+\subsubsection*{R1. High-\pt Higgs boson measurements}
+
+In the standard model (SM) of particle physics, the Higgs boson (\PH) is a manifestation of electroweak symmetry breaking, which gives rise to the masses of the {\PW} and {\PZ} bosons that carry the weak force and the elementary fermions.
+Measuring the Higgs boson's interactions with other particles and itself is necessary to confirm the validity of the SM, and any deviations may give a critical hint for new physics beyond the SM.
+Studying the production of Higgs bosons at high \pt is a uniquely sensitive way to search for new physics at higher energy scales.
+In addition, studying high-\pt Higgs boson pair ($\PH\PH$) production enables us to better constrain the Higgs boson self-coupling and gives us insight into the shape of the Higgs potential.
+
+Within the CMS Collaboration, I helped lead a small team of graduate students, postdoctoral researchers, and scientists in a search for high-$\pt$ $\PH\PH$ production in the gluon fusion production mode and the four-bottom-quark final state ($\bbbar\bbbar$)~[\mycite{CMS:2022nmn}].
+At high-\pt, the decay products of the Higgs boson merge into a single large-radius jet.
+This search, now accepted for publication in \emph{Phys. Rev. Lett.}, is 30 times more sensitive than the previous CMS search in the same final state, leading to an observed (expected) limit at 95\% confidence level (CL) of 9.9 (5.1) times the SM cross section.
+In addition, a combination I directed with a vector boson fusion (VBF) production-specific search established the existence of the quartic coupling between two vector bosons and two Higgs bosons at 6.3 standard deviations for the first time (assuming all other Higgs boson couplings are at the SM values).
+This work is novel in its use of graph neural networks (GNNs), a special type of ML algorithm that treats the particles in a jet as the nodes in a graph, to identify the Higgs boson candidates.
+The first demonstration that GNNs are state of the art for this task was published by myself and collaborators~[\mycite{Moreno:2019bmu}, \mycite{Moreno:2019neq}].
+This search also builds on a prior searches, which I led, for single high-\pt Higgs bosons decaying to \bbbar~[\mycite{Sirunyan:2020hwz}, \mycite{Sirunyan:2017dgc}], published in \emph{J. High Energy Phys.} and \emph{Phys. Rev. Lett.}, respectively.
+I was invited to present this work at the \href{https://indico.fnal.gov/event/55499/}{Fermilab Joint Experimental-Theoretical Physics (Wine \& Cheese) Seminar}, a lab-wide colloquium.
+
+The boosted $\PH\PH$ search~[\mycite{CMS:2022nmn}] was the cornerstone of the combination of all CMS Higgs boson pair searches, which was recently published in Nature~[\mycite{CMS:2022dwd}].
+As part of a small team, I helped coordinate this combination.
+In particular, I was responsible for the combination of the low-\pt (4 resolved small-radius jets) and high-\pt (2 merged large-radius jets)~[\mycite{CMS:2022nmn}] in the $\bbbar\bbbar$ final state.
+These searches, when combined, were found to be the most sensitive to the $\PH\PH$ production cross section.
+The combined statistical analysis of all final states set an upper limit at 95\% CL of 3.4 (with 2.5 expected) times the SM cross section.
+This work represents a substantial step forward toward measuring the Higgs boson self-coupling and other couplings.
+
+My graduate students and postdoctoral researchers are actively working on two new searches leveraging a new GNN algorithm we developed for identifying high-\pt Higgs bosons decaying to {\PW} bosons: a search for single $\PH\to\PW\PW$ production and search for Higgs pair production in the $\PH\PH\to\bbbar\PW\PW$ final state.
+These analyses are on track for publication in the coming year.
+One of my postdoctoral fellows, Dr. Daniel Diaz, has also developed high-level (software-based) trigger algorithms for Higgs boson pair production, which are already recording data in Run 3.
+This category of my research program is mainly supported by a DOE Early Career Award for ``Real-Time Artificial Intelligence for Particle Reconstruction and Higgs Physics'' (\$750,000 as sole PI, 2020--2025)
+\vspace{-1ex}
+\subsubsection*{R2. Exotic long-lived particle and jet-based searches}
+
+During this review period, I have made significant contributions to several other CMS publications involving searches for exotic long-lived particles~[\mycite{CMS:2021juv}, \mycite{CMS:2021yhb}].
+In both, I helped develop and validate the statistical analysis, and supervised graduate students and postdoctoral researchers.
+In addition, my graduate students and postdoctoral fellows are developing a new analysis to search for long-lived particles using a data sample of $10^{10}$ \PQb hadron decays, which recorded and ``parked'' for later analysis by the CMS experiment in 2018.
+Using this dataset for exotic long-lived particle searches is a novel technique.
+
+Previously, I also served as the co-convener of the CMS physics analysis subgroup for exotic physics searches with jets in the final state from 2018 to 2022.
+In this capacity, I coordinated biweekly subgroup meetings, reviewed in detail each analysis, and helped shepherd toward publication ten CMS papers.
+Among the ten, I specfically led~[\mycite{Sirunyan:2018ikr}, \mycite{Sirunyan:2018xlo}, \mycite{Sirunyan:2016iap}] and contributed to~[\mycite{Sirunyan:2019pnb}, \mycite{Sirunyan:2019vgj}, \mycite{Sirunyan:2019sgo}, \mycite{Sirunyan:2019vxa}, \mycite{Sirunyan:2017nvi}] several CMS publications in this area, many of which set the most stringent constraints on new physics in these channels.
+% As a member of the CMS Collaboration, I am an author of all CMS publications since 2011 that are listed in my bibliography.
+% Many of these works benefit from my indirect contributions in the form of my development of deep neural networks for Higgs boson identification and b-tagging, trigger algorithms, and statistical analysis tools within CMS.
+\vspace{-1ex}
+\subsubsection*{R3. Novel machine learning for event reconstruction and simulation}
+
+Beyond the CMS Collaboration, my research includes developing new ML techniques to improve event reconstruction and simulation in particle physics.
+This work is done in collaboration with a relatively small number of co-authors and I made significant technical and writing contributions to these papers.
+A novel ML algorithm I helped develop in Ref.~[\mycite{Pata:2021oez}], published in \emph{Eur. Phys. J. C}, uses a GNN to improve the particle-flow algorithm, which combines low-level information from multiple detectors to determine the set of particles produced in a collision.
+This algorithm was also trained using CMS simulation and its performance was shown at the 20th International Workshop on Advanced Computing and Analysis Techniques in Physics Research~[\mycite{Pata:2022wam}].
+I also supervised UCSD graduate student Farouk Mokhtar in developing tools for explaining the predictions of this algorithm~[\mycite{Mokhtar:2021bkf}].
+
+I have collaborated with several groups in developing anomaly detection algorithms, mainly based on autoencoders, a type of ML algorithm trained on SM data that compresses then decompresses input data and measures the level of disagreement between the output and the input.
+A large discrepancy indicates the data is unlike the SM training data may be anomalous signal.
+In particular, I supervised UCSD undergraduate student Steven Tsan and other students~[\mycite{Kasieczka:2021xcg}, \mycite{Aarrestad:2021oeb}, \mycite{Jawahar:2021vyu}, \mycite{Tsan:2021brw}, \mycite{Wozniak:2020}].
+
+Some of my work is focused on developing generative models using GNNs to replace or speed up computationally expensive simulation.
+Notably, this work led to a first-author paper for my student Raghav Kansal accepted to the Neural Information Processing Systems conference~[\mycite{Kansal:2021cqp}], the premier ML conference (9,122 submissions in 2021, with 25.7\% acceptance rate).
+This is an exceptional achievement for any Ph.D. student, let alone one conducting research primarily in physics and not computer science.
+I supervised Raghav in this project, including helping guide the project and writing and reviewing the manuscript.
+Several other publications~[\mycite{Touranakou:2022qrp}] and conference papers~[\mycite{Kansal:2020svm}, \mycite{Orzari:2021suh}] have been produced as part of this project with collaborators.
+As part of the \href{https://www.anl.gov/event/ai-at-the-edge-of-particle-physics}{AI Distinguished Lecture Series at Argonne National Laboratory}, I was invited to speak on this work.
+
+I have also contributed to the development and study of GNNs~[\mycite{Dezoort:2021kfk}] and quantum-annealing-inspired algorithms~[\mycite{Zlokapa:2019tkn}] for charged particle tracking.
+Some of this work, especially GNN-based tracking, is planned to be adopted by the CMS and ATLAS experiments.
+
+A common thread throughout this work is developing open, public scientific datasets~[\mycite{Chen:2021euv}] and sharable AI models following the findable, accessible, interoperable, and reusable (FAIR) principles.
+These principles are significant because they enable more reproducible science, greater access to a larger community of researchers, and support educational efforts.
+For example, for the UCSD Data Science Capstone, I developed material on ``Particle Physics and Machine Learning,'' in which students reproduce an AI-based analysis of simulated Higgs boson decay data.
+This was possible because of the availability of a \href{https://doi.org/10.7483/OPENDATA.CMS.JGJX.MS7Q}{FAIR data set} that I published on the CERN Open Data Portal.
+This work is funded by a DOE award \href{https://fair4hep.github.io}{``FAIR4HEP: FAIR Framework for Physics-Inspired AI in High Energy Physics''} (\$2,250,000 total, \$450,000 for UCSD, 2020--2023) on which I am a Co-PI.
+\vspace{-1ex}
+\subsubsection*{R4. Accelerated machine learning for trigger and computing}
+
+In the next phase of the LHC, the instantaneous luminosity will increase by a factor of five and the CMS detector will become more complex, producing up to hundreds of terabytes of data per second.
+This avalanche of data must be filtered down by several orders of magnitude by the real-time, hardware-based trigger system within microseconds using field-programmable gate arrays (FPGAs).
+To meet this challenge, my research focuses on developing new ultra-low-latency AI techniques trained to reconstruct, identify, and preserve these precious collisions.
+This work has broader impacts for many disciplines, including multimessenger astronomy, neutrino physics, neuroscience, and microscopy, which I helped review in Ref.~[\mycite{Deiana:2021niw}].
+
+I contributed to the design, implementation, and evaluation of real-time AI algorithms on FPGAs for the LHC trigger.
+My key contribution is the creation and continued development of \texttt{hls4ml}~[\mycite{Duarte:2018ite}], a generic tool allowing scientists to translate ML algorithms into FPGA firmware.
+In Refs.~[\mycite{Summers:2020xiy}, \mycite{DiGuglielmo:2020eqx}, \mycite{Iiyama:2020wap}, \mycite{Aarrestad:2021zos}, \mycite{Elabd:2021lgo}], we extended \texttt{hls4ml} to include new implementations of boosted decision trees, binary and ternary neural networks, convolutional neural networks, and GNNs, respectively.
+I helped apply this work to on-detector data compression using an autoencoder~[\mycite{DiGuglielmo:2021ide}] and controlling the Fermilab Booster accelerator using reinforcement learning~[\mycite{John:2020sak}].
+A large array of LHC trigger applications~[\mycite{CERN-LHCC-2020-004}] have adopted \texttt{hls4ml} to develop low-latency ML solutions for anomaly detection~[\mycite{Govorkova:2021utb}] (published in \emph{Nature Machine Intelligence}), jet identification, and muon {\pt} measurements.
+I have also studied the combination of  pruning, removing insignificant synapses, and quantization, reducing the precision of the calculations, for model compression~[\mycite{Hawks:2021ruw}], applied \texttt{hls4ml} for ``tinyML'' low-power inference~[\mycite{Fahim:2021cic}, \mycite{Borras:2022opensource}], and developed a universal exchange format for representing quantized neural networks~[\mycite{Pappalardo:2022nxk}].
+For all the above work, I helped develop and test these implementations and made major contributions to writing the manuscripts.
+% The goal of this work is to realize advanced AI techniques in the low-latency, resource-constrained environment of the trigger.
+
+As more physics reconstructions algorithms turn to ML-based approaches, there is a need to accelerate the inference of large models run on billions of collision events in traditional computing workflows.
+I have helped developed a new framework of ``ML inference as a service'' for particle physics~[\mycite{Duarte:2019fta}], in which heterogeneous computing elements, including GPUs, FPGAs, and AI-specific ASICs, can be flexibly composed and used with in tandem with CPUs.
+I have coordinated and contributed to multiple studies using FPGAs~[\mycite{Rankin:2020usv}] and GPUs~[\mycite{Krupa:2020bwg}] benchmarking the acceleration of these ML algorithms and providing proofs of concept.
+There is ongoing work to integrate these workflows as part of the CMS and ATLAS computing frameworks.
+I also study the applicability of new hardware for accelerated ML training and inference, like the SDSC Voyager supercomputer composed of AI-specific Intel Habana Gaudi and Goya processors.
+This work is facilitated by the NSF award  ``Category II: Exploring Neural Network Processors for AI in Science and Engineering'' (\$5,000,000 for SDSC, 2020--2025) for which I am a co-PI, which gives me direct access to the hardware.
+
+This work is also supported by my DOE Early Career Award and the \href{https://a3d3.ai}{``NSF Harnessing the Data Revolution (HDR) Institute for Accelerated AI Algorithms for Data Driven Discovery (A3D3)''} (\$15,000,000 total, \$675,600 for UCSD, 2021--2026) focused on the domains of multimessenger astronomy, neuroscience, and particle physics.
+For this Institute, I am a key personnel, the UCSD institute PI and co-chair of the Equity and Career Committee.
+I also coordinate the Targeted Systems group,
+Some of this work is also supported by a DOE Award for ``Real-time Data Reduction Codesign at the Extreme Edge for Science'' (\$750,000 total, \$225,000 for UCSD, 2021--2024), on which I am a co-PI.
+\vspace{-1ex}
+\subsection*{Mentorship}
+
+My research group has grown substantially to include two postdoctoral fellows, Dr. Melissa Quinnan and Dr. Daniel Diaz, three physics graduate students, Raghav Kansal (year 3), Farouk Mokhtar (year 2), and Anthony Aportela (year 3), and more than 10 undergraduate student researchers.
+I also supervise several computer science graduate students: Olivia Weng, Nirmal Thomas, and Selwyn Reis Gomes.
+With my support, several of these students have received significant awards and funding.
+For example, Raghav Kansal was awarded an LHC Physics Center (LPC) AI fellowship, Farouk Mokhtar was awarded a Hal{\i}c{\i}o\u{g}lu Data Science Institute (HDSI) and NSF Institute for Research and Innovation in Software for High Energy Physics (IRIS-HEP) fellowships, Anthony Aportela was awarded Sloan and \href{https://hepcat.ucsd.edu}{High Energy Physics Consortium for Advanced Training (HEPCAT)} fellowships, and Olivia Weng was awarded an NSF Graduate Research Fellowship.
+From the Division of Physical Sciences, Raghav received a Carol and George Lattimer Award for Graduate Excellence and Zichun Hao received a Dean's Undergraduate Excellence Award in 2021--2022.
+Many other undergraduate students have also received awards and funding from the UCSD TRELS program, Undergraduate Research Hub, the Division of Physical Sciences Undergraduate Research Award, and NSF IRIS-HEP,
+As a result of my mentorship of undergraduate researchers, I was a recipient of the UCSD Undergraduate Research Hub Outstanding Mentor Award in 2021.
+
+As mentioned above, my graduate student Anthony Aportela received an inaugural HEPCAT fellowship.
+This fellowship is supported by a DOE award (\$3,700,000 total, \$110,000 for UCSD so far, 2021--2026), which aims to support and train the next generation of HEP instrumentation researchers.
+For this award, I am Key Personnel and lead the \href{https://hepcat.ucsd.edu/topical-groups/tg7-ai-ml-for-detectors-2/}{Topical Group on AI/ML for detectors}.
+This group includes six university mentors and four laboratory mentors, who work on research topics including ML for instrumentation, like detector modeling for optimization and design, detector simulation, and detector calibration, and specialized instrumentation for ML, like ML on FPGAs or ASICs for trigger or on-detector readout.
+The charge of our topical group includes reviewing the applications for HEPCAT fellows in our area, developing a summer training module, and lecturing at the summer school.
+
+% I devoted substantial effort to securing external funding by submitting several applications to the NSF and the DOE, four of which have been funded during this review period.
+% My graduate student Anthony Aportela has received a HEPCAT fellowship with \$110,000 support, including stipend and indirect costs, for 2021--2023.
+% Finally, I am Key Personnel for the NSF AI Institute Intelligent Cyberinfrastructure with Computational Learning in the Environment (ICICLE) (\$25,000,000 total, 2021--2026).
+\vspace{-1ex}
+\subsection*{Teaching}
+
+My teaching approach is to foster an inclusive, welcoming learning environment and promote active learning though evidence-based methods.
+I also strive to provide sufficient scaffolding through lower-stakes, incremental assignments.
+
+During the winter and spring quarters of 2021, I taught Physics 2C: Fluids, Waves, Thermodynamics, and Optics to 300+ students each quarter.
+Because of the COVID-19 pandemic, it was taught virtually on Zoom in 2021.
+I adopted a ``flipped classroom'' format with readings and conceptual homework assignments due prior to each lecture.
+During the lecture, I briefly reviewed the material from the readings and the homework using the document camera to write notes, focusing on conceptually challenging issues.
+I used a student response system (Zoom polls) to promote active learning, engage the students, and better understand the difficulties that they were having with the material.
+To facilitate learning outside the classroom, my team of TAs and I quickly responded to students questions on Piazza.
+Most of the grade (70\%) was from homework, where half was earned through a draft, and the other half was earned through revisions to reinforce the concepts that students may have misunderstood.
+Overall, I received good ratings in the CAPES evaluations with 85.6\% (82.2\%) of the class responding, 95.6\% (94.1\%) recommending the course, and 98.0\% (93.3\%) recommending me as the instructor in winter (spring) quarter 2021.
+
+In the fall quarters 2020 and 2021 and winter quarters 2021 and 2022, I was the primary scientific domain mentor (along with Prof. Frank W\"{u}rthwein) for the ``Particle Physics and Machine Learning'' section of DSC 180AB, the two-quarter data science capstone project course, for approximately six students each quarter.
+I created the public \href{https://jduarte.physics.ucsd.edu/capstone-particle-physics-domain/README.html}{course webpage}, with exercises on particle physics and jets, data formats, feature engineering, classifiers, deep learning, GNNs, and application to real data.
+In the first quarter, the students were tasked with reproducing a result from the domain, namely the classification of Higgs boson jets with GNNs~[\mycite{Moreno:2019neq}], using a FAIR public data set that I published, while in the second quarter students were tasked with extending the result in some direction.
+Students chose to extend the work by exploring model interpretability, regression, and multiclassification tasks.
+
+In the winter and spring quarters of 2022, I co-taught Physics 141/241: Computational Physics I: Probabilistic Models and Simulations  and 142/242: Computational Physics II: PDE and Matrix Models with Prof. Julius Kuti.
+I helped procure the availability of modern campus computing resources using the UCSD JupyterHub Data Science and Machine Learning Platform (DSMLP).
+I showed students how to use modern computing tools like Jupyter, Git, Docker, and Kubernetes for exploratory programming, collaboration, version control, and creating reproducible environments.
+
+In winter and spring quarters 2022, I am slated to teach Physics 141/241 and 142/242, again independently.
+During this, I plan to revamp the material, with one quarter focusing on data science and machine learning for physics and the other quarter focusing on classical numerical and stochastic methods.
+In these new project-based courses, I will interlace lectures on conceptual topics with practical hands-on laboratory sessions introducing how to use modern computational tools.
+The final project for the courses will be open-ended group research projects, with intermediate checkpoints to provide feedback.
+These courses will act as a bridge between theory and practice in research, providing authentic learning experiences to prepare students for professional work and advanced academic research.
+
+Finally, I am also developing a new graduate course with Prof. R. Sekhar Chivuluka on computational methods in collider physics, covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
+The goal of the course is to give graduate students an ``end-to-end'' view of the process from theoretical prediction to experimental constraints.
+% In the fall quarter 2021, I facilitated 3 local UCSD graduate students to take a hybrid class on statistics for particle physics organized by the LHC Physics Center at Fermilab.
+% Lectures were taught remotely by Prof. Harrison Prosper at University of Florida, and we held an in-person session at UCSD where I provided in-person instruction and homework assistance.
+\vspace{-1ex}
+\subsection*{Service}
+
+During 2020--2021 and 2021--2022 academic years, I served on the Physics Department Graduate Admissions Committee, and the Equity, Diversity, and Inclusion Committee.
+As part of this dual role, I have advocated for the use of holistic review, with a well-defined rubric for evaluating students, including dimensions for EDI contributions.
+I was also tasked with additional responsibilities including coordinating the graduate fellowships for URM students.
+Beginning in 2022, I also serve as the Physics Department representative to the Equity in Graduate Education Consortium.
+
+I have served as a peer reviewer for \emph{J. High Energy Phys.}, \emph{Phys. Lett. B}, \emph{Phys. Rev. D}, \emph{Phys. Rev. Research}, \emph{Eur. Phys. J. C}, \emph{Comput. Softw. Big Sci.}, and \emph{Nucl. Instrum. Methods Phys. Res. A}, and \emph{Applied Optics}, and as a Guest Associate Editor for \emph{Front. Big Data} and \emph{Front. AI}.
+I have also served as an external reviewer for the Department of Energy and the European Science Foundation.
+In 2020 and 2022, I organized the Fast Machine Learning for Science Workshops.
+I am actively participating in the Snowmass 2022 process, which defines the priorities for the US HEP program for the next decade, by contributing a variety of white papers on machine learning for Higgs boson pair production~[\mycite{Apresyan:2022tqw}], GNNs~[\mycite{Thais:2022iok}], fast ML~[\mycite{Harris:2022qtm}], and data science and ML in physics education, as well as co-convening of the computational subgroup on AI-specific hardware.
+\vspace{-1ex}
+\subsection*{Equity, Diversity, and Inclusion}
+
+As mentioned above, one of my main focuses as a faculty member has been driving EDI initiatives, especially promoting equitable graduate admissions.
+This involved giving a seminar to the Graduate Admissions Committee on holistic review and other lessons learned from the Equity in Graduate Education Consortium.
+With other high energy physics faculty members, we developed a common rubric for graduate admissions that we used in the 2021--2022 academic year.
+Thanks in part to my efforts at raising awareness of EDI issues, our committee matriculated one of the most diverse graduate classes, with 34\% women and 14\% underrepresented minority (URM) students for the Physics Ph.D. program (excluding the newly created Astronomy Ph.D. program).
+
+As key personnel of the NSF HDR A3D3 Institute, I co-chair the Equity and Career Committee.
+One of my main contributions in this role was the conception and execution of the A3D3 Postbaccalaureate Research Fellowship.
+This one-year fellowship is intended to increase research opportunities for URM groups in STEM, including African American/Black, Chicanx/Latinx, Native American/Alaska Native, Native Hawaiin/Pacific Islander, and Filipinx scientists.
+In particular, the program is intended as a bridge to help students with a lack of access to research opportunities gain experience, while being supported with mentoring and professional development activities (like technical writing seminars), in order to be more competitive for graduate study or industry positions.
+In our first year (2022--2023), four postbac fellows have been recruited to conduct research at institutions across the country including UCSD, and we hope to grow the program in the coming years.
+
+I have also mentored students ranging from high school to graduate school participating in the SDSC MAP, UCSD EXPAND, UCSD ENLACE, Cal-Bridge, CERN REU, IRIS-HEP fellowship, APS National Mentorship, and US CMS Mentorship programs.
+Many of these programs specifically aim to provide opportunities for URM students in STEM.
+Finally, I contribute to department-level outreach activities, for example, as an exhibitor for the Physics Department and my lab at the \href{https://www.barriologansae.com/}{Barrio Logan Science \& Art Expo} on Saturday, April 16, 2022.
+
+\vspace{0.1in}
+\includegraphics{signature.pdf}\\
+\indent\indent Javier M. Duarte
+
+\end{document}
