@@ -14,9 +14,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{palatino}
 \usepackage{mathpazo}
-\usepackage{pennames}
-\usepackage{ptdr-definitions}
 \usepackage{ifthen}
+\newboolean{cms@italic}
+\setboolean{cms@italic}{false}
+\newboolean{cms@external}
+\setboolean{cms@external}{false}
+\usepackage[pazoGreek]{heppennames2}
+\usepackage{ptdr-definitions}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -89,6 +93,7 @@
 \ifthenelse{\equal{#1}{Pata:2022wam}}{\href{https://arxiv.org/abs/2203.00330}{\textbf{A.IV.13}}}{}%
 \ifthenelse{\equal{#1}{Borras:2022opensource}}{\href{https://arxiv.org/abs/2206.11791}{\textbf{A.IV.14}}}{}%
 \ifthenelse{\equal{#1}{Pappalardo:2022nxk}}{\href{https://arxiv.org/abs/2206.07527}{\textbf{A.IV.15}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022hdp}}{\href{https://arxiv.org/abs/2207.07958}{\textbf{A.IV.16}}}{}%
 \ifthenelse{\equal{#1}{Duarte:2014soa}}{\href{https://arxiv.org/abs/1409.4466}{\textbf{B.I.1}}}{}%
 \ifthenelse{\equal{#1}{Bornheim_2015}}{\href{https://doi.org/10.1088/1742-6596/587/1/012057}{\textbf{B.I.2}}}{}%
 \ifthenelse{\equal{#1}{7581887}}{\href{https://doi.org/10.1109/NSSMIC.2015.7581887}{\textbf{B.I.3}}}{}%
@@ -102,6 +107,7 @@
 \ifthenelse{\equal{#1}{Thais:2022iok}}{\href{https://arxiv.org/abs/2203.12852}{\textbf{B.I.11}}}{}%
 \ifthenelse{\equal{#1}{Harris:2022qtm}}{\href{https://arxiv.org/abs/2203.16255}{\textbf{B.I.12}}}{}%
 \ifthenelse{\equal{#1}{Apresyan:2022tqw}}{\href{https://arxiv.org/abs/2203.07353}{\textbf{B.I.13}}}{}%
+\ifthenelse{\equal{#1}{Benelli:2022sqn}}{\href{https://arxiv.org/abs/2207.09060}{\textbf{B.I.14}}}{}%
 \ifthenelse{\equal{#1}{Duarte:2017bbq}}{\href{https://arxiv.org/abs/1703.06544}{\textbf{B.IV.1}}}{}%
 \ifthenelse{\equal{#1}{CMS-DP-2018-046}}{\href{https://cds.cern.ch/record/2630438}{\textbf{B.IV.2}}}{}%
 \ifthenelse{\equal{#1}{CMS-PAS-EXO-17-026}}{\href{https://cds.cern.ch/record/2637847}{\textbf{B.IV.3}}}{}%
@@ -126,6 +132,8 @@ My research focuses on (R1) measurements of Higgs bosons decaying to quarks with
 (R3) developing novel artificial intelligence (AI) and machine learning (ML) algorithms for event reconstruction and simulation to enable these physics results, and
 (R4) developing methods to accelerate AI algorithm training and inference, e.g., to improve the real-time LHC event selection in the trigger.
 This work is naturally interdisciplinary, at the interface of physics, computer science, AI, and electrical engineering.
+My research also crosses traditional academia/industry divides, and I have collaborated with computer scientists and engineers at Microsoft Research (e.g. Ted Way), AMD Adaptive and Embedded Computing Group (AECG) (formerly Xilinx Research, e.g. Michaela Blott), Intel Programmable Solutions Group (PSG) (e.g. Nabeel Shirazi), and Habana Labs.
+
 \vspace{-1ex}
 \subsubsection*{R1. High-\pt Higgs boson measurements}
 
@@ -141,7 +149,8 @@ In addition, a combination I directed with a vector boson fusion (VBF) productio
 This work is novel in its use of graph neural networks (GNNs), a special type of ML algorithm that treats the particles in a jet as the nodes in a graph, to identify the Higgs boson candidates.
 The first demonstration that GNNs are state of the art for this task was published by myself and collaborators~[\mycite{Moreno:2019bmu}, \mycite{Moreno:2019neq}].
 This search also builds on a prior searches, which I led, for single high-\pt Higgs bosons decaying to \bbbar~[\mycite{Sirunyan:2020hwz}, \mycite{Sirunyan:2017dgc}], published in \emph{J. High Energy Phys.} and \emph{Phys. Rev. Lett.}, respectively.
-I was invited to present this work at the \href{https://indico.fnal.gov/event/55499/}{Fermilab Joint Experimental-Theoretical Physics (Wine \& Cheese) Seminar}, a lab-wide colloquium.
+These prior searches were important contributions to the first observation of the Higgs boson decaying to \bbbar~[\mycite{Sirunyan:2018kst}] and other differential cross section measurements~[\mycite{Sirunyan:2018sgc}].
+I was invited to present the high-\pt $\PH\PH$ measurements at the \href{https://indico.fnal.gov/event/55499/}{Fermilab Joint Experimental-Theoretical Physics (Wine \& Cheese) Seminar}, a lab-wide colloquium.
 
 The boosted $\PH\PH$ search~[\mycite{CMS:2022nmn}] was the cornerstone of the combination of all CMS Higgs boson pair searches, which was recently published in Nature~[\mycite{CMS:2022dwd}].
 As part of a small team, I helped coordinate this combination.
@@ -164,7 +173,8 @@ Using this dataset for exotic long-lived particle searches is a novel technique.
 
 Previously, I also served as the co-convener of the CMS physics analysis subgroup for exotic physics searches with jets in the final state from 2018 to 2022.
 In this capacity, I coordinated biweekly subgroup meetings, reviewed in detail each analysis, and helped shepherd toward publication ten CMS papers.
-Among the ten, I specfically led~[\mycite{Sirunyan:2018ikr}, \mycite{Sirunyan:2018xlo}, \mycite{Sirunyan:2016iap}] and contributed to~[\mycite{Sirunyan:2019pnb}, \mycite{Sirunyan:2019vgj}, \mycite{Sirunyan:2019sgo}, \mycite{Sirunyan:2019vxa}, \mycite{Sirunyan:2017nvi}] several CMS publications in this area, many of which set the most stringent constraints on new physics in these channels.
+Among the ten, I specifically led two dijet searches~[\mycite{Sirunyan:2018xlo}, \mycite{Sirunyan:2016iap}] and a search for a boosted (pseudo)scalar decaying to dijets~[\mycite{Sirunyan:2018ikr}], which set some of the most stringent constraints on new physics in these channels.
+I also contributed to several additional (boosted) dijet searches~[\mycite{Sirunyan:2019pnb}, \mycite{Sirunyan:2019vgj}, \mycite{Sirunyan:2019sgo}, \mycite{Sirunyan:2019vxa}, \mycite{Sirunyan:2017nvi}].
 % As a member of the CMS Collaboration, I am an author of all CMS publications since 2011 that are listed in my bibliography.
 % Many of these works benefit from my indirect contributions in the form of my development of deep neural networks for Higgs boson identification and b-tagging, trigger algorithms, and statistical analysis tools within CMS.
 \vspace{-1ex}
@@ -178,7 +188,7 @@ I also supervised UCSD graduate student Farouk Mokhtar in developing tools for e
 
 I have collaborated with several groups in developing anomaly detection algorithms, mainly based on autoencoders, a type of ML algorithm trained on SM data that compresses then decompresses input data and measures the level of disagreement between the output and the input.
 A large discrepancy indicates the data is unlike the SM training data may be anomalous signal.
-In particular, I supervised UCSD undergraduate student Steven Tsan and other students~[\mycite{Kasieczka:2021xcg}, \mycite{Aarrestad:2021oeb}, \mycite{Jawahar:2021vyu}, \mycite{Tsan:2021brw}, \mycite{Wozniak:2020}].
+In particular, I supervised UCSD undergraduate students Steven Tsan and Sukanya Krishna, and other students in creating and evaluating GNN-based autoencoders for detecting anomalous particle jets~[\mycite{Kasieczka:2021xcg}, \mycite{Aarrestad:2021oeb}, \mycite{Jawahar:2021vyu}, \mycite{Tsan:2021brw}, \mycite{Wozniak:2020}].
 
 Some of my work is focused on developing generative models using GNNs to replace or speed up computationally expensive simulation.
 Notably, this work led to a first-author paper for my student Raghav Kansal accepted to the Neural Information Processing Systems conference~[\mycite{Kansal:2021cqp}], the premier ML conference (9,122 submissions in 2021, with 25.7\% acceptance rate).
@@ -233,6 +243,7 @@ For example, Raghav Kansal was awarded an LHC Physics Center (LPC) AI fellowship
 From the Division of Physical Sciences, Raghav received a Carol and George Lattimer Award for Graduate Excellence and Zichun Hao received a Dean's Undergraduate Excellence Award in 2021--2022.
 Many other undergraduate students have also received awards and funding from the UCSD TRELS program, Undergraduate Research Hub, the Division of Physical Sciences Undergraduate Research Award, and NSF IRIS-HEP,
 As a result of my mentorship of undergraduate researchers, I was a recipient of the UCSD Undergraduate Research Hub Outstanding Mentor Award in 2021.
+A great deal of the work done by undergraduates in my group has to led to publications or conference papers including work by Steven Tsan and Sukanya Krishna on GNN-based autoencoders for anomaly detection~[\mycite{Kasieczka:2021xcg}, \mycite{Aarrestad:2021oeb}, \mycite{Jawahar:2021vyu}, \mycite{Tsan:2021brw}], work by Abdelrahman Elabd and Vesal Razavimaleki on implementing GNNs on FPGAs for charged particle tracking~[\mycite{Dezoort:2021kfk}, \mycite{Elabd:2021lgo}, \mycite{Heintz:2020soy}], and work by Brian Sheldon on the sensitivity to $\PH\PH$ production at future colliders~[\mycite{Apresyan:2022tqw}].
 
 As mentioned above, my graduate student Anthony Aportela received an inaugural HEPCAT fellowship.
 This fellowship is supported by a DOE award (\$3,700,000 total, \$110,000 for UCSD so far, 2021--2026), which aims to support and train the next generation of HEP instrumentation researchers.
@@ -273,7 +284,7 @@ In these new project-based courses, I will interlace lectures on conceptual topi
 The final project for the courses will be open-ended group research projects, with intermediate checkpoints to provide feedback.
 These courses will act as a bridge between theory and practice in research, providing authentic learning experiences to prepare students for professional work and advanced academic research.
 
-Finally, I am also developing a new graduate course with Prof. R. Sekhar Chivuluka on computational methods in collider physics, covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
+Finally, I am also developing a new graduate course with Prof. R. Sekhar Chivukula on computational methods in collider physics, covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
 The goal of the course is to give graduate students an ``end-to-end'' view of the process from theoretical prediction to experimental constraints.
 % In the fall quarter 2021, I facilitated 3 local UCSD graduate students to take a hybrid class on statistics for particle physics organized by the LHC Physics Center at Fermilab.
 % Lectures were taught remotely by Prof. Harrison Prosper at University of Florida, and we held an in-person session at UCSD where I provided in-person instruction and homework assistance.
@@ -288,11 +299,11 @@ Beginning in 2022, I also serve as the Physics Department representative to the 
 I have served as a peer reviewer for \emph{J. High Energy Phys.}, \emph{Phys. Lett. B}, \emph{Phys. Rev. D}, \emph{Phys. Rev. Research}, \emph{Eur. Phys. J. C}, \emph{Comput. Softw. Big Sci.}, and \emph{Nucl. Instrum. Methods Phys. Res. A}, and \emph{Applied Optics}, and as a Guest Associate Editor for \emph{Front. Big Data} and \emph{Front. AI}.
 I have also served as an external reviewer for the Department of Energy and the European Science Foundation.
 In 2020 and 2022, I organized the Fast Machine Learning for Science Workshops.
-I am actively participating in the Snowmass 2022 process, which defines the priorities for the US HEP program for the next decade, by contributing a variety of white papers on machine learning for Higgs boson pair production~[\mycite{Apresyan:2022tqw}], GNNs~[\mycite{Thais:2022iok}], fast ML~[\mycite{Harris:2022qtm}], and data science and ML in physics education, as well as co-convening of the computational subgroup on AI-specific hardware.
+I am actively participating in the Snowmass 2022 process, which defines the priorities for the US HEP program for the next decade, by contributing a variety of white papers on machine learning for Higgs boson pair production~[\mycite{Apresyan:2022tqw}], GNNs~[\mycite{Thais:2022iok}], fast ML~[\mycite{Harris:2022qtm}], and data science and ML in physics education~[\mycite{Benelli:2022sqn}], as well as co-convening of the computational subgroup on AI-specific hardware.
 \vspace{-1ex}
 \subsection*{Equity, Diversity, and Inclusion}
 
-As mentioned above, one of my main focuses as a faculty member has been driving EDI initiatives, especially promoting equitable graduate admissions.
+As a faculty member, I have driven Equity, Diversity, and Inclusion (EDI) initiatives, especially promoting equitable graduate admissions.
 This involved giving a seminar to the Graduate Admissions Committee on holistic review and other lessons learned from the Equity in Graduate Education Consortium.
 With other high energy physics faculty members, we developed a common rubric for graduate admissions that we used in the 2021--2022 academic year.
 Thanks in part to my efforts at raising awareness of EDI issues, our committee matriculated one of the most diverse graduate classes, with 34\% women and 14\% underrepresented minority (URM) students for the Physics Ph.D. program (excluding the newly created Astronomy Ph.D. program).
