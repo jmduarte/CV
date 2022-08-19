@@ -396,6 +396,82 @@
   \usebibmacro{finentry}%
 }
 
+\DeclareBibliographyDriver{misc}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \setunit{\printdelim{nametitledelim}}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{byeditor+others}%
+  \newunit\newblock
+  \printfield{howpublished}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit
+  \printfield{version}%
+  \newunit
+  \usebibmacro{note}
+  \newunit\newblock
+  \usebibmacro{organization+location+date}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{report}{%
+\usebibmacro{bibindex}%
+\usebibmacro{begentry}%
+\usebibmacro{author}%
+\setunit{\printdelim{nametitledelim}}\newblock
+\usebibmacro{title}%
+\newunit
+\printlist{language}%
+\newunit\newblock
+\usebibmacro{byauthor}%
+\newunit\newblock
+\printfield{type}%
+\setunit*{\addspace}%
+\printfield{number}%
+\newunit\newblock
+\printfield{version}%
+\newunit
+\usebibmacro{note}
+\newunit\newblock
+\usebibmacro{institution+location+date}%
+\newunit\newblock
+\usebibmacro{chapter+pages}%
+\newunit
+\printfield{pagetotal}%
+\newunit\newblock
+\iftoggle{bbx:isbn}
+  {\printfield{isrn}}
+  {}%
+\newunit\newblock
+\usebibmacro{doi+eprint+url}%
+\newunit\newblock
+\usebibmacro{addendum+pubstate}%
+\setunit{\bibpagerefpunct}\newblock
+\usebibmacro{pageref}%
+\newunit\newblock
+\iftoggle{bbx:related}
+  {\usebibmacro{related:init}%
+   \usebibmacro{related}}
+  {}%
+\usebibmacro{finentry}}
+
 % Deal with repeated names or journals in entry sets: based on
 % http://tex.stackexchange.com/a/63013
 \DeclareBibliographyDriver{set}{%
