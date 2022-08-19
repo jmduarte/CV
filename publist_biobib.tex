@@ -74,39 +74,22 @@ biblabel=brackets,
 
 % for UCSD, add contribution codes and statement to recent pubs
 \DeclareFieldFormat{bold}{\mkbibbold{#1}}
-\renewbibmacro*{note}{%
-  \iffieldundef{userb}{%
-    \printfield{note}%
-  }%
-  {%
-    %\ifkeyword{recent}{%
-      \iffieldundef{note}{%
-        \iffieldundef{userc}{%
-          \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-        }%
-        {%
-          \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-        }
-      }%
-      {%
-        \iffieldundef{userc}{%
-          \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-        }%
-        {%
-          \printfield{note} \newunit \printtext[bold]{Author Contribution Code(s):} \printfield{userb}%
-        }%
-      }%
-    %}%
-  }%
-  {%
-    \iffieldundef{userc}{%
-      \printfield{note}%
-    }%
-    {%
-      \printfield{note}%
-    }%
-  }%
-  \newunit%
+\renewbibmacro*{note}{
+    \iffieldundef{note}{
+    }
+    {
+      \printfield{note} \newunit
+    }
+    \iffieldundef{userc}{
+    }
+    {
+      \printfield{userc} \newunit
+    }
+    \iffieldundef{userb}{
+    }
+    {
+      \printtext[bold]{Author Contribution Code(s):} \printfield{userb} \newunit
+    }
 }
 
 % for UCSD, mark recent with asterisk
