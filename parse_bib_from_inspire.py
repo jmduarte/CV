@@ -51,6 +51,7 @@ career_keys = [
     "Anderson:2016ygg",
     "Apresyan:2022tqw",
     "Banbury:2021mlperf",
+    "Bhimij:2022xyn",
     "Bornheim:2017gql",
     "Bornheim_2015",
     "Borras:2022opensource",
@@ -82,6 +83,7 @@ career_keys = [
     "Heintz:2020soy",
     "hls4ml",
     "Iiyama:2020wap",
+    "Li:2024xpw",
     "Jawahar:2021vyu",
     "John:2020sak",
     "Kansal:2020svm",
@@ -236,7 +238,11 @@ for l in t:
 
     # add recent and career kewords
     add_recent_keyword = (int(l["year"]) >= 2021) or (
-        int(l["year"]) == 2020 and "month" in l and int(l["month"]) >= 9 and "day" in l and int(l["day"] > 1)
+        int(l["year"]) == 2020
+        and "month" in l
+        and int(l["month"]) >= 9
+        and "day" in l
+        and int(l["day"] > 1)
     )
     add_career_keyword = l["ID"] in career_keys
     keywords_to_add = []
