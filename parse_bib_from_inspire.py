@@ -297,7 +297,7 @@ for l in t:
             del l["keywords"]
 
     # add CMS contribution codes if missing
-    if is_publication and add_recent_keyword and "contibutioncodes" not in l:
+    if is_publication and add_recent_keyword and "contributioncodes" not in l:
         if ("collaboration" in l and "CMS" in l["collaboration"]) or (
             "usera" in l and "CMS" in l["usera"]
         ):
