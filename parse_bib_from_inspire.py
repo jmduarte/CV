@@ -24,7 +24,7 @@ sci_names = ["Science"]
 jinst_names = ["JINST", "J. Instrum."]
 nima_names = ["Nucl. Instrum. Meth. A", "Nucl. Instrum. Methods Phys. Res. A"]
 iop_names = ["Mach. Learn.: Sci. Technol.", "Rep. Prog. Phys."]
-nat_names = ["Nature", "Nat. Phys.", "Nat. Mach. Intell.", "Sci. Data"]
+nat_names = ["Nature", "Nat. Phys.", "Nature Phys.", "Nat. Mach. Intell.", "Sci. Data"]
 fr_names = ["Front. AI", "Front. Big Data"]
 spp_names = ["SciPost Phys."]
 mlst_names = ["Mach. Learn.: Sci. Technol."]
@@ -36,6 +36,8 @@ journal_names_to_replace = {
     "Nucl. Instrum. Meth. A": "Nucl. Instrum. Methods Phys. Res. A",
     "JINST": "J. Instrum.",
     "JHEP": "J. High Energy Phys.",
+    "Nature Phys.": "Nat. Phys.",
+    "Rept. Prog. Phys.": "Rep. Prog. Phys.",
 }
 
 career_keys = [
@@ -163,7 +165,7 @@ career_keys = [
     "neurips2019_sonic",
 ]
 
-convert_to_proceedings = ["Albertsson:2018maf", "Duarte:2016wnw"]
+convert_to_proceedings = []
 
 with open("bib_publications.bib") as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
@@ -280,7 +282,7 @@ for l in t:
         and "month" in l
         and int(l["month"]) >= 8
         and "day" in l
-        and int(l["day"] > 1)
+        and int(l["day"]) >= 1
     )
     add_career_keyword = l["ID"] in career_keys
     keywords_to_add = []
