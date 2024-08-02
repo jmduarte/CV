@@ -1,6 +1,6 @@
 import bibtexparser
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     aux_lines = []
 
     with open("bib_publications.bib") as bibtex_file:
@@ -50,4 +50,6 @@ if __name__ == '__main__':
                             url = l["url"]
                         else:
                             print("WARNING: no URL found")
-                        print(f"\ifthenelse{{\equal{{#1}}{{{key}}}}}{{\href{{{url}}}{{\\textbf{{{name}}}}}}}{{}}%")
+                        print(
+                            f"\ifthenelse{{\equal{{#1}}{{{key}}}}}{{\href{{{url}}}{{\\textbf{{{name}}}}}}}{{}}%"
+                        )
