@@ -183,7 +183,7 @@ My research focuses on
 (R3) developing novel AI and ML algorithms for event reconstruction and simulation to enable these physics results, and
 (R4) developing methods to accelerate AI algorithm training and inference (i.e. execution), e.g., to improve the real-time LHC event selection in the trigger.
 This work is naturally interdisciplinary, at the interface of physics, computer science, AI, and electrical engineering.
-My research also crosses traditional academia/industry divides, and I have collaborated with computer scientists and engineers at Microsoft Research (e.g. Ted Way), AMD Adaptive and Embedded Computing Group (AECG) (formerly Xilinx Research, e.g. Michaela Blott), Intel Programmable Solutions Group (PSG) (e.g. Nabeel Shirazi), and Habana Labs.
+My research also crosses traditional academia/industry divides, and I have collaborated with computer scientists and engineers.
 
 \vspace{-1ex}
 \subsubsection*{R1. High-\pt Higgs boson measurements}
@@ -212,11 +212,12 @@ This final state is experimentally challenging to identify reliably, especially 
 
 My graduate student Raghav Kansal is the main analyst for a search for Higgs boson pair production through gluon fusion and vector boson fusion in the $\PH\PH\to\bbbar\PW\PW\to\bbbar 4\Pq$ all-hadronic final state.
 At high \pt, the decay products of the Higgs boson merge into a single large-radius jet.
-This search, now released as a physics analysis summary~[\mycite{CMS-PAS-HIG-23-012}], is the second most sensitive in CMS to the coupling between two vector bosons and two Higgs bosons $c_{2\PV}$.
+This search, now released as a physics analysis summary~[\mycite{CMS-PAS-HIG-23-012}], is one of the first to use a new machine learning algorithm, known as a transformer, to identify the Higgs boson decay, and is the second most sensitive in CMS to the coupling between two vector bosons and two Higgs bosons $c_{2\PV}$.
 The data and fitted signal and background distributions are shown for the vector boson fusion category in Fig.~\ref{fig:HH} (left).
 While this search is not yet sensitive to the SM production rate, we can exclude many new physics scenarios that would enhance the production rate to this level or above.
-The results can also be interpreted as a 95\% CL interval on the $c_{2\PV}$ coupling modifier $\kappa_{2\PV}$---advancing our knowledge of the allowed range for this fundamental parameter.
+The results can also be interpreted as a 95\% confidence level interval on the $c_{2\PV}$ coupling modifier $\kappa_{2\PV}$---advancing our knowledge of the allowed range for this fundamental parameter.
 This search will be included in an upcoming CMS publication combining all Higgs boson pair production searches.
+This search also forms a major part of Raghav Kansal's Ph.D. thesis, which he successfully defended on June 18, 2024.
 
 
 \begin{figure}[htb]
@@ -273,12 +274,15 @@ During this review period, we have shown this approach can be extended to future
 We also studied the applicability of new hardware for accelerated ML training and inference, like the SDSC Voyager supercomputer composed of AI-specific Intel Habana Gaudi and Goya processors.
 This work is facilitated by the NSF award  ``Category II: Exploring Neural Network Processors for AI in Science and Engineering'' (\$5,000,000 for SDSC, 2020--2025) for which I am a co-PI.
 
+With collaborators, we have also developed new more efficient ML algorithms based on transformers for charged particle tracking~[\mycite{Miao:2024oqy}].
+This work was accepted at the International Conference on Machine Learning (ICML).
+
 My group and I have worked on developing anomaly detection algorithms for particle physics.
 An anomaly, in this case, refers to a collection of events that share unusual characteristics that are potentially inconsistent with SM processes, and thus may be related to new BSM particles or interactions.
 The methods I've developed are mainly based on autoencoders, a type of ML algorithm trained on SM-like data that compresses then decompresses input data and measures the level of disagreement between the output and the input.
 A large discrepancy indicates the data is unlike the SM-like data seen during training, and may be an anomalous signal.
 Postdoctoral fellow Melissa Quinnan and I have helped implement this anomaly detection algorithm into data-taking during LHC Run 3~[\mycite{CMS-DP-2023-079}].
-Together with an undergraduate student Zichun Hao and graduate student Raghav Kansal, we also developed the first Lorentz-equivariant autoencoder for particle physics~[\mycite{Hao:2022zns}], published in \emph{Eur. Phys. J. C}.
+Together with an undergraduate student Zichun Hao and graduate student Raghav Kansal, we also developed the first Lorentz-equivariant autoencoder for particle physics published in \emph{Eur. Phys. J. C}~[\mycite{Hao:2022zns}].
 
 
 High energy physicists rely heavily on simulation for a wide array of tasks, including data selection, statistical inference, and design optimization for new experiments.
@@ -301,10 +305,12 @@ This avalanche of data must be filtered down by several orders of magnitude by t
 To meet this challenge, my research focuses on developing new ultra-low-latency AI techniques trained to reconstruct, identify, and preserve these precious collisions.
 This work has broader impacts for many disciplines, including multimessenger astronomy, neutrino physics, neuroscience, and microscopy~[\mycite{Deiana:2021niw}, \mycite{Duarte:2022efficient}].
 
-I contributed to the design, implementation, and evaluation of real-time AI algorithms on FPGAs for the LHC trigger.
+I contributed to the design, implementation, and evaluation of real-time AI algorithms on FPGAs for the LHC trigger and data acquisition.
 My key contribution is the creation and continued development of \texttt{hls4ml}~[\mycite{Duarte:2018ite}], a generic tool allowing scientists to translate ML algorithms into FPGA firmware.
-In Ref.~[\mycite{Odagiu:2024bkp}], we developed new implementations of deep set and graph neural networks in FPGAs for jet tagging in the LHC trigger, and compared their performance.
-In Ref.~[\mycite{Shenoy:2023ros}], we developed a differentiable approximation to the Earth mover's distance in order to train a better autoencoder for data compression.
+Recently, we developed new implementations of deep set and graph neural networks in FPGAs for jet tagging in the LHC trigger, and compared their performance~[\mycite{Odagiu:2024bkp}].
+In Ref.~[\mycite{Shenoy:2023ros}], we developed a differentiable approximation to the Earth mover's distance in order to train a better autoencoder for data compression in real time for an LHC detector.
+We have also developed tools for efficient hardware implementations of neural networks with skip connections~[\mycite{Weng:2023tailor}], improving the robustness of neural networks to faults induced by radiation~[\mycite{Weng:2024fkeras}], and quantizing neural networks based on Hessian information~[\mycite{Campos:2023pkp}].
+
 % For all the above work, I oversaw the development and validation of these implementations and cowrote the publications.
 
 As more physics reconstruction and simulation algorithms turn to ML-based approaches, there is a need to scale up and accelerate the inference of large ML models in order to run them on billions of collision events in distributed computing workflows.
