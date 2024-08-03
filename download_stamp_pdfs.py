@@ -5,7 +5,7 @@ from articledownloader.articledownloader import ArticleDownloader
 import time
 from sys import platform
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     downloader = ArticleDownloader(els_api_key="11acc1dbb49e1a44d49d46d48469a2f7")
 
@@ -34,12 +34,13 @@ if __name__ == '__main__':
                 if "bx@aux@number" in line and l["ID"] in line:
                     n = line.split("{")[-1][:-2]
                     name = "A.I." + n
+                    print("Destination file: %s/%s.pdf" % (article_dir, name))
+                    break
             if (
                 os.path.isfile("%s/%s.pdf" % (article_dir, name))
                 and os.path.getsize("%s/%s.pdf" % (article_dir, name)) > 0
             ):
                 continue
-
 
             print("Getting PDF URL for %s" % l["ID"])
             r = requests.get("https://doi.org/" + l["doi"])
@@ -58,9 +59,9 @@ if __name__ == '__main__':
                     + "/pdfft?isDTMRedir=true&download=true"
                 )
             elif "ieeexplore.ieee.org" in r.url:
-                get_pdf_url = r.url.replace("/document/", "/stamp/stamp.jsp?tp=&arnumber=")[
-                    :-1
-                ]
+                get_pdf_url = r.url.replace(
+                    "/document/", "/stamp/stamp.jsp?tp=&arnumber="
+                )[:-1]
             elif "iopscience.iop.org" in r.url:
                 get_pdf_url = r.url + "/pdf"
             elif "scipost.org" in r.url:
@@ -68,46 +69,72 @@ if __name__ == '__main__':
             elif "nature.com" in r.url:
                 get_pdf_url = r.url + ".pdf"
             elif "frontiersin.org" in r.url:
-                get_pdf_url = r.url.replace("/full","/pdf")
-                
-            if (
-                not (os.path.isfile("%s/%s_nostamp.pdf" % (article_dir, name))
-                and os.path.getsize("%s/%s_nostamp.pdf" % (article_dir, name)) > 0)
+                get_pdf_url = r.url.replace("/full", "/pdf")
+            elif "dl.acm.org" in r.url:
+                get_pdf_url = r.url.replace("/doi/", "/doi/pdf/")
+            elif "josstheoj.org" in r.url:
+                pages = r.url.split(".")[-1]
+                get_pdf_url = (
+                    "https://www.theoj.org/joss-papers/"
+                    + "joss."
+                    + pages
+                    + "/10.21105.joss."
+                    + pages
+                    + ".pdf"
+                )
+
+            print("URL: %s" % get_pdf_url)
+            if not (
+                os.path.isfile("%s/%s_nostamp.pdf" % (article_dir, name))
+                and os.path.getsize("%s/%s_nostamp.pdf" % (article_dir, name)) > 0
             ):
                 print("Downloading %s" % l["ID"])
                 if "elsevier" in r.url:
-                    with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as my_file:
+                    with open(
+                        "%s/%s_nostamp.pdf" % (article_dir, name), "wb"
+                    ) as my_file:
                         b = downloader.get_pdf_from_doi(l["doi"], my_file, "elsevier")
                 elif "iopscience" in r.url:
-                    with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as my_file:
+                    with open(
+                        "%s/%s_nostamp.pdf" % (article_dir, name), "wb"
+                    ) as my_file:
                         b = downloader.get_pdf_from_doi(l["doi"], my_file, "crossref")
                     if not b:
                         response = requests.get(get_pdf_url, stream=True)
-                        with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as handle:
+                        with open(
+                            "%s/%s_nostamp.pdf" % (article_dir, name), "wb"
+                        ) as handle:
                             for data in response.iter_content():
                                 handle.write(data)
                 else:
                     response = requests.get(get_pdf_url, stream=True)
-                    with open("%s/%s_nostamp.pdf" % (article_dir, name), "wb") as handle:
+                    with open(
+                        "%s/%s_nostamp.pdf" % (article_dir, name), "wb"
+                    ) as handle:
                         for data in response.iter_content():
                             handle.write(data)
+            else:
+                print("Already downloaded %s" % l["ID"])
 
             print("Stamping %s" % l["ID"])
             stamp_page = 1
             if "iopscience" in r.url:
                 stamp_page = 2
-            command = '%s -add-text "%s" -topright 20  %s/%s_nostamp.pdf %i -o %s/%s_stamp.pdf' % (
-                cpdf,
-                name,
-                article_dir,
-                name,
-                stamp_page,
-                article_dir,
-                name,
+            command = (
+                '%s -add-text "%s" -topright 20  %s/%s_nostamp.pdf %i -o %s/%s_stamp.pdf'
+                % (
+                    cpdf,
+                    name,
+                    article_dir,
+                    name,
+                    stamp_page,
+                    article_dir,
+                    name,
+                )
             )
-            
+
             value = os.system(command)
-            
+
             if value != 0:
                 print("Error stamping %s" % l["ID"])
                 os.system("rm  %s/%s_stamp.pdf" % (article_dir, name))
