@@ -296,13 +296,9 @@ for l in t:
         if "keywords" in l:
             del l["keywords"]
 
-    # add CMS contribution codes if missing
-    if is_publication and add_recent_keyword and "contributioncodes" not in l:
-        if ("collaboration" in l and "CMS" in l["collaboration"]) or (
-            "usera" in l and "CMS" in l["usera"]
-        ):
-            codes = [8, 9]
-            l["contributioncodes"] = ", ".join([str(c) for c in codes])
+    # remove contribution codes for recent publications
+    if add_recent_keyword and "contributioncodes" in l:
+        del l["contributioncodes"]
 
 # export 4 bib files
 with open("bib_publications_update.bib", "w") as bibtex_file:
