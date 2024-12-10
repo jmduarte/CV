@@ -296,9 +296,16 @@ for l in t:
         if "keywords" in l:
             del l["keywords"]
 
-    # remove contribution codes for recent publications
+    # remove contribution codes for recent publications, but add standard CMS contribuion text
     if add_recent_keyword and "contributioncodes" in l:
         del l["contributioncodes"]
+    if add_recent_keyword and "contribution" not in l:
+        if ("collaboration" in l and "CMS" in l["collaboration"]) or (
+            "usera" in l and "CMS" in l["usera"]
+        ):
+            l["contribution"] = (
+                "As a member of the CMS Collaboration, I contribute indirectly to all collaboration publications by developing common software, acquiring funding, reviewing drafts, participating in meetings, and taking on coordination roles."
+            )
 
 # export 4 bib files
 with open("bib_publications_update.bib", "w") as bibtex_file:
