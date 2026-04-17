@@ -18,13 +18,13 @@ prev_names = [
     "Phys. Rev. C",
     "Phys. Rev. Accel. Beams",
 ]
-plb_names = ["Phys. Lett. B", "PLB"]
+plb_names = ["Phys. Lett. B", "PLB", "Phys. Rept.", "Phys. Rep."]
 csbs_names = ["Comput. Softw. Big Sci.", "CSBS"]
 sci_names = ["Science"]
 jinst_names = ["JINST", "J. Instrum."]
 nima_names = ["Nucl. Instrum. Meth. A", "Nucl. Instrum. Methods Phys. Res. A"]
 iop_names = ["Mach. Learn.: Sci. Technol.", "Rep. Prog. Phys."]
-nat_names = ["Nature", "Nat. Phys.", "Nature Phys.", "Nat. Mach. Intell.", "Sci. Data"]
+nat_names = ["Nature", "Nat. Phys.", "Nature Phys.", "Nat. Mach. Intell.", "Sci. Data", "Nature Commun.", "Nat. Commun.", "Commun. Phys."]
 fr_names = ["Front. AI", "Front. Big Data"]
 spp_names = ["SciPost Phys."]
 mlst_names = ["Mach. Learn.: Sci. Technol."]
@@ -38,6 +38,8 @@ journal_names_to_replace = {
     "JHEP": "J. High Energy Phys.",
     "Nature Phys.": "Nat. Phys.",
     "Rept. Prog. Phys.": "Rep. Prog. Phys.",
+    "Nature Commun.": "Nat. Commun.",
+    "Phys. Rept.": "Phys. Rep.",
 }
 
 career_keys = [
@@ -57,11 +59,13 @@ career_keys = [
     "Baldi:2024reliable",
     "Banbury:2021mlperf",
     "Benelli:2022sqn",
+    "Bhatnagar:2024fkx",
     "Bhimij:2022xyn",
     "Black:2022cth",
     "Bornheim:2017gql",
     "Bornheim_2015",
     "Borras:2022opensource",
+    "Brigljevic:2024vuv",
     "CERN-LHCC-2020-004",
     "CMS-DP-2018-046",
     "CMS-DP-2021-030",
@@ -69,8 +73,13 @@ career_keys = [
     "CMS-DP-2022-061",
     "CMS-DP-2023-037",
     "CMS-DP-2023-079",
+    "CMS-DP-2024-059",
+    "CMS-DP-2025-033",
+    "CMS-DP-2025-061",
     "CMS-PAS-EXO-17-026",
     "CMS-PAS-HIG-23-012",
+    "CMS-PAS-HIG-24-010",
+    "CMS-PAS-HIG-24-012",
     "CMS:2021juv",
     "CMS:2021yhb",
     "CMS:2022dwd",
@@ -81,8 +90,17 @@ career_keys = [
     "CMS:2024bvl",
     "CMS:2024ddc",
     "CMS:2024twn",
+    "CMS:2024zhe",
+    "CMS:2024zqs",
+    "CMS:2025ngq",
+    "CMS:2025rtd",
+    "CMS:2026shw",
+    "CMS:2026uph",
+    "CMS:2026yrb",
+    "CMS:2026znb",
     "Campos:2023pkp",
     "Chen:2021euv",
+    "Chien:2024gnn",
     "Dawson:2022zbb",
     "Deiana:2021niw",
     "Dezoort:2021kfk",
@@ -98,12 +116,19 @@ career_keys = [
     "Duarte:2022efficient",
     "Duarte:2022hdp",
     "Duarte:2022job",
+    "Duarte:2024lsg",
+    "Duarte:2024xkc",
+    "Duarte:2025qbk",
     "Elabd:2021lgo",
     "Fahim:2021cic",
+    "Gonski:2026jgu",
+    "Govil:2025nvy",
     "Govorkova:2021utb",
     "Hao:2022zns",
+    "Hao:2025abk",
     "Harris:2022qtm",
     "Hawks:2021ruw",
+    "Hawks:2025hew",
     "Heintz:2020soy",
     "Huang:2023bny",
     "Huerta:2022kgj",
@@ -118,14 +143,20 @@ career_keys = [
     "Kasieczka:2021xcg",
     "Khachatryan:2015pwa",
     "Khachatryan:2016epu",
+    "Katel:2024ygn",
+    "Kondratyev:2025jfj",
     "Krupa:2020bwg",
+    "Legge:2025cnm",
     "Li:2023xhj",
     "Li:2024xpw",
+    "Li:2024htp",
+    "Li:2024qfq",
     "McDermott:2023neural",
     "Miao:2024oqy",
     "Mokhtar:2021bkf",
     "Mokhtar:2022pwm",
     "Mokhtar:2023fzl",
+    "Mokhtar:2025zqs",
     "Moreno:2019bmu",
     "Moreno:2019neq",
     "Odagiu:2024bkp",
@@ -136,6 +167,7 @@ career_keys = [
     "Pata:2022wam",
     "Pata:2023rhh",
     "Rankin:2020usv",
+    "Schulte:2025mai",
     "Shanahan:2022ifi",
     "Shenoy:2023ros",
     "Sirunyan:2016iap",
@@ -156,9 +188,15 @@ career_keys = [
     "Thais:2022iok",
     "Touranakou:2022qrp",
     "Tsan:2021brw",
+    "Tsoi:2024pbn",
+    "Wang:2025dky",
+    "Weitz:2025dia",
+    "Weitz:2025tcj",
     "Weng:2023tailor",
     "Weng:2024fkeras",
     "Wozniak:2020",
+    "Zhao:2024kry",
+    "Zhao:2025daw",
     "Zlokapa:2019tkn",
     "neurips2019_hbb",
     "neurips2019_hls4ml",
@@ -277,10 +315,10 @@ for l in t:
             )
 
     # add recent and career kewords
-    add_recent_keyword = (int(l["year"]) >= 2023) or (
-        int(l["year"]) == 2022
+    add_recent_keyword = (int(l["year"]) >= 2025) or (
+        int(l["year"]) == 2024
         and "month" in l
-        and int(l["month"]) >= 8
+        and int(l["month"]) >= 9
         and "day" in l
         and int(l["day"]) >= 1
     )
