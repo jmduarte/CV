@@ -33,7 +33,8 @@ biblabel=brackets,
    sorting=dt,
    plauthorhandling=highlight,
    plnumbered=reset,
-   nameorder=given-family
+   nameorder=given-family,
+   date=year,
 ]{biblatex}
  \plauthorname[Javier]{Duarte}
 \DeclareSourcemap{
@@ -189,11 +190,10 @@ biblabel=brackets,
   \printbibliography[heading=none]
 
   \MarginText{C. WORK IN PROGRESS}
-  % \vspace{10pt}
-  % \newrefsection[bib_workinprogress]
-  % \nocite{*}
-  % \vspace{10pt}
-  % \printbibliography[heading=none]
+  \newrefsection[bib_workinprogress]
+  \nocite{*}
+  \vspace{10pt}
+  \printbibliography[heading=none]
   \clearpage
 
 \end{resume}
