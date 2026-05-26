@@ -4,6 +4,9 @@ import os
 from articledownloader.articledownloader import ArticleDownloader
 import time
 from sys import platform
+from bs4 import BeautifulSoup
+from urllib.request import unquote
+from html import unescape
 
 if __name__ == "__main__":
 
@@ -28,7 +31,7 @@ if __name__ == "__main__":
 
     for l in bib_database.entries:
         print("Checking %s" % l["ID"])
-        if "doi" in l and "keywords" in l and "recent" in l["keywords"]:
+        if "doi" in l and "keywords" in l and "recent" in l["keywords"] and "career" in l["keywords"]:
             name = ""
             for line in aux_lines:
                 if "bx@aux@number" in line and l["ID"] in line:
@@ -43,10 +46,17 @@ if __name__ == "__main__":
                 continue
 
             print("Getting PDF URL for %s" % l["ID"])
+            print("DOI: %s" % l["doi"])
             r = requests.get("https://doi.org/" + l["doi"])
+            print("Redirected URL: %s" % r.url)                
             get_pdf_url = ""
             if "link.springer.com" in r.url:
                 get_pdf_url = r.url.replace("/article/", "/content/pdf/") + ".pdf"
+            elif "link.aps.org" in r.url:
+                if "PhysRevD" in r.url:
+                    get_pdf_url = r.url.replace("https://link.aps.org/doi/", "https://journals.aps.org/prd/pdf/")
+                elif "PhysRevLett" in r.url:
+                    get_pdf_url = r.url.replace("https://link.aps.org/doi/", "https://journals.aps.org/prl/pdf/")                    
             elif "journals.aps.org" in r.url:
                 get_pdf_url = r.url.replace("/abstract/", "/pdf/")
             elif "linkinghub.elsevier.com" in r.url:

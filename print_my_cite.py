@@ -3,6 +3,12 @@ import bibtexparser
 if __name__ == "__main__":
     aux_lines = []
 
+    external = True
+    if external:
+        aux_file_name = "cv_duarte_javier.aux"
+    else:
+        aux_file_name = "publist_biobib.aux"
+
     with open("bib_publications.bib") as bibtex_file:
         bib_database = bibtexparser.load(bibtex_file)
     with open("bib_reviews.bib") as bibtex_file:
@@ -20,7 +26,10 @@ if __name__ == "__main__":
     with open("bib_other.bib") as bibtex_file:
         bib_database_more = bibtexparser.load(bibtex_file)
     bib_database.entries.extend(bib_database_more.entries)
-    with open("publist_biobib.aux") as aux_file:
+    with open("bib_workinprogress.bib") as bibtex_file:
+        bib_database_more = bibtexparser.load(bibtex_file)
+    bib_database.entries.extend(bib_database_more.entries)
+    with open(aux_file_name) as aux_file:
         aux_lines = aux_file.readlines()
         for line in aux_lines:
             if "abx@aux@number" in line:
@@ -39,6 +48,10 @@ if __name__ == "__main__":
                     prefix = "B.I."
                 elif section == 6:
                     prefix = "B.IV."
+                elif section == 7:
+                    prefix = "C."
+                if external: 
+                    prefix = ""
                 name = prefix + n
                 for l in bib_database.entries:
                     if l["ID"] == key and "keywords" in l and "career" in l["keywords"]:
