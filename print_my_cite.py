@@ -3,7 +3,7 @@ import bibtexparser
 if __name__ == "__main__":
     aux_lines = []
 
-    external = False
+    external = True
     if external:
         aux_file_name = "cv_duarte_javier.aux"
     else:
@@ -66,3 +66,11 @@ if __name__ == "__main__":
                         print(
                             f"\ifthenelse{{\equal{{#1}}{{{key}}}}}{{\href{{{url}}}{{\\textbf{{{name}}}}}}}{{}}%"
                         )
+                        # n_ext = 0
+                        # with open("cv_duarte_javier.aux") as ext_aux_file:
+                        #     ext_aux_lines = ext_aux_file.readlines()
+                        #     for ext_line in ext_aux_lines:
+                        #         if "abx@aux@number" in ext_line and key in ext_line:
+                        #             n_ext = int(ext_line.split("{")[-1][:-2])
+                        #             break
+                        # print("cp Javier_Duarte_Publications/*/%s.pdf Javier_Duarte_Publications/External/%s.pdf" % (name, n_ext))
