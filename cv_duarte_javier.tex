@@ -123,6 +123,8 @@ date=year,
   }%
 }%
 
+\renewbibmacro*{begentry}{\ifkeyword{citation}{\makebox[0pt][r]{\textasteriskcentered\addspace}}{}}
+
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}
 % Name of your .bib file(s)
@@ -247,6 +249,15 @@ date=year,
     \item Fermilab LDRD Award for \href{https://ldrd.fnal.gov/subdir/FNAL-LDRD-2019-027-D1.pdf}{Accelerator Control with Artificial Intelligence} ({2019--2021}).
   \end{itemize}
 
+  \MarginText{Most Significant Scientific Contributions}
+
+  \begin{itemize}
+    \item Leading some of the first high-$\pt$ Higgs boson searches~\cite{CMS:2022nmn,Sirunyan:2017dgc}
+    \item Development of \texttt{hls4ml}~\cite{Schulte:2025mai,Duarte:2018ite} for AI-enabled trigger and data acquisition systems.
+    \item Creation of the first ML algorithm for particle-flow reconstruction~\cite{Pata:2021oez} deployed in real data~\cite{CMS:2026znb} and one of the first graph neural networks for jet tagging~\cite{Moreno:2019bmu,Moreno:2019neq}.
+  \end{itemize}
+
+
   \MarginText{Selected Research Experience}
 
   \textbf{Higgs Boson Measurements \& Combinations}
@@ -324,6 +335,8 @@ date=year,
   %----------------------------------------------------------------------------------------
   \MarginText{Selected Publications, Reviews, Reports, Book Chapters, and Conference Proceedings}
   Selected publications, reviews, reports, book chapters, and conference proceedings to which I made a substantial contribution are listed here.
+  My most highly cited articles according to Google Scholar are denoted with an asterisk (*).
+  My h-index according to Google Scholar is 245.
   % to add all career keys
   \nocite{*}
 
@@ -774,10 +787,10 @@ date=year,
     \item \href{https://news.fnal.gov/2019/01/fermilab-scientists-help-push-ai-to-unprecedented-speeds/}{``Fermilab scientists help push AI to unprecedented speeds''} by Javier Duarte, Sergo Jindariani, Ben Kreis and Nhan Tran, Fermilab News, January 29, 2019
   \end{itemize}
 
-  % \MarginText{Citation Information}
+  %\MarginText{Citation Information}
 
-  % My most highly cited articles according to Google Scholar are relisted here.
-  %My h-index according to Web of Science is 101.
+  %My most highly cited articles according to Google Scholar are relisted here.
+  %My h-index according to Google Scholar is 245.
 
   %\vspace{11pt}
   %\setlength\bibitemsep{\itemsep-0.3em}

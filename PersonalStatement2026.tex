@@ -373,7 +373,17 @@
 
 \pagestyle{fancyplain}
 
+\vspace{-1ex}
+\subsection*{Executive Summary}
+Over the past decade, I have built a research program at the intersection of particle physics, artificial intelligence (AI), and real-time scientific computing.
+My work has advanced our understanding of the Higgs boson and the standard model by establishing a new paradigm of high-transverse-momentum searches and measurements for new phenomena at the CERN Large Hadron Collider, while simultaneously developing machine learning (ML) methods and hardware-software systems that have transformed how particle physics experiments reconstruct, analyze, and process data.
+I have helped establish widely adopted tools, including \texttt{hls4ml} for deploying ML algorithms on dedicated hardware and ML-based particle reconstruction and identification algorithms, and led major scientific efforts within the CMS Collaboration, including the Machine Learning and Higgs $\bbbar$/$\ccbar$ Groups.
+Beyond research, I have secured substantial federal support, mentored students and postdoctoral scholars who have gone on to presitigious positions in academia, laboratories, and industry, and integrated modern data science and AI into the physics curriculum.
+Together, these contributions have helped shape new research directions that bridge fundamental discovery science with advances in AI and computing, creating lasting impact across particle physics and the broader scientific community.
+
 Below, I describe my contributions to research, teaching, mentorship, service, and equity, diversity and inclusion, focusing on the most recent review period from July 1, 2024 to June 30, 2026.
+During this review period, I was on parental bonding leave with active service-modified duties and teaching relief during Spring 2025.
+
 \vspace{-1ex}
 \subsection*{Research}
 
@@ -725,32 +735,30 @@ The HEPCAT fellowship is supported by a DOE award (\$3,700,000 total, \$110,000 
 For this award, I am Key Personnel and lead the \href{https://hepcat.ucsd.edu/topical-groups/tg7-ai-ml-for-detectors-2/}{Topical Group on AI/ML for detectors}.
 The WATCHEP fellowship is also supported by a DOE award (\$2,000,000 total, \$440,00 for UCSD, 2022--2027), which trains students on computational topics in experimental particle physics.
 
-Although outcomes of mentorship can be difficult to quantify, many of my mentees have gone on to begin successful careers in academia and industry.
-Former graduate student Raghav Kansal first joined Caltech and Fermilab as a Schmidt AI Postdoctoral Fellow, before joining Bexorg, Inc. as a Senior Deep Learning Scientist.
-Farouk Mokhtar has accepted a presitigious CERN Fellowship in Applied Physics beginning in July 2026.
-Former postdoctoral researcher Daniel Diaz joined the San Diego Supercomputer Center as a Computational Data Science and Research Specialist 3.
-Finally, Dr. Melissa Quinnan has also accepted a prestigious CERN Fellowship in Experimental Physics beginning in September 2026.
+Although outcomes of mentorship can be difficult to quantify, many of my trainees have gone on to begin successful careers in academia and industry, including prestigious Schmidt AI and CERN Fellowships, as shown in Table~\ref{tab:alumni}.
 
-% I devoted substantial effort to securing external funding by submitting several 
+\begin{table}[htpb]
+    \centering
+    \caption{Graduate student and postdoctoral trainees and their positions after training.}
+    \begin{tabular}{ll}
+        Trainee         & Position after training                                    \\\hline
+        Raghav Kansal   & Schmidt AI Postdoctoral Fellow, Caltech/Fermilab           \\
+                        & $\to$ Senior Deep Learning Scientist, Bexorg, Inc.         \\
+        Farouk Mokhtar  & CERN Fellow in Applied Physics                             \\
+        Daniel Diaz     & Computational Data Science and Research Specialist 3, SDSC \\
+        Melissa Quinnan & CERN Fellow in Experimental Physics                        \\
+    \end{tabular}
+    \label{tab:alumni}
+\end{table}
+
 \vspace{-1ex}
 \subsection*{Teaching}
 
 My teaching approach is to foster an inclusive, welcoming learning environment and promote active learning through evidence-based methods.
-I also strive to provide sufficient scaffolding through lower-stakes, incremental assignments.
-For example on homework assignments, half of the grade is earned through a draft, and the other half is earned through revisions to reinforce the concepts that students may have misunderstood.
+My most significant contributions to teaching are the creation and modernization of several upper-division computational physics courses, including one focused on machine learning in physics.
+I strive to provide sufficient scaffolding through lower-stakes, incremental assignments.
 However, given the ubiquity and popularity of AI tools, I have recently shifted to focus more on in-class assessments and projects, which are more difficult to outsource to AI, and less on homework assignments.
 I also use ``exit tickets'' and surveys to collect feedback on the course structure, difficulty of projects, and appropriateness of the assessments.
-
-During this review period, I taught Physics 105A: Mathematical and Computational Physics I for the first time in Winter 2025, covering Fourier series and integrals, special functions, initial and boundary value problems, and Green's functions with applications to the heat, Laplace, and wave equations.
-My main goal was for students to appreciate how applying ideas from linear algebra (i.e., eigenvalues and eigenvectors) to differential equations can give us powerful tools to solve them and understand their properties.
-Often, I would pose an in-class problem and ask students to solve it in small groups using the methods we had just learned, and then we would review the solution together.
-I was also interested in giving students experience using computational tools, like Mathematica and open-source alternatives, to solve problems that are difficult to solve analytically, visualize the solutions, and build their intuition about the underlying physics.
-The course structure consisted of three weekly lectures and two weekly computer lab sessions, with nine homework assignments, two in-class midterms, and a final exam.
-
-I also taught Physics 2C: Fluids, Waves, Thermodynamics, and Optics to 300+ students in Spring 2026.
-I adopted a ``flipped classroom'' format with readings and conceptual homework assignments due prior to each lecture.
-During the lecture, I briefly reviewed the material from the readings and the homework using an iPad to write notes over prepared material, focusing on conceptually challenging issues.
-I used in-class demonstrations of beat frequencies, engines, diffraction gratings, and lenses as well as a student response system (iClicker polls) to promote active learning, engage the students, and better understand the difficulties that they were having with the material.
 
 I created a new introductory graduate and upper-division undergraduate course, currently taught as a special topics course called Physics 139/239: Machine Learning in Physics, which I have now taught three times (Winter 2023, Spring 2024, and Fall 2025).
 The course structure consists of weekly lectures on conceptual topics, e.g. statistics, linear algebra, scientific data set exploration, feature engineering, (stochastic) gradient descent, neural networks, and unsupervised learning.
@@ -773,15 +781,26 @@ Throughout the three quarters, students completed final group projects on galaxy
         \label{fig:teaching}}
 \end{figure}
 
-Previously, I also revamped Physics 141/241: Computational Physics I: Probabilistic Models and Simulations and Physics 142/242: Computational Physics II: PDE and Matrix Models.
+I also revamped Physics 141/241: Computational Physics I: Probabilistic Models and Simulations (Winter 2022, Spring 2023) and Physics 142/242: Computational Physics II: PDE and Matrix Models (Spring 2022, Winter 2024, Winter 2025).
 I helped procure modern campus computing resources through the UCSD JupyterHub Data Science and Machine Learning Platform (DSMLP).
 I showed students how to use modern computing tools like Jupyter, Git, Docker, Numpy/Numba, and Kubernetes for exploratory programming, writing accelerated vectorized code, collaboration and version control, creating reproducible environments, and orchestrating jobs over large clusters.
 The students gave positive feedback on gaining this experience, finding the skills transferable to computational research and job opportunities.
-I also co-taught a new graduate course developed with Prof. R. Sekhar Chivukula, Physics 239: Computational Methods in Collider Physics, covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
+I also co-taught a new graduate course developed with Prof. R. Sekhar Chivukula, Physics 239: Computational Methods in Collider Physics (Spring 2023), covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
 The goal of the course is to give graduate students an ``end-to-end'' view of the process from theoretical prediction to experimental constraints.
 
+During this review period, I taught Physics 105A: Mathematical and Computational Physics I for the first time in Winter 2025, covering Fourier series and integrals, special functions, initial and boundary value problems, and Green's functions with applications to the heat, Laplace, and wave equations.
+My main goal was for students to appreciate how applying ideas from linear algebra (i.e., eigenvalues and eigenvectors) to differential equations can give us powerful tools to solve them and understand their properties.
+Often, I would pose an in-class problem and ask students to solve it in small groups using the methods we had just learned, and then we would review the solution together.
+I was also interested in giving students experience using computational tools, like Mathematica and open-source alternatives, to solve problems that are difficult to solve analytically, visualize the solutions, and build their intuition about the underlying physics.
+The course structure consisted of three weekly lectures and two weekly computer lab sessions, with nine homework assignments, two in-class midterms, and a final exam.
+
+I also taught Physics 2C: Fluids, Waves, Thermodynamics, and Optics to 300+ students in Spring 2026.
+I adopted a ``flipped classroom'' format with readings and conceptual homework assignments due prior to each lecture.
+During the lecture, I briefly reviewed the material from the readings and the homework using an iPad to write notes over prepared material, focusing on conceptually challenging issues.
+I used in-class demonstrations of beat frequencies, engines, diffraction gratings, and lenses as well as a student response system (iClicker polls) to promote active learning, engage the students, and better understand the difficulties that they were having with the material.
+
 Overall, I received good ratings in the student evaluations of teaching (SETs).
-For Physics 139/239 (Fall 2025) and Physics 105A (Winter 2026), students gave scores of 4.45/5.00 and 4.57/5.00 for student learning, 4.36/5.00 and 4.49/5.00 for course structure, and 4.63/5.00 and 4.61/5.00 for class environment, respectively.
+For Physics 142/242 (Winter 2025),Physics 139/239 (Fall 2025), and Physics 105A (Winter 2026), students gave scores of 4.85/5.00, 4.45/5.00, and 4.57/5.00 for student learning, 4.72/5.00, 4.36/5.00, and 4.49/5.00 for course structure, and 4.87/5.00, 4.63/5.00 and 4.61/5.00 for class environment, respectively.
 For Physics 105A (Winter 2026), students wrote
 \begin{quotation}
     \itshape
@@ -824,7 +843,7 @@ For Physics 139/239 (Fall 2025) students wrote
 % I have been internationally recognized as a teacher-scholar for my contributions to particle physics and machine learning pedagogy.
 I recently co-wrote the review of ``Machine Learning'' for the Particle Data Group's 2026 Review of Particle Physics to appear in Int. J. Mod. Phys. A~[\myextcite{Duarte:2025qbk}].
 These reviews are widely seen as the definitive reference material for our field, with each biannual edition typically receiving nearly 10,000 citations.
-I also co-wrote the section on applications in high energy physics in a review entitled ``Opportunities and challenges of graph neural networks in electrical engineering''~[\myextcite{Chien:2024gnn}].
+I also co-wrote the section on applications in high energy physics in an invited review for \emph{Nature Reviews Electrical Engineering} entitled ``Opportunities and challenges of graph neural networks in electrical engineering''~[\myextcite{Chien:2024gnn}].
 I received a 2023 Cottrell Scholar Award from the Research Corporation for Science Advancement for my project to augment computational physics course offerings at UC San Diego entitled ``Building a Better Foundation: Teaching Physicists and Machines How to Learn from Data.''
 I have co-written two textbook chapters aimed at graduate students, entitled ``Graph Neural Networks for Particle Tracking and Reconstruction'' in \emph{Artificial Intelligence for High Energy Physics}~[\myextcite{Duarte:2020ngm}] and another entitled ``Machine Learning for Analysis and Instrumentation in High Energy Physics'' in \emph{Instrumentation and Techniques in High Energy Physics}~[\myextcite{Duarte:2024xkc}].
 
@@ -847,6 +866,7 @@ Due to budget constraints, I sought to offset costs, by applying to and being aw
 I am also a member of the School of Physical Sciences Task Force on Data Science in the Physical Sciences.
 Specifically, I am chairing the subgroup on Computing and Data Infrastructure, which is responsible for assessing current computational infrastructure, identifying gaps in access or usability, and ensuring that students and instructors have access to the necessary software, hardware, and datasets to support hands-on, high-impact learning.
 I have also volunteered to serve on the Ad-Hoc Committee for the Five-Year Review of Warren College Provost Marisa Abrajano.
+Finally, as a member of the Executive Board of the UC San Diego Faculty Association (SDFA), I advocate for faculty interests and to advance shared governance.
 
 I have served as a peer reviewer for \emph{J. High Energy Phys.}, \emph{Phys. Lett. B}, \emph{Phys. Rev. D}, \emph{Phys. Rev. Research}, \emph{Eur. Phys. J. C}, \emph{Comput. Softw. Big Sci.}, and \emph{Nucl. Instrum. Methods Phys. Res. A}, and \emph{Applied Optics}, and as a Guest Associate Editor for \emph{Front. Big Data} and \emph{Front. AI}.
 I have also reviewed for the NeurIPS, ICML, and ICLR Conferences.
