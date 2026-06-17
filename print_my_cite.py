@@ -3,7 +3,7 @@ import bibtexparser
 if __name__ == "__main__":
     aux_lines = []
 
-    external = True
+    external = False
     if external:
         aux_file_name = "cv_duarte_javier.aux"
     else:
