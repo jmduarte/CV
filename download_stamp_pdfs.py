@@ -37,19 +37,19 @@ if __name__ == "__main__":
     with open("bib_refproceedings.bib") as bibtex_file:
         bib_database_more = bibtexparser.load(bibtex_file)
     bib_database.entries.extend(bib_database_more.entries)
-    with open("bib_proceedings.bib") as bibtex_file:
-        bib_database_more = bibtexparser.load(bibtex_file)
-    bib_database.entries.extend(bib_database_more.entries)
-    with open("bib_other.bib") as bibtex_file:
-        bib_database_more = bibtexparser.load(bibtex_file)
-    bib_database.entries.extend(bib_database_more.entries)
+    # with open("bib_proceedings.bib") as bibtex_file:
+    #     bib_database_more = bibtexparser.load(bibtex_file)
+    # bib_database.entries.extend(bib_database_more.entries)
+    # with open("bib_other.bib") as bibtex_file:
+    #     bib_database_more = bibtexparser.load(bibtex_file)
+    # bib_database.entries.extend(bib_database_more.entries)
     with open("bib_workinprogress.bib") as bibtex_file:
         bib_database_more = bibtexparser.load(bibtex_file)
     bib_database.entries.extend(bib_database_more.entries)
 
     for l in bib_database.entries:
         print("Checking %s" % l["ID"])
-        if "keywords" in l and "career" in l["keywords"]:
+        if "keywords" in l and "recent" in l["keywords"]:
             name = ""
             for line in aux_lines:
                 if "bx@aux@number" in line and l["ID"] in line:
@@ -67,15 +67,15 @@ if __name__ == "__main__":
                     elif section == 4:
                         prefix = "A.IV."
                         article_dir = "Javier_Duarte_Publications/Refereed_Conference_Proceedings"
-                    elif section == 5:
-                        prefix = "B.I."
-                        article_dir = "Javier_Duarte_Publications/Other_Conference_Proceedings"
-                    elif section == 6:
-                        prefix = "B.IV."
-                        article_dir = "Javier_Duarte_Publications/Additional_Products_of_Major_Research"
                     elif section == 7:
                         prefix = "C."
                         article_dir = "Javier_Duarte_Publications/Work_in_Progress"
+                    # elif section == 5:
+                    #     prefix = "B.I."
+                    #     article_dir = "Javier_Duarte_Publications/Other_Conference_Proceedings"
+                    # elif section == 6:
+                    #     prefix = "B.IV."
+                    #     article_dir = "Javier_Duarte_Publications/Additional_Products_of_Major_Research"
                     name = prefix + n
                     os.makedirs(article_dir, exist_ok=True)
                     print("Destination file: %s/%s.pdf" % (article_dir, name))
@@ -96,9 +96,11 @@ if __name__ == "__main__":
                 if "link.springer.com" in r.url:
                     get_pdf_url = r.url.replace("/article/", "/content/pdf/") + ".pdf"
                 elif "link.aps.org" in r.url:
-                    if "PhysRevD" in r.url:
+                    if l["journal"] == "Phys. Rev. D":
                         get_pdf_url = r.url.replace("https://link.aps.org/doi/", "https://journals.aps.org/prd/pdf/")
-                    elif "PhysRevLett" in r.url:
+                    elif l["journal"] == "Phys. Rev. C":
+                        get_pdf_url = r.url.replace("https://link.aps.org/doi/", "https://journals.aps.org/prc/pdf/")
+                    elif l["journal"] == "Phys. Rev. Lett.":
                         get_pdf_url = r.url.replace("https://link.aps.org/doi/", "https://journals.aps.org/prl/pdf/")                    
                 elif "journals.aps.org" in r.url:
                     get_pdf_url = r.url.replace("/abstract/", "/pdf/")
@@ -139,8 +141,13 @@ if __name__ == "__main__":
                     get_pdf_url = r.url + "/pdf"
                 elif "epj-conferences.org" in r.url:
                     get_pdf_url = r.url + "/pdf"
+                elif "openreview.net" in r.url:
+                    get_pdf_url = r.url.replace("forum", "pdf")
             elif "url" in l:
-                get_pdf_url = l["url"]
+                if "openreview.net" in r.url:
+                    get_pdf_url = l["url"].replace("forum", "pdf")
+                else:
+                    get_pdf_url = l["url"]
             elif "eprint" in l:
                 get_pdf_url = f"https://arxiv.org/pdf/{l['eprint']}"
             else:
