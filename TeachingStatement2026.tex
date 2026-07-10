@@ -1,0 +1,516 @@
+\documentclass[11pt,letterpaper,notitlepage]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{46,48,147}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=darkblue,
+            urlcolor=darkblue,
+            citecolor=darkblue}
+\usepackage{xspace}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{ifthen}
+\newboolean{cms@italic}
+\setboolean{cms@italic}{false}
+\newboolean{cms@external}
+\setboolean{cms@external}{false}
+\usepackage[pazoGreek]{heppennames2}
+\usepackage{ptdr-definitions}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{Javier M. Duarte}
+\rhead{Teaching Statement}
+\cfoot{\thepage}
+
+\newcommand{\mycite}[1]{%
+\ifthenelse{\equal{#1}{Khachatryan:2015pwa}}{\href{https://doi.org/10.1103/PhysRevD.91.052018}{\textbf{A.I.277}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015tia}}{\href{https://doi.org/10.1016/j.nima.2014.11.041}{\textbf{A.I.311}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015gha}}{\href{https://doi.org/10.1016/j.nima.2015.04.013}{\textbf{A.I.317}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016ygg}}{\href{https://doi.org/10.1109/TNS.2016.2528166}{\textbf{A.I.373}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016tiu}}{\href{https://doi.org/10.1016/j.nima.2015.11.129}{\textbf{A.I.396}}}{}%
+\ifthenelse{\equal{#1}{Khachatryan:2016epu}}{\href{https://doi.org/10.1103/PhysRevD.95.012003}{\textbf{A.I.444}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2016iap}}{\href{https://doi.org/10.1016/j.physletb.2017.02.012}{\textbf{A.I.491}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017nvi}}{\href{https://doi.org/10.1007/JHEP01(2018)097}{\textbf{A.I.567}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017dgc}}{\href{https://doi.org/10.1103/PhysRevLett.120.071802}{\textbf{A.I.571}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017eie}}{\href{https://doi.org/10.1016/j.physletb.2017.12.069}{\textbf{A.I.604}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018ite}}{\href{https://doi.org/10.1088/1748-0221/13/07/P07027}{\textbf{A.I.644}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018xlo}}{\href{https://doi.org/10.1007/JHEP08(2018)130}{\textbf{A.I.662}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018kst}}{\href{https://doi.org/10.1103/PhysRevLett.121.121801}{\textbf{A.I.667}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018ikr}}{\href{https://doi.org/10.1103/PhysRevD.99.012005}{\textbf{A.I.713}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018koj}}{\href{https://doi.org/10.1140/epjc/s10052-019-6909-y}{\textbf{A.I.761}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018sgc}}{\href{https://doi.org/10.1016/j.physletb.2019.03.059}{\textbf{A.I.762}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2019fta}}{\href{https://doi.org/10.1007/s41781-019-0027-2}{\textbf{A.I.794}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vxa}}{\href{https://doi.org/10.1103/PhysRevD.100.112007}{\textbf{A.I.817}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019sgo}}{\href{https://doi.org/10.1103/PhysRevLett.123.231803}{\textbf{A.I.818}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019bmu}}{\href{https://doi.org/10.1140/epjc/s10052-020-7608-4}{\textbf{A.I.824}}}{}%
+\ifthenelse{\equal{#1}{Summers:2020xiy}}{\href{https://doi.org/10.1088/1748-0221/15/05/p05026}{\textbf{A.I.861}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vgj}}{\href{https://doi.org/10.1007/JHEP05(2020)033}{\textbf{A.I.866}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019pnb}}{\href{https://doi.org/10.1016/j.physletb.2020.135448}{\textbf{A.I.875}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019neq}}{\href{https://doi.org/10.1103/PhysRevD.102.012010}{\textbf{A.I.877}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2020eqx}}{\href{https://doi.org/10.1088/2632-2153/aba042}{\textbf{A.I.910}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2020hwz}}{\href{https://doi.org/10.1007/JHEP12(2020)085}{\textbf{A.I.911}}}{}%
+\ifthenelse{\equal{#1}{Iiyama:2020wap}}{\href{https://doi.org/10.3389/fdata.2020.598927}{\textbf{A.I.915}}}{}%
+\ifthenelse{\equal{#1}{Krupa:2020bwg}}{\href{https://doi.org/10.1088/2632-2153/abec21}{\textbf{A.I.930}}}{}%
+\ifthenelse{\equal{#1}{Pata:2021oez}}{\href{https://doi.org/10.1140/epjc/s10052-021-09158-w}{\textbf{A.I.939}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021zos}}{\href{https://doi.org/10.1088/2632-2153/ac0ea1}{\textbf{A.I.944}}}{}%
+\ifthenelse{\equal{#1}{Hawks:2021ruw}}{\href{https://doi.org/10.3389/frai.2021.676564}{\textbf{A.I.948}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2021ide}}{\href{https://doi.org/10.1109/TNS.2021.3087100}{\textbf{A.I.951}}}{}%
+\ifthenelse{\equal{#1}{John:2020sak}}{\href{https://doi.org/10.1103/PhysRevAccelBeams.24.104601}{\textbf{A.I.971}}}{}%
+\ifthenelse{\equal{#1}{Dezoort:2021kfk}}{\href{https://doi.org/10.1007/s41781-021-00073-z}{\textbf{A.I.974}}}{}%
+\ifthenelse{\equal{#1}{Zlokapa:2019tkn}}{\href{https://doi.org/10.1007/s42484-021-00054-w}{\textbf{A.I.975}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021juv}}{\href{https://doi.org/10.1103/PhysRevLett.127.261804}{\textbf{A.I.987}}}{}%
+\ifthenelse{\equal{#1}{Kasieczka:2021xcg}}{\href{https://doi.org/10.1088/1361-6633/ac36b9}{\textbf{A.I.988}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021oeb}}{\href{https://doi.org/10.21468/SciPostPhys.12.1.043}{\textbf{A.I.992}}}{}%
+\ifthenelse{\equal{#1}{Chen:2021euv}}{\href{https://doi.org/10.1038/s41597-021-01109-0}{\textbf{A.I.993}}}{}%
+\ifthenelse{\equal{#1}{Govorkova:2021utb}}{\href{https://doi.org/10.1038/s42256-022-00441-3}{\textbf{A.I.994}}}{}%
+\ifthenelse{\equal{#1}{Jawahar:2021vyu}}{\href{https://doi.org/10.3389/fdata.2022.803685}{\textbf{A.I.996}}}{}%
+\ifthenelse{\equal{#1}{Elabd:2021lgo}}{\href{https://doi.org/10.3389/fdata.2022.828666}{\textbf{A.I.1004}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021yhb}}{\href{https://doi.org/10.1007/JHEP03(2022)160}{\textbf{A.I.1006}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022nmn}}{\href{https://doi.org/10.1103/PhysRevLett.131.041803}{\textbf{A.I.1028}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022dwd}}{\href{https://doi.org/10.1038/s41586-022-04892-x}{\textbf{A.I.1029}}}{}%
+\ifthenelse{\equal{#1}{Touranakou:2022qrp}}{\href{https://doi.org/10.1088/2632-2153/ac7c56}{\textbf{A.I.1030}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2022spb}}{\href{https://doi.org/10.1103/PhysRevD.107.076017}{\textbf{A.I.1046}}}{}%
+\ifthenelse{\equal{#1}{Bhimij:2022xyn}}{\href{https://doi.org/10.1007/s41781-023-00097-7}{\textbf{A.I.1047}}}{}%
+\ifthenelse{\equal{#1}{Hao:2022zns}}{\href{https://doi.org/10.1140/epjc/s10052-023-11633-5}{\textbf{A.I.1052}}}{}%
+\ifthenelse{\equal{#1}{Huerta:2022kgj}}{\href{https://doi.org/10.1038/s41597-023-02298-6}{\textbf{A.I.1057}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022wqf}}{\href{https://doi.org/10.1103/PhysRevLett.131.041801}{\textbf{A.I.1073}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022wjc}}{\href{https://doi.org/10.1007/JHEP07(2023)210}{\textbf{A.I.1078}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2023joss}}{\href{https://doi.org/10.21105/joss.05789}{\textbf{A.I.1112}}}{}%
+\ifthenelse{\equal{#1}{Orzari:2023zrh}}{\href{https://doi.org/10.1088/2632-2153/ad04ea}{\textbf{A.I.1113}}}{}%
+\ifthenelse{\equal{#1}{Shenoy:2023ros}}{\href{https://doi.org/10.1088/2632-2153/ad1139}{\textbf{A.I.1126}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022job}}{\href{https://doi.org/10.1088/2632-2153/ad12e3}{\textbf{A.I.1127}}}{}%
+\ifthenelse{\equal{#1}{Weng:2023tailor}}{\href{https://doi.org/10.1145/3624990}{\textbf{A.I.1140}}}{}%
+\ifthenelse{\equal{#1}{Black:2022cth}}{\href{https://doi.org/10.1088/1748-0221/19/02/T02015}{\textbf{A.I.1142}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024twn}}{\href{https://doi.org/10.1007/s41781-024-00124-1}{\textbf{A.I.1144}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024bvl}}{\href{https://doi.org/10.1103/PhysRevD.110.032007}{\textbf{A.I.1145}}}{}%
+\ifthenelse{\equal{#1}{Pata:2023rhh}}{\href{https://doi.org/10.1038/s42005-024-01599-5}{\textbf{A.I.1155}}}{}%
+\ifthenelse{\equal{#1}{Campos:2023pkp}}{\href{https://doi.org/10.1145/3662000}{\textbf{A.I.1168}}}{}%
+\ifthenelse{\equal{#1}{Weng:2024fkeras}}{\href{https://doi.org/10.1145/3665334}{\textbf{A.I.1178}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024ake}}{\href{https://doi.org/10.1103/PhysRevD.110.012004}{\textbf{A.I.1181}}}{}%
+\ifthenelse{\equal{#1}{Odagiu:2024bkp}}{\href{https://doi.org/10.1088/2632-2153/ad5f10}{\textbf{A.I.1183}}}{}%
+\ifthenelse{\equal{#1}{Brigljevic:2024vuv}}{\href{https://doi.org/10.1140/epjc/s10052-024-13376-3}{\textbf{A.I.1222}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024ddc}}{\href{https://doi.org/10.1007/JHEP12(2024)035}{\textbf{A.I.1229}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024zqs}}{\href{https://doi.org/10.1016/j.physrep.2024.09.013}{\textbf{A.I.1260}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024zhe}}{\href{https://doi.org/10.1016/j.physrep.2024.09.006}{\textbf{A.I.1262}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2025zqs}}{\href{https://doi.org/10.1103/PhysRevD.111.092015}{\textbf{A.I.1276}}}{}%
+\ifthenelse{\equal{#1}{Zhao:2025daw}}{\href{https://doi.org/10.1088/1748-0221/20/06/P06002}{\textbf{A.I.1286}}}{}%
+\ifthenelse{\equal{#1}{Weitz:2025tcj}}{\href{https://doi.org/10.1088/2632-2153/adede1}{\textbf{A.I.1288}}}{}%
+\ifthenelse{\equal{#1}{Tsoi:2024pbn}}{\href{https://doi.org/10.1007/s41781-025-00140-9}{\textbf{A.I.1293}}}{}%
+\ifthenelse{\equal{#1}{Li:2024qfq}}{\href{https://doi.org/10.1007/JHEP11(2025)119}{\textbf{A.I.1321}}}{}%
+\ifthenelse{\equal{#1}{CMS:2025rtd}}{\href{https://doi.org/10.1103/7ldn-snzn}{\textbf{A.I.1337}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026znb}}{\href{https://arxiv.org/abs/2601.17554}{\textbf{A.I.1352}}}{}%
+\ifthenelse{\equal{#1}{Schulte:2025mai}}{\href{https://doi.org/10.1145/3801979}{\textbf{A.I.1365}}}{}%
+\ifthenelse{\equal{#1}{Hawks:2025hew}}{\href{https://doi.org/10.1145/3787490}{\textbf{A.I.1375}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026shw}}{\href{https://arxiv.org/abs/2602.00273}{\textbf{A.I.1377}}}{}%
+\ifthenelse{\equal{#1}{Deiana:2021niw}}{\href{https://doi.org/10.3389/fdata.2022.787421}{\textbf{A.II.1}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022efficient}}{\href{https://doi.org/10.3389/frai.2022.999173}{\textbf{A.II.2}}}{}%
+\ifthenelse{\equal{#1}{Chien:2024gnn}}{\href{https://doi.org/10.1038/s44287-024-00076-z}{\textbf{A.II.3}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2025qbk}}{\href{https://doi.org/10.1142/S0217751X26300115}{\textbf{A.II.4}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2020ngm}}{\href{https://doi.org/10.1142/9789811234033_0012}{\textbf{A.III.1}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2024xkc}}{\href{https://doi.org/10.1142/9789819801107_0005}{\textbf{A.III.2}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_sonic}}{\href{https://doi.org/10.5281/zenodo.3895029}{\textbf{A.IV.1}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hbb}}{\href{https://doi.org/10.5281/zenodo.3895048}{\textbf{A.IV.2}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hls4ml}}{\href{https://doi.org/10.5281/zenodo.3895081}{\textbf{A.IV.3}}}{}%
+\ifthenelse{\equal{#1}{Rankin:2020usv}}{\href{https://doi.org/10.1109/H2RC51942.2020.00010}{\textbf{A.IV.4}}}{}%
+\ifthenelse{\equal{#1}{Heintz:2020soy}}{\href{https://arxiv.org/abs/2012.01563}{\textbf{A.IV.5}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2020svm}}{\href{https://arxiv.org/abs/2012.00173}{\textbf{A.IV.6}}}{}%
+\ifthenelse{\equal{#1}{Fahim:2021cic}}{\href{https://arxiv.org/abs/2103.05579}{\textbf{A.IV.7}}}{}%
+\ifthenelse{\equal{#1}{Orzari:2021suh}}{\href{https://arxiv.org/abs/2109.15197}{\textbf{A.IV.8}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2021bkf}}{\href{https://arxiv.org/abs/2111.12840}{\textbf{A.IV.9}}}{}%
+\ifthenelse{\equal{#1}{Banbury:2021mlperf}}{\href{https://arxiv.org/abs/2106.07597}{\textbf{A.IV.10}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2021cqp}}{\href{https://arxiv.org/abs/2106.11535}{\textbf{A.IV.11}}}{}%
+\ifthenelse{\equal{#1}{Tsan:2021brw}}{\href{https://arxiv.org/abs/2111.12849}{\textbf{A.IV.12}}}{}%
+\ifthenelse{\equal{#1}{Pata:2022wam}}{\href{https://doi.org/10.1088/1742-6596/2438/1/012100}{\textbf{A.IV.13}}}{}%
+\ifthenelse{\equal{#1}{Borras:2022opensource}}{\href{https://arxiv.org/abs/2206.11791}{\textbf{A.IV.14}}}{}%
+\ifthenelse{\equal{#1}{Pappalardo:2022nxk}}{\href{https://arxiv.org/abs/2206.07527}{\textbf{A.IV.15}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022hdp}}{\href{https://arxiv.org/abs/2207.07958}{\textbf{A.IV.16}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2022pwm}}{\href{https://arxiv.org/abs/2211.09912}{\textbf{A.IV.17}}}{}%
+\ifthenelse{\equal{#1}{Hussain:2022faststamp}}{\href{https://doi.org/10.1145/3508352.3549357}{\textbf{A.IV.18}}}{}%
+\ifthenelse{\equal{#1}{McDermott:2023neural}}{\href{https://arxiv.org/abs/2312.05978}{\textbf{A.IV.19}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2023fzl}}{\href{https://doi.org/10.1088/1742-6596/3206/1/012099}{\textbf{A.IV.20}}}{}%
+\ifthenelse{\equal{#1}{Huang:2023bny}}{\href{https://doi.org/10.1109/FPL60245.2023.00050}{\textbf{A.IV.21}}}{}%
+\ifthenelse{\equal{#1}{Amaro:2023voyager}}{\href{https://doi.org/10.1145/3569951.3597597}{\textbf{A.IV.22}}}{}%
+\ifthenelse{\equal{#1}{Li:2023xhj}}{\href{https://arxiv.org/abs/2312.04757}{\textbf{A.IV.23}}}{}%
+\ifthenelse{\equal{#1}{Miao:2024oqy}}{\href{https://arxiv.org/abs/2402.12535}{\textbf{A.IV.24}}}{}%
+\ifthenelse{\equal{#1}{Baldi:2024reliable}}{\href{https://doi.org/10.1109/VTS60656.2024.10538639}{\textbf{A.IV.25}}}{}%
+\ifthenelse{\equal{#1}{Zhao:2024kry}}{\href{https://arxiv.org/abs/2408.09343}{\textbf{A.IV.26}}}{}%
+\ifthenelse{\equal{#1}{Bhatnagar:2024fkx}}{\href{https://arxiv.org/abs/2412.03673}{\textbf{A.IV.27}}}{}%
+\ifthenelse{\equal{#1}{Katel:2024ygn}}{\href{https://arxiv.org/abs/2412.05333}{\textbf{A.IV.28}}}{}%
+\ifthenelse{\equal{#1}{Weng:2025amigolut}}{\href{https://doi.org/10.1145/3706628.3708874}{\textbf{A.IV.29}}}{}%
+\ifthenelse{\equal{#1}{Kondratyev:2025jfj}}{\href{https://doi.org/10.1145/3708035.3736049}{\textbf{A.IV.30}}}{}%
+\ifthenelse{\equal{#1}{Hao:2025abk}}{\href{https://arxiv.org/abs/2509.07486}{\textbf{A.IV.31}}}{}%
+\ifthenelse{\equal{#1}{Govil:2025nvy}}{\href{https://arxiv.org/abs/2510.07594}{\textbf{A.IV.32}}}{}%
+\ifthenelse{\equal{#1}{Legge:2025cnm}}{\href{https://arxiv.org/abs/2512.00210}{\textbf{A.IV.33}}}{}%
+\ifthenelse{\equal{#1}{Weitz:2025dia}}{\href{https://arxiv.org/abs/2512.15998}{\textbf{A.IV.34}}}{}%
+\ifthenelse{\equal{#1}{Weitz:2026xsv}}{\href{https://arxiv.org/abs/2605.16138}{\textbf{A.IV.35}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2014soa}}{\href{https://arxiv.org/abs/1409.4466}{\textbf{B.I.1}}}{}%
+\ifthenelse{\equal{#1}{Bornheim_2015}}{\href{https://doi.org/10.1088/1742-6596/587/1/012057}{\textbf{B.I.2}}}{}%
+\ifthenelse{\equal{#1}{7581887}}{\href{https://doi.org/10.1109/NSSMIC.2015.7581887}{\textbf{B.I.3}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2016wnw}}{\href{https://doi.org/10.1016/j.nuclphysbps.2015.09.071}{\textbf{B.I.4}}}{}%
+\ifthenelse{\equal{#1}{8069874}}{\href{https://doi.org/10.1109/NSSMIC.2016.8069874}{\textbf{B.I.5}}}{}%
+\ifthenelse{\equal{#1}{Bornheim:2017gql}}{\href{https://doi.org/10.1088/1742-6596/928/1/012023}{\textbf{B.I.6}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018bsd}}{\href{https://arxiv.org/abs/1808.00902}{\textbf{B.I.7}}}{}%
+\ifthenelse{\equal{#1}{Albertsson:2018maf}}{\href{https://doi.org/10.1088/1742-6596/1085/2/022008}{\textbf{B.I.8}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2020ngo}}{\href{https://doi.org/10.5281/zenodo.4009114}{\textbf{B.I.9}}}{}%
+\ifthenelse{\equal{#1}{Wozniak:2020}}{\href{https://doi.org/10.1051/epjconf/202024506039}{\textbf{B.I.10}}}{}%
+\ifthenelse{\equal{#1}{Thais:2022iok}}{\href{https://arxiv.org/abs/2203.12852}{\textbf{B.I.11}}}{}%
+\ifthenelse{\equal{#1}{Harris:2022qtm}}{\href{https://arxiv.org/abs/2203.16255}{\textbf{B.I.12}}}{}%
+\ifthenelse{\equal{#1}{Apresyan:2022tqw}}{\href{https://arxiv.org/abs/2203.07353}{\textbf{B.I.13}}}{}%
+\ifthenelse{\equal{#1}{Benelli:2022sqn}}{\href{https://arxiv.org/abs/2207.09060}{\textbf{B.I.14}}}{}%
+\ifthenelse{\equal{#1}{Dawson:2022zbb}}{\href{https://arxiv.org/abs/2209.07510}{\textbf{B.I.15}}}{}%
+\ifthenelse{\equal{#1}{Shanahan:2022ifi}}{\href{https://arxiv.org/abs/2209.07559}{\textbf{B.I.16}}}{}%
+\ifthenelse{\equal{#1}{Agarwal:2023rwr}}{\href{https://arxiv.org/abs/2306.08106}{\textbf{B.I.17}}}{}%
+\ifthenelse{\equal{#1}{Li:2024xpw}}{\href{https://doi.org/10.1051/epjconf/202429509017}{\textbf{B.I.18}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2024lsg}}{\href{https://doi.org/10.22323/1.476.0012}{\textbf{B.I.19}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2017bbq}}{\href{https://arxiv.org/abs/1703.06544}{\textbf{B.IV.1}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2018-046}}{\href{https://cds.cern.ch/record/2630438}{\textbf{B.IV.2}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-17-026}}{\href{https://cds.cern.ch/record/2637847}{\textbf{B.IV.3}}}{}%
+\ifthenelse{\equal{#1}{CERN-LHCC-2020-004}}{\href{https://cds.cern.ch/record/2714892}{\textbf{B.IV.4}}}{}%
+\ifthenelse{\equal{#1}{hls4ml}}{\href{https://doi.org/10.5281/zenodo.1201549}{\textbf{B.IV.5}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2021-030}}{\href{https://cds.cern.ch/record/2792320}{\textbf{B.IV.6}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-012}}{\href{https://cds.cern.ch/record/2809929}{\textbf{B.IV.7}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2022-041}}{\href{https://cds.cern.ch/record/2839736}{\textbf{B.IV.8}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2022-061}}{\href{https://cds.cern.ch/record/2842375}{\textbf{B.IV.9}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2023-037}}{\href{https://cds.cern.ch/record/2863316}{\textbf{B.IV.10}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-020}}{\href{https://cds.cern.ch/record/2866501}{\textbf{B.IV.11}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2023-079}}{\href{https://cds.cern.ch/record/2876546}{\textbf{B.IV.12}}}{}%
+\ifthenelse{\equal{#1}{Weng:2024architectural}}{\href{https://arxiv.org/abs/2403.08980}{\textbf{B.IV.13}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-23-012}}{\href{https://cds.cern.ch/record/2904879}{\textbf{B.IV.14}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-24-007}}{\href{https://cds.cern.ch/record/2904945}{\textbf{B.IV.15}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2024-059}}{\href{https://cds.cern.ch/record/2904695}{\textbf{B.IV.16}}}{}%
+\ifthenelse{\equal{#1}{Li:2024htp}}{\href{https://arxiv.org/abs/2405.12972}{\textbf{B.IV.17}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2025-033}}{\href{https://cds.cern.ch/record/2937578}{\textbf{B.IV.18}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2025-061}}{\href{https://cds.cern.ch/record/2942560}{\textbf{B.IV.19}}}{}%
+\ifthenelse{\equal{#1}{Wang:2025dky}}{\href{https://arxiv.org/abs/2510.23641}{\textbf{B.IV.20}}}{}%
+\ifthenelse{\equal{#1}{Wang:2026lqb}}{\href{https://arxiv.org/abs/2605.21789}{\textbf{B.IV.21}}}{}%
+\ifthenelse{\equal{#1}{CMS:2025ngq}}{\href{https://arxiv.org/abs/2510.07527}{\textbf{C.1}}}{}%
+\ifthenelse{\equal{#1}{Gonski:2026jgu}}{\href{https://arxiv.org/abs/2602.22248}{\textbf{C.2}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026yrb}}{\href{https://arxiv.org/abs/2603.22233}{\textbf{C.3}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026yvw}}{\href{https://arxiv.org/abs/2603.21965}{\textbf{C.4}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026znu}}{\href{https://arxiv.org/abs/2604.27044}{\textbf{C.5}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026uph}}{\href{https://arxiv.org/abs/2604.09809}{\textbf{C.6}}}{}%
+\ifthenelse{\equal{#1}{Miao:2026yvl}}{\href{https://arxiv.org/abs/2606.20437}{\textbf{C.7}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2026gdb}}{\href{https://arxiv.org/abs/2606.14373}{\textbf{C.8}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-24-012}}{\href{https://arxiv.org/abs/2607.05145}{\textbf{C.9}}}{}%
+}
+
+\newcommand{\myextcite}[1]{%
+\ifthenelse{\equal{#1}{Duarte:2025qbk}}{\href{https://arxiv.org/abs/2512.11133}{\textbf{1}}}{}%
+\ifthenelse{\equal{#1}{Wang:2026lqb}}{\href{https://arxiv.org/abs/2605.21789}{\textbf{2}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026znu}}{\href{https://arxiv.org/abs/2604.27044}{\textbf{3}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026uph}}{\href{https://arxiv.org/abs/2604.09809}{\textbf{4}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026yrb}}{\href{https://arxiv.org/abs/2603.22233}{\textbf{5}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026yvw}}{\href{https://arxiv.org/abs/2603.21965}{\textbf{6}}}{}%
+\ifthenelse{\equal{#1}{Gonski:2026jgu}}{\href{https://arxiv.org/abs/2602.22248}{\textbf{7}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026znb}}{\href{https://arxiv.org/abs/2601.17554}{\textbf{8}}}{}%
+\ifthenelse{\equal{#1}{CMS:2025rtd}}{\href{https://doi.org/10.1103/7ldn-snzn}{\textbf{9}}}{}%
+\ifthenelse{\equal{#1}{CMS:2026shw}}{\href{https://arxiv.org/abs/2602.00273}{\textbf{10}}}{}%
+\ifthenelse{\equal{#1}{Schulte:2025mai}}{\href{https://doi.org/10.1145/3801979}{\textbf{11}}}{}%
+\ifthenelse{\equal{#1}{Weitz:2025dia}}{\href{https://arxiv.org/abs/2512.15998}{\textbf{12}}}{}%
+\ifthenelse{\equal{#1}{Hawks:2025hew}}{\href{https://doi.org/10.1145/3787490}{\textbf{13}}}{}%
+\ifthenelse{\equal{#1}{Li:2024qfq}}{\href{https://doi.org/10.1007/JHEP11(2025)119}{\textbf{14}}}{}%
+\ifthenelse{\equal{#1}{Legge:2025cnm}}{\href{https://arxiv.org/abs/2512.00210}{\textbf{15}}}{}%
+\ifthenelse{\equal{#1}{CMS:2025ngq}}{\href{https://arxiv.org/abs/2510.07527}{\textbf{16}}}{}%
+\ifthenelse{\equal{#1}{Govil:2025nvy}}{\href{https://arxiv.org/abs/2510.07594}{\textbf{17}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-24-012}}{\href{https://cds.cern.ch/record/2945361}{\textbf{18}}}{}%
+\ifthenelse{\equal{#1}{Wang:2025dky}}{\href{https://arxiv.org/abs/2510.23641}{\textbf{19}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2025-061}}{\href{https://cds.cern.ch/record/2942560}{\textbf{20}}}{}%
+\ifthenelse{\equal{#1}{Hao:2025abk}}{\href{https://arxiv.org/abs/2509.07486}{\textbf{21}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2025-033}}{\href{https://cds.cern.ch/record/2937578}{\textbf{22}}}{}%
+\ifthenelse{\equal{#1}{Weitz:2025tcj}}{\href{https://doi.org/10.1088/2632-2153/adede1}{\textbf{23}}}{}%
+\ifthenelse{\equal{#1}{Kondratyev:2025jfj}}{\href{https://doi.org/10.1145/3708035.3736049}{\textbf{24}}}{}%
+\ifthenelse{\equal{#1}{Tsoi:2024pbn}}{\href{https://doi.org/10.1007/s41781-025-00140-9}{\textbf{25}}}{}%
+\ifthenelse{\equal{#1}{Zhao:2025daw}}{\href{https://doi.org/10.1088/1748-0221/20/06/P06002}{\textbf{26}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2025zqs}}{\href{https://doi.org/10.1103/PhysRevD.111.092015}{\textbf{27}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024zqs}}{\href{https://doi.org/10.1016/j.physrep.2024.09.013}{\textbf{28}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024zhe}}{\href{https://doi.org/10.1016/j.physrep.2024.09.006}{\textbf{29}}}{}%
+\ifthenelse{\equal{#1}{Weng:2025amigolut}}{\href{https://doi.org/10.1145/3706628.3708874}{\textbf{30}}}{}%
+\ifthenelse{\equal{#1}{Bhatnagar:2024fkx}}{\href{https://arxiv.org/abs/2412.03673}{\textbf{31}}}{}%
+\ifthenelse{\equal{#1}{Katel:2024ygn}}{\href{https://arxiv.org/abs/2412.05333}{\textbf{32}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2024xkc}}{\href{https://doi.org/10.1142/9789819801107_0005}{\textbf{33}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024ddc}}{\href{https://doi.org/10.1007/JHEP12(2024)035}{\textbf{34}}}{}%
+\ifthenelse{\equal{#1}{Brigljevic:2024vuv}}{\href{https://doi.org/10.1140/epjc/s10052-024-13376-3}{\textbf{35}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2024lsg}}{\href{https://doi.org/10.22323/1.476.0012}{\textbf{36}}}{}%
+\ifthenelse{\equal{#1}{Zhao:2024kry}}{\href{https://arxiv.org/abs/2408.09343}{\textbf{37}}}{}%
+\ifthenelse{\equal{#1}{Chien:2024gnn}}{\href{https://doi.org/10.1038/s44287-024-00076-z}{\textbf{38}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2024-059}}{\href{https://cds.cern.ch/record/2904695}{\textbf{39}}}{}%
+\ifthenelse{\equal{#1}{Weng:2024fkeras}}{\href{https://doi.org/10.1145/3665334}{\textbf{40}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-23-012}}{\href{https://cds.cern.ch/record/2904879}{\textbf{41}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024ake}}{\href{https://doi.org/10.1103/PhysRevD.110.012004}{\textbf{42}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-24-007}}{\href{https://cds.cern.ch/record/2904945}{\textbf{43}}}{}%
+\ifthenelse{\equal{#1}{Odagiu:2024bkp}}{\href{https://doi.org/10.1088/2632-2153/ad5f10}{\textbf{44}}}{}%
+\ifthenelse{\equal{#1}{Campos:2023pkp}}{\href{https://doi.org/10.1145/3662000}{\textbf{45}}}{}%
+\ifthenelse{\equal{#1}{Li:2024htp}}{\href{https://arxiv.org/abs/2405.12972}{\textbf{46}}}{}%
+\ifthenelse{\equal{#1}{Miao:2024oqy}}{\href{https://arxiv.org/abs/2402.12535}{\textbf{47}}}{}%
+\ifthenelse{\equal{#1}{Baldi:2024reliable}}{\href{https://doi.org/10.1109/VTS60656.2024.10538639}{\textbf{48}}}{}%
+\ifthenelse{\equal{#1}{Pata:2023rhh}}{\href{https://doi.org/10.1038/s42005-024-01599-5}{\textbf{49}}}{}%
+\ifthenelse{\equal{#1}{Weng:2024architectural}}{\href{https://arxiv.org/abs/2403.08980}{\textbf{50}}}{}%
+\ifthenelse{\equal{#1}{Black:2022cth}}{\href{https://doi.org/10.1088/1748-0221/19/02/T02015}{\textbf{51}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024twn}}{\href{https://doi.org/10.1007/s41781-024-00124-1}{\textbf{52}}}{}%
+\ifthenelse{\equal{#1}{CMS:2024bvl}}{\href{https://doi.org/10.1103/PhysRevD.110.032007}{\textbf{53}}}{}%
+\ifthenelse{\equal{#1}{Weng:2023tailor}}{\href{https://doi.org/10.1145/3624990}{\textbf{54}}}{}%
+\ifthenelse{\equal{#1}{Li:2024xpw}}{\href{https://doi.org/10.1051/epjconf/202429509017}{\textbf{55}}}{}%
+\ifthenelse{\equal{#1}{Shenoy:2023ros}}{\href{https://doi.org/10.1088/2632-2153/ad1139}{\textbf{56}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022job}}{\href{https://doi.org/10.1088/2632-2153/ad12e3}{\textbf{57}}}{}%
+\ifthenelse{\equal{#1}{Li:2023xhj}}{\href{https://arxiv.org/abs/2312.04757}{\textbf{58}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2023-079}}{\href{https://cds.cern.ch/record/2876546}{\textbf{59}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2023joss}}{\href{https://doi.org/10.21105/joss.05789}{\textbf{60}}}{}%
+\ifthenelse{\equal{#1}{Orzari:2023zrh}}{\href{https://doi.org/10.1088/2632-2153/ad04ea}{\textbf{61}}}{}%
+\ifthenelse{\equal{#1}{Huang:2023bny}}{\href{https://doi.org/10.1109/FPL60245.2023.00050}{\textbf{62}}}{}%
+\ifthenelse{\equal{#1}{Amaro:2023voyager}}{\href{https://doi.org/10.1145/3569951.3597597}{\textbf{63}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-020}}{\href{https://cds.cern.ch/record/2866501}{\textbf{64}}}{}%
+\ifthenelse{\equal{#1}{Huerta:2022kgj}}{\href{https://doi.org/10.1038/s41597-023-02298-6}{\textbf{65}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022wqf}}{\href{https://doi.org/10.1103/PhysRevLett.131.041801}{\textbf{66}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022wjc}}{\href{https://doi.org/10.1007/JHEP07(2023)210}{\textbf{67}}}{}%
+\ifthenelse{\equal{#1}{Agarwal:2023rwr}}{\href{https://arxiv.org/abs/2306.08106}{\textbf{68}}}{}%
+\ifthenelse{\equal{#1}{Hao:2022zns}}{\href{https://doi.org/10.1140/epjc/s10052-023-11633-5}{\textbf{69}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2023-037}}{\href{https://cds.cern.ch/record/2863316}{\textbf{70}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2022spb}}{\href{https://doi.org/10.1103/PhysRevD.107.076017}{\textbf{71}}}{}%
+\ifthenelse{\equal{#1}{Bhimij:2022xyn}}{\href{https://doi.org/10.1007/s41781-023-00097-7}{\textbf{72}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2023fzl}}{\href{https://arxiv.org/abs/2303.17657}{\textbf{73}}}{}%
+\ifthenelse{\equal{#1}{McDermott:2023neural}}{\href{https://arxiv.org/abs/2312.05978}{\textbf{74}}}{}%
+\ifthenelse{\equal{#1}{Hussain:2022faststamp}}{\href{https://doi.org/10.1145/3508352.3549357}{\textbf{75}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2022pwm}}{\href{https://arxiv.org/abs/2211.09912}{\textbf{76}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2022-041}}{\href{https://cds.cern.ch/record/2839736}{\textbf{77}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2022-061}}{\href{https://cds.cern.ch/record/2842375}{\textbf{78}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022efficient}}{\href{https://doi.org/10.3389/frai.2022.999173}{\textbf{79}}}{}%
+\ifthenelse{\equal{#1}{Dawson:2022zbb}}{\href{https://arxiv.org/abs/2209.07510}{\textbf{80}}}{}%
+\ifthenelse{\equal{#1}{Shanahan:2022ifi}}{\href{https://arxiv.org/abs/2209.07559}{\textbf{81}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022dwd}}{\href{https://doi.org/10.1038/s41586-022-04892-x}{\textbf{82}}}{}%
+\ifthenelse{\equal{#1}{Benelli:2022sqn}}{\href{https://arxiv.org/abs/2207.09060}{\textbf{83}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2022hdp}}{\href{https://arxiv.org/abs/2207.07958}{\textbf{84}}}{}%
+\ifthenelse{\equal{#1}{Touranakou:2022qrp}}{\href{https://doi.org/10.1088/2632-2153/ac7c56}{\textbf{85}}}{}%
+\ifthenelse{\equal{#1}{Borras:2022opensource}}{\href{https://arxiv.org/abs/2206.11791}{\textbf{86}}}{}%
+\ifthenelse{\equal{#1}{Pappalardo:2022nxk}}{\href{https://arxiv.org/abs/2206.07527}{\textbf{87}}}{}%
+\ifthenelse{\equal{#1}{CMS:2022nmn}}{\href{https://doi.org/10.1103/PhysRevLett.131.041803}{\textbf{88}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-HIG-21-012}}{\href{https://cds.cern.ch/record/2809929}{\textbf{89}}}{}%
+\ifthenelse{\equal{#1}{Deiana:2021niw}}{\href{https://doi.org/10.3389/fdata.2022.787421}{\textbf{90}}}{}%
+\ifthenelse{\equal{#1}{Apresyan:2022tqw}}{\href{https://arxiv.org/abs/2203.07353}{\textbf{91}}}{}%
+\ifthenelse{\equal{#1}{Elabd:2021lgo}}{\href{https://doi.org/10.3389/fdata.2022.828666}{\textbf{92}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2020ngm}}{\href{https://doi.org/10.1142/9789811234033_0012}{\textbf{93}}}{}%
+\ifthenelse{\equal{#1}{Thais:2022iok}}{\href{https://arxiv.org/abs/2203.12852}{\textbf{94}}}{}%
+\ifthenelse{\equal{#1}{Pata:2022wam}}{\href{https://arxiv.org/abs/2203.00330}{\textbf{95}}}{}%
+\ifthenelse{\equal{#1}{Harris:2022qtm}}{\href{https://arxiv.org/abs/2203.16255}{\textbf{96}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021yhb}}{\href{https://doi.org/10.1007/JHEP03(2022)160}{\textbf{97}}}{}%
+\ifthenelse{\equal{#1}{Chen:2021euv}}{\href{https://doi.org/10.1038/s41597-021-01109-0}{\textbf{98}}}{}%
+\ifthenelse{\equal{#1}{Govorkova:2021utb}}{\href{https://doi.org/10.1038/s42256-022-00441-3}{\textbf{99}}}{}%
+\ifthenelse{\equal{#1}{Jawahar:2021vyu}}{\href{https://doi.org/10.3389/fdata.2022.803685}{\textbf{100}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021oeb}}{\href{https://doi.org/10.21468/SciPostPhys.12.1.043}{\textbf{101}}}{}%
+\ifthenelse{\equal{#1}{Mokhtar:2021bkf}}{\href{https://arxiv.org/abs/2111.12840}{\textbf{102}}}{}%
+\ifthenelse{\equal{#1}{Banbury:2021mlperf}}{\href{https://arxiv.org/abs/2106.07597}{\textbf{103}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2021cqp}}{\href{https://arxiv.org/abs/2106.11535}{\textbf{104}}}{}%
+\ifthenelse{\equal{#1}{Tsan:2021brw}}{\href{https://arxiv.org/abs/2111.12849}{\textbf{105}}}{}%
+\ifthenelse{\equal{#1}{CMS:2021juv}}{\href{https://doi.org/10.1103/PhysRevLett.127.261804}{\textbf{106}}}{}%
+\ifthenelse{\equal{#1}{Kasieczka:2021xcg}}{\href{https://doi.org/10.1088/1361-6633/ac36b9}{\textbf{107}}}{}%
+\ifthenelse{\equal{#1}{Dezoort:2021kfk}}{\href{https://doi.org/10.1007/s41781-021-00073-z}{\textbf{108}}}{}%
+\ifthenelse{\equal{#1}{Zlokapa:2019tkn}}{\href{https://doi.org/10.1007/s42484-021-00054-w}{\textbf{109}}}{}%
+\ifthenelse{\equal{#1}{hls4ml}}{\href{https://doi.org/10.5281/zenodo.1201549}{\textbf{110}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2021-030}}{\href{https://cds.cern.ch/record/2792320}{\textbf{111}}}{}%
+\ifthenelse{\equal{#1}{John:2020sak}}{\href{https://doi.org/10.1103/PhysRevAccelBeams.24.104601}{\textbf{112}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2021ide}}{\href{https://doi.org/10.1109/TNS.2021.3087100}{\textbf{113}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2021zos}}{\href{https://doi.org/10.1088/2632-2153/ac0ea1}{\textbf{114}}}{}%
+\ifthenelse{\equal{#1}{Hawks:2021ruw}}{\href{https://doi.org/10.3389/frai.2021.676564}{\textbf{115}}}{}%
+\ifthenelse{\equal{#1}{Orzari:2021suh}}{\href{https://arxiv.org/abs/2109.15197}{\textbf{116}}}{}%
+\ifthenelse{\equal{#1}{Pata:2021oez}}{\href{https://doi.org/10.1140/epjc/s10052-021-09158-w}{\textbf{117}}}{}%
+\ifthenelse{\equal{#1}{Krupa:2020bwg}}{\href{https://doi.org/10.1088/2632-2153/abec21}{\textbf{118}}}{}%
+\ifthenelse{\equal{#1}{Fahim:2021cic}}{\href{https://arxiv.org/abs/2103.05579}{\textbf{119}}}{}%
+\ifthenelse{\equal{#1}{Iiyama:2020wap}}{\href{https://doi.org/10.3389/fdata.2020.598927}{\textbf{120}}}{}%
+\ifthenelse{\equal{#1}{Heintz:2020soy}}{\href{https://arxiv.org/abs/2012.01563}{\textbf{121}}}{}%
+\ifthenelse{\equal{#1}{DiGuglielmo:2020eqx}}{\href{https://doi.org/10.1088/2632-2153/aba042}{\textbf{122}}}{}%
+\ifthenelse{\equal{#1}{Kansal:2020svm}}{\href{https://arxiv.org/abs/2012.00173}{\textbf{123}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2020hwz}}{\href{https://doi.org/10.1007/JHEP12(2020)085}{\textbf{124}}}{}%
+\ifthenelse{\equal{#1}{Rankin:2020usv}}{\href{https://doi.org/10.1109/H2RC51942.2020.00010}{\textbf{125}}}{}%
+\ifthenelse{\equal{#1}{Wozniak:2020}}{\href{https://doi.org/10.1051/epjconf/202024506039}{\textbf{126}}}{}%
+\ifthenelse{\equal{#1}{Aarrestad:2020ngo}}{\href{https://doi.org/10.5281/zenodo.4009114}{\textbf{127}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019neq}}{\href{https://doi.org/10.1103/PhysRevD.102.012010}{\textbf{128}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019pnb}}{\href{https://doi.org/10.1016/j.physletb.2020.135448}{\textbf{129}}}{}%
+\ifthenelse{\equal{#1}{Summers:2020xiy}}{\href{https://doi.org/10.1088/1748-0221/15/05/p05026}{\textbf{130}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vgj}}{\href{https://doi.org/10.1007/JHEP05(2020)033}{\textbf{131}}}{}%
+\ifthenelse{\equal{#1}{CERN-LHCC-2020-004}}{\href{https://cds.cern.ch/record/2714892}{\textbf{132}}}{}%
+\ifthenelse{\equal{#1}{Moreno:2019bmu}}{\href{https://doi.org/10.1140/epjc/s10052-020-7608-4}{\textbf{133}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_sonic}}{\href{https://doi.org/10.5281/zenodo.3895029}{\textbf{134}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hbb}}{\href{https://doi.org/10.5281/zenodo.3895048}{\textbf{135}}}{}%
+\ifthenelse{\equal{#1}{neurips2019_hls4ml}}{\href{https://doi.org/10.5281/zenodo.3895081}{\textbf{136}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019vxa}}{\href{https://doi.org/10.1103/PhysRevD.100.112007}{\textbf{137}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2019sgo}}{\href{https://doi.org/10.1103/PhysRevLett.123.231803}{\textbf{138}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2019fta}}{\href{https://doi.org/10.1007/s41781-019-0027-2}{\textbf{139}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018koj}}{\href{https://doi.org/10.1140/epjc/s10052-019-6909-y}{\textbf{140}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018sgc}}{\href{https://doi.org/10.1016/j.physletb.2019.03.059}{\textbf{141}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018ikr}}{\href{https://doi.org/10.1103/PhysRevD.99.012005}{\textbf{142}}}{}%
+\ifthenelse{\equal{#1}{Albertsson:2018maf}}{\href{https://doi.org/10.1088/1742-6596/1085/2/022008}{\textbf{143}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018kst}}{\href{https://doi.org/10.1103/PhysRevLett.121.121801}{\textbf{144}}}{}%
+\ifthenelse{\equal{#1}{CMS-PAS-EXO-17-026}}{\href{https://cds.cern.ch/record/2637847}{\textbf{145}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018bsd}}{\href{https://arxiv.org/abs/1808.00902}{\textbf{146}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2018xlo}}{\href{https://doi.org/10.1007/JHEP08(2018)130}{\textbf{147}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2018ite}}{\href{https://doi.org/10.1088/1748-0221/13/07/P07027}{\textbf{148}}}{}%
+\ifthenelse{\equal{#1}{CMS-DP-2018-046}}{\href{https://cds.cern.ch/record/2630438}{\textbf{149}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017eie}}{\href{https://doi.org/10.1016/j.physletb.2017.12.069}{\textbf{150}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017dgc}}{\href{https://doi.org/10.1103/PhysRevLett.120.071802}{\textbf{151}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2017nvi}}{\href{https://doi.org/10.1007/JHEP01(2018)097}{\textbf{152}}}{}%
+\ifthenelse{\equal{#1}{Bornheim:2017gql}}{\href{https://doi.org/10.1088/1742-6596/928/1/012023}{\textbf{153}}}{}%
+\ifthenelse{\equal{#1}{Sirunyan:2016iap}}{\href{https://doi.org/10.1016/j.physletb.2017.02.012}{\textbf{154}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2017bbq}}{\href{https://arxiv.org/abs/1703.06544}{\textbf{155}}}{}%
+\ifthenelse{\equal{#1}{Khachatryan:2016epu}}{\href{https://doi.org/10.1103/PhysRevD.95.012003}{\textbf{156}}}{}%
+\ifthenelse{\equal{#1}{8069874}}{\href{https://doi.org/10.1109/NSSMIC.2016.8069874}{\textbf{157}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016tiu}}{\href{https://doi.org/10.1016/j.nima.2015.11.129}{\textbf{158}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2016wnw}}{\href{https://doi.org/10.1016/j.nuclphysbps.2015.09.071}{\textbf{159}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2016ygg}}{\href{https://doi.org/10.1109/TNS.2016.2528166}{\textbf{160}}}{}%
+\ifthenelse{\equal{#1}{7581887}}{\href{https://doi.org/10.1109/NSSMIC.2015.7581887}{\textbf{161}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015gha}}{\href{https://doi.org/10.1016/j.nima.2015.04.013}{\textbf{162}}}{}%
+\ifthenelse{\equal{#1}{Anderson:2015tia}}{\href{https://doi.org/10.1016/j.nima.2014.11.041}{\textbf{163}}}{}%
+\ifthenelse{\equal{#1}{Khachatryan:2015pwa}}{\href{https://doi.org/10.1103/PhysRevD.91.052018}{\textbf{164}}}{}%
+\ifthenelse{\equal{#1}{Bornheim_2015}}{\href{https://doi.org/10.1088/1742-6596/587/1/012057}{\textbf{165}}}{}%
+\ifthenelse{\equal{#1}{Duarte:2014soa}}{\href{https://arxiv.org/abs/1409.4466}{\textbf{166}}}{}%
+}
+
+\graphicspath{{PersonalStatement2022_figures/}}
+
+\newcommand{\PY}{\ensuremath{\mathrm{Y}}\xspace}
+
+\begin{document}
+
+\pagestyle{fancyplain}
+
+\vspace{-1ex}
+\subsection*{Teaching}
+
+Below, I describe my contributions to teaching focusing on the most recent review period from July 1, 2024 to June 30, 2026.
+During this review period, I was on parental bonding leave with active service-modified duties and teaching relief during Spring 2025.
+
+My teaching approach is to foster an inclusive, welcoming learning environment and promote active learning through evidence-based methods.
+My most significant contributions to teaching are the creation and modernization of several upper-division computational physics courses, including one focused on machine learning in physics.
+I strive to provide sufficient scaffolding through lower-stakes, incremental assignments.
+However, given the ubiquity and popularity of AI tools, I have recently shifted to focus more on in-class assessments and projects, which are more difficult to outsource to AI, and less on homework assignments.
+I also use ``exit tickets'' and surveys to collect feedback on the course structure, difficulty of projects, and appropriateness of the assessments.
+
+I created a new introductory graduate and upper-division undergraduate course, currently taught as a special topics course called Physics 139/239: Machine Learning in Physics, which I have now taught three times (Winter 2023, Spring 2024, and Fall 2025).
+The course structure consists of weekly lectures on conceptual topics, e.g. statistics, linear algebra, scientific data set exploration, feature engineering, (stochastic) gradient descent, neural networks, and unsupervised learning.
+Students learn key concepts in data science and machine learning, including selecting and preprocessing data, designing machine learning models, evaluating model performance, and relating model inputs and outputs to the underlying physics concepts.
+They apply these methods to the domains of collider physics, neutrino physics, astronomy, and others.
+In addition to hands-on programming-based homework assignments, the final project for the course is an open-ended group research project to reproduce the results of an ML in physics research article, with intermediate checkpoints to provide feedback.
+A midterm assignment to propose the project is also required.
+The projects use real, open scientific datasets, including those shown in Fig.~\ref{fig:teaching} (right).
+The use of real data sets communicates to students that they are doing publication-quality work at the interface of machine learning and physics.
+The course acts as a bridge between theory and practice in research, providing authentic learning experiences to prepare students for professional work and advanced academic research.
+Throughout the three quarters, students completed final group projects on galaxy image classification, gravitational wave noise reduction, neutrino event identification, temperature field prediction, superconductor property prediction, and more.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\textwidth]{jupyterbook.png}
+    \includegraphics[width=0.5\textwidth]{phys141_data.pdf}
+    \caption[Jupyter Book format]{Demonstration of the Jupyter Book format (left).
+        The code is executable and renders in the browser.
+        Visualizations of data sets used in Physics 139/239: (a) high-energy collider physics data consisting of simulated particle jets from the CMS experiment for identifying Higgs bosons, (b) astrophysical time-series data consisting of gravitational wave transient events maintained by the LIGO/Virgo/KAGRA collaboration, and (c) neutrino physics data containing simulated neutrinos interacting in a liquid argon time projection chamber (right).
+        \label{fig:teaching}}
+\end{figure}
+
+I also revamped Physics 141/241: Computational Physics I: Probabilistic Models and Simulations (Winter 2022, Spring 2023) and Physics 142/242: Computational Physics II: PDE and Matrix Models (Spring 2022, Winter 2024, Winter 2025).
+I helped procure modern campus computing resources through the UCSD JupyterHub Data Science and Machine Learning Platform (DSMLP).
+I showed students how to use modern computing tools like Jupyter, Git, Docker, Numpy/Numba, and Kubernetes for exploratory programming, writing accelerated vectorized code, collaboration and version control, creating reproducible environments, and orchestrating jobs over large clusters.
+The students gave positive feedback on gaining this experience, finding the skills transferable to computational research and job opportunities.
+I also co-taught a new graduate course developed with Prof. R. Sekhar Chivukula, Physics 239: Computational Methods in Collider Physics (Spring 2023), covering beyond the SM physics, Monte Carlo event generators, detector simulation, and ML methods for data analysis.
+The goal of the course is to give graduate students an ``end-to-end'' view of the process from theoretical prediction to experimental constraints.
+
+During this review period, I taught Physics 105A: Mathematical and Computational Physics I for the first time in Winter 2025, covering Fourier series and integrals, special functions, initial and boundary value problems, and Green's functions with applications to the heat, Laplace, and wave equations.
+My main goal was for students to appreciate how applying ideas from linear algebra (i.e., eigenvalues and eigenvectors) to differential equations can give us powerful tools to solve them and understand their properties.
+Often, I would pose an in-class problem and ask students to solve it in small groups using the methods we had just learned, and then we would review the solution together.
+I was also interested in giving students experience using computational tools, like Mathematica and open-source alternatives, to solve problems that are difficult to solve analytically, visualize the solutions, and build their intuition about the underlying physics.
+The course structure consisted of three weekly lectures and two weekly computer lab sessions, with nine homework assignments, two in-class midterms, and a final exam.
+
+I also taught Physics 2C: Fluids, Waves, Thermodynamics, and Optics to 350 students in Spring 2026.
+I adopted a ``flipped classroom'' format with readings and conceptual homework assignments due prior to each lecture.
+During the lecture, I briefly reviewed the material from the readings and the homework using an iPad to write notes over prepared material, focusing on conceptually challenging issues.
+I used in-class demonstrations of beat frequencies, engines, diffraction gratings, and lenses as well as a student response system (iClicker polls) to promote active learning, engage the students, and better understand the difficulties that they were having with the material.
+
+Overall, I received good ratings in the student evaluations of teaching (SETs), summarized in Table~\ref{tab:set}.
+\begin{table}[htpb]
+    \centering
+    \caption{Summary of student evaluations of teaching (SETs) for courses taught during the review period.}
+    \begin{tabular}{ll|rrr}
+        Quarter     & Course          & Student learning & Course structure & Class environment \\\hline
+        Winter 2025 & Physics 142/242 & 4.85/5.00        & 4.72/5.00        & 4.87/5.00         \\
+        Fall 2025   & Physics 139/239 & 4.45/5.00        & 4.36/5.00        & 4.63/5.00         \\
+        Winter 2026 & Physics 105A    & 4.57/5.00        & 4.49/5.00        & 4.61/5.00         \\
+        Spring 2026 & Physics 2C      & 3.99/5.00        & 3.86/5.00        & 4.37/5.00         \\
+    \end{tabular}
+    \label{tab:set}
+\end{table}
+For Physics 105A (Winter 2026) and Physics 139/239 (Fall 2025), students appreciated the different teaching methods I used (e.g., in-class problem solving and computational tutorials in addition to lectures) as well as the homework assignments, which helped them learn the material and prepare for the exams.
+They also felt I was approachable and willing to answer questions, and that I created a welcoming environment in the classroom.
+Selected excerpts from the student comments are shown below for Physics 105A (Winter 2026):
+\begin{quotation}
+    \itshape
+    The professor clearly incorporated various methods in lecture, with examples, in class problems and clear notes with steps.
+    This was EXCELLENT.
+    For a very hard topic, Professor Duarte did an amazing job...
+
+    Professor Duarte has especially well-written homeworks and exams that were challenging but felt like they helped me learn or were a fair measurement of my learning.
+    His lectures helped me understand course content and he was always very good about answering student questions and always took student questions seriously.
+    He comes across as very knowledgable and intelligent but also incredibly humble and I especially appreciate the environment of his class...
+
+    Professor Duarte was great! Although I mostly attended his lecture through zoom, whenever I did attend in person he would offer to stay behind and answer any questions regarding the material or homework.
+    Very nice and welcoming person as well so there was never any ``fear" to come up and ask...
+
+    Professor Duarte was very helpful when it came to helping me understand the material. What really helped was how he allowed us to use Mathematica to visualize the problems we were solving. Overall, his course provided great insight into the topics, and I really enjoyed it.
+    Professor Duarte's lectures were always very well written and thought out, I left every class with a good understanding of how to solve the problems he expected us to solve.
+    And the homeworks also really helped solidify the concepts that we learned.
+\end{quotation}
+For Physics 139/239 (Fall 2025), students wrote
+\begin{quotation}
+    \itshape
+    The homework was a good reflection of the class material and helped me put the concepts from class into action.
+    The hands-on exercises were also a good lead into the homework assignments and were a good reference for how to write the code...
+
+    The lectures of this class are incredibly well constructed.
+    They cover from the very basics all the way to some very complicated material in depth and thoroughly.
+    All of the homework were incredibly relevant to the material in class, and I felt that were never anything lacking...
+
+    The homework only ever enhanced my understanding and appreciation for the material and never took away from it, complicated it, or forced me to learn copious amounts of material on my own.
+    The hands-on were engaging and provided nice places to go if I was stuck writing certain parts of my code, as I could always cross-reference with these materials. I also liked the incorporation of the final project.
+    It was really interesting trying to tackle and recreate the contents of a paper in machine learning.
+    I think the passion that this instructor has for this field and the examples and experience he can bring to the table make lectures really engaging. Finally, although I never went to in-depth there were a lot of supplemental reading and materials provided for this course.
+    In the future if I was doing machine learning topics again, I would definitely not hesitate to return to these lectures and the materials recommended in this course...
+
+    This was one of my favorite classes I have taken at UCSD. More than anything this class has really expanded my knowledge of what is possible with computer science, coding, and physics. I have always loved coding and solving the challenges associated with coding a program.
+    But, I also loved Physics and Math and this course showed me an avenue that I could attempt to apply fuse all three of these passions or at least apply ML to these passions.
+    Through this course I have gained an extreme passion for machine learning that I hope I can find a way to apply and work on in future, which is probably the highest praise I could give for any class.
+\end{quotation}
+
+For Physics 2C (Spring 2026), while some students enjoyed the flipped clasroom format, others found the in-class problem solving to be too fast-paced.
+Several students also commented that they would prefer homework assignments (graded based on completion), which I removed this year given the rise of AI tools, to help them better prepare for exams.
+I will take this feedback into consideration for future iterations of the course.
+Excerpts from the student comments from Physics 2C (Spring 2026) are shown below:
+\begin{quotation}
+    \itshape
+    All practice problems done in class were adequately challenging and helped me understand
+    the material a lot more. Exams felt fair in gauging our knowledge of material. Prelecture
+    videos were very helpful and the welcoming environment for questions made it easy to relax
+    and learn at a good pace...
+
+    The instructor's clear explanations, step-by-step examples, and willingness to answer
+    questions helped me understand the material better. Practice problems and discussion also
+    made the course more engaging...
+
+    I did not like the fact that there was no assigned homework except for reading quizzes that
+    you could retake for full credit. I think homework is important and suggest completion based
+    assignments instead of reading quizzes...
+
+    I did not really like the flipped learning classroom, though it does have its pros and cons; it is
+    not my preferred learning method. It varies for every student, though!
+\end{quotation}
+
+% I have been internationally recognized as a teacher-scholar for my contributions to particle physics and machine learning pedagogy.
+I recently co-wrote the review of ``Machine Learning'' for the Particle Data Group's 2026 Review of Particle Physics to appear in \emph{Int. J. Mod. Phys. A}~[\mycite{Duarte:2025qbk}].
+These reviews are widely seen as the definitive reference material for our field, with each biannual edition typically receiving nearly 10,000 citations.
+I also co-wrote the section on applications in high energy physics in an invited review for \emph{Nature Reviews Electrical Engineering} entitled ``Opportunities and challenges of graph neural networks in electrical engineering''~[\mycite{Chien:2024gnn}].
+I received a 2023 Cottrell Scholar Award from the Research Corporation for Science Advancement for my project to augment computational physics course offerings at UC San Diego entitled ``Building a Better Foundation: Teaching Physicists and Machines How to Learn from Data.''
+I have co-written two textbook chapters aimed at graduate students, entitled ``Graph Neural Networks for Particle Tracking and Reconstruction'' in \emph{Artificial Intelligence for High Energy Physics}~[\mycite{Duarte:2020ngm}] and another entitled ``Machine Learning for Analysis and Instrumentation in High Energy Physics'' in \emph{Instrumentation and Techniques in High Energy Physics}~[\mycite{Duarte:2024xkc}].
+
+\end{document}
