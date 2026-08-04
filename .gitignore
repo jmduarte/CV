@@ -232,3 +232,6 @@ TSWLatexianTemp*
 
 # large data folder
 /azureml/figures/sonicplot/sonic_data
+
+# Google Scholar fetch cache (regenerate with: make citations)
+scholar_cache.json
