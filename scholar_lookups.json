@@ -1,10 +1,82 @@
 {
+  "arxiv_id:1502.00300": {
+    "citations": 163,
+    "title": "Search for supersymmetry using razor variables in events with b-tagged jets in pp collisions at sqrt (s)= 8 TeV"
+  },
   "arxiv_id:1609.07658": {
     "citations": 135,
     "title": "Inclusive search for supersymmetry using razor variables in pp collisions at √s= 13 TeV"
   },
+  "arxiv_id:1611.03568": {
+    "citations": 241,
+    "title": "Search for dijet resonances in proton-proton collisions at sqrt (s)= 13 TeV and constraints on dark matter and other models"
+  },
+  "arxiv_id:1710.00159": {
+    "citations": 167,
+    "title": "Search for low mass vector resonances decaying into quark-antiquark pairs in proton-proton collisions at sqrt (s)= 13 TeV"
+  },
+  "arxiv_id:1909.04114": {
+    "citations": 101,
+    "title": "Search for low mass vector resonances decaying into quark-antiquark pairs in proton-proton collisions at  13 TeV"
+  },
+  "arxiv_id:2110.13218": {
+    "citations": 43,
+    "title": "Search for long-lived particles produced in association with a Z boson in proton-proton collisions at  = 13 TeV"
+  },
   "arxiv_id:2207.00043": {
     "citations": 1346,
     "title": "A portrait of the Higgs boson by the CMS experiment ten years after the discovery"
+  },
+  "arxiv_id:2209.07559": {
+    "citations": 39,
+    "title": "Snowmass 2021 computational frontier CompF03 topical group report: Machine learning"
+  },
+  "arxiv_id:2212.06695": {
+    "citations": 32,
+    "title": "Search for long-lived particles using out-of-time trackless jets in proton-proton collisions at  = 13 TeV"
+  },
+  "arxiv_id:2402.01876": {
+    "citations": 34,
+    "title": "Ultrafast jet classification at the HL-LHC"
+  },
+  "arxiv_id:2402.01898": {
+    "citations": 57,
+    "title": "Search for long-lived particles decaying in the CMS muon detectors in proton-proton collisions at"
+  },
+  "arxiv_id:2403.16134": {
+    "citations": 136,
+    "title": "[HTML][HTML] Enriching the physics program of the CMS experiment via data scouting and data parking"
+  },
+  "arxiv_id:2405.13778": {
+    "citations": 94,
+    "title": "Elsevier BV: Dark sector searches with the CMS experiment"
+  },
+  "arxiv_id:2407.08012": {
+    "citations": 37,
+    "title": "Measurement of boosted Higgs bosons produced via vector boson fusion or gluon fusion in the H   decay mode using LHC proton-proton collision data at  = 13 …"
+  },
+  "arxiv_id:2602.00273": {
+    "citations": 0,
+    "title": "Search for heavy scalar resonances decaying to Lorentz-boosted Higgs and Higgs-like bosons in the 4q final state at  = 13 TeV"
+  },
+  "arxiv_id:2604.27044": {
+    "citations": 6,
+    "title": "Improved results on Higgs boson pair production in the 4b final state"
+  },
+  "arxiv_id:2605.16138": {
+    "citations": 2,
+    "title": "Surrogate Neural Architecture Codesign Package (SNAC-Pack)"
+  },
+  "arxiv_id:2605.21789": {
+    "citations": 0,
+    "title": "Patch Hierarchical Attention Transformer for Efficient Particle Jet Tagging"
+  },
+  "arxiv_id:2606.14373": {
+    "citations": 1,
+    "title": "Machine-learned particle flow as a foundation model for collider physics"
+  },
+  "arxiv_id:2606.20437": {
+    "citations": 0,
+    "title": "HEPTv2: End-to-End Efficient Point Transformer for Charged Particle Reconstruction"
   }
 }
