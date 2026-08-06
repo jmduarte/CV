@@ -14,6 +14,12 @@ publist_biobib:
 	pdflatex -interaction=nonstopmode -synctex=-1 publist_biobib
 	pdflatex -interaction=nonstopmode -synctex=-1 publist_biobib
 
+citations:
+	python update_scholar_citations.py --lookup --dry-run
+
+citations-apply:
+	python update_scholar_citations.py --lookup
+
 lint:
 	grep -E --color=always -r -i --include=\*.tex --include=\*.bib "(\b[a-zA-Z]+) \1\b" || true
 

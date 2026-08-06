@@ -11,25 +11,23 @@ on:
     tags:
       - v*
 
+# Never let two deploys race to the same web directory.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10"]
 
     steps:
       - name: Checkout CV
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: "recursive"
       - name: Make cpdf executable
         run: |
           chmod +x $GITHUB_WORKSPACE/cpdf-binaries/Linux-Intel-64bit/cpdf
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version }}
       - name: Compile CV LaTeX
         uses: docker://xucheng/texlive-full:latest
         with:
@@ -38,8 +36,38 @@ jobs:
             -c "\
             apk --no-cache add make && \
             make tex"
-      - name: List directory contents
-        run: ls -lhtra
+
+      # `make tex` runs pdflatex in nonstopmode, which can leave a broken PDF
+      # behind rather than failing, so check the outputs explicitly.
+      - name: Check build output
+        run: |
+          status=0
+          for pdf in cv_duarte_javier.pdf publist_biobib.pdf; do
+            if [ ! -s "$pdf" ]; then
+              echo "::error file=$pdf::$pdf was not produced"
+              status=1
+              continue
+            fi
+            if ! head -c 5 "$pdf" | grep -q '%PDF-'; then
+              echo "::error file=$pdf::$pdf is not a valid PDF"
+              status=1
+              continue
+            fi
+            echo "$pdf: $(du -h "$pdf" | cut -f1)"
+          done
+          for log in cv_duarte_javier.log publist_biobib.log; do
+            [ -f "$log" ] || continue
+            if grep -q '^!' "$log"; then
+              echo "::error file=$log::LaTeX errors in $log"
+              grep -n -A3 '^!' "$log" | head -40
+              status=1
+            fi
+            # Undefined citations still build, so surface them without failing.
+            grep -n 'Citation.*undefined\|Reference.*undefined' "$log" \
+              | head -10 | sed 's/^/::warning::/' || true
+          done
+          exit $status
+
       - name: Setup build for deployment
         run: |
           mkdir -p docs/_build
@@ -48,7 +76,9 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: cv-pdfs
           path: docs/_build
+
       - name: Deploy build to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -58,3 +88,29 @@ jobs:
           force_orphan: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
+
+      # Pull requests build and upload artifacts but never publish: fork PRs
+      # cannot read secrets, and unreviewed code should not reach the web host.
+      - name: Deploy PDFs to UCSD web server
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          SSH_KEY: ${{ secrets.UCSD_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.UCSD_KNOWN_HOSTS }}
+          DEST: jduarte@users.physics.ucsd.edu:/home/jduarte/web/jduarte.physics.ucsd.edu/cv/
+        run: |
+          if [ -z "$SSH_KEY" ] || [ -z "$KNOWN_HOSTS" ]; then
+            echo "::error::UCSD_SSH_KEY and UCSD_KNOWN_HOSTS secrets are not set"
+            exit 1
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/cv_deploy
+          chmod 600 ~/.ssh/cv_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          rsync -avz --checksum \
+            -e "ssh -i ~/.ssh/cv_deploy -o IdentitiesOnly=yes" \
+            cv_duarte_javier.pdf publist_biobib.pdf \
+            "$DEST"
+      - name: Scrub deploy key
+        if: always()
+        run: rm -f ~/.ssh/cv_deploy
